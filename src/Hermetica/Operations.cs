@@ -5903,6 +5903,9 @@ namespace Hermetica
         /// <summary>PUT /v1/integrations/connections/{id}/declarative/push - Turn on sending changed profiles to this CRM/helpdesk (off by default), optionally for one segment</summary>
         public Task<JsonElement?> PutV1IntegrationsConnectionsByIdDeclarativePushAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/integrations/connections/{id}/declarative/push", p, ct);
 
+        /// <summary>PUT /v1/integrations/connections/{id}/declarative/webhook-secret - Save the signing secret the vendor shows only after it verified the webhook URL (e.g. Clover X-Clover-Auth); it is never returned</summary>
+        public Task<JsonElement?> PutV1IntegrationsConnectionsByIdDeclarativeWebhookSecretAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/integrations/connections/{id}/declarative/webhook-secret", p, ct);
+
         /// <summary>PUT /v1/integrations/secrets/{name} - Create or replace a secret</summary>
         public Task<JsonElement?> PutV1IntegrationsSecretsByNameAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/integrations/secrets/{name}", p, ct);
 

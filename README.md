@@ -1,6 +1,6 @@
 # Hermetica .NET client
 
-Generated from the Hermetica OpenAPI spec (2041 operations). netstandard2.0 and net8.0; System.Net.Http and System.Text.Json only.
+Generated from the Hermetica OpenAPI spec (2042 operations). netstandard2.0 and net8.0; System.Net.Http and System.Text.Json only.
 
 ## Install
 
