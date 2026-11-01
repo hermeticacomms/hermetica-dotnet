@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Hermetica</RootNamespace>
+    <AssemblyName>Hermetica</AssemblyName>
+    <PackageId>Hermeticacomms.Hermetica</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Hermetica</Authors>
+    <Description>.NET client for the Hermetica API: one async method per operation, idempotency keys, cursor paging.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/hermeticacomms/hermetica-dotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/hermeticacomms/hermetica-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>hermetica;email;sms;outreach;api-client</PackageTags>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+  <!-- System.Text.Json is part of net8.0; netstandard2.0 gets Microsoft's package. -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+</Project>

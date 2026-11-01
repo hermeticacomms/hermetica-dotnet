@@ -1,0 +1,15 @@
+name: ci
+on:
+  push: { branches: [main] }
+  pull_request:
+permissions: { contents: read }
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-dotnet@v5
+        with: { dotnet-version: '8.0.x' }
+      - run: dotnet build src/Hermetica -c Release # netstandard2.0 and net8.0
+      - run: dotnet test tests/Hermetica.Tests -c Release
+      - run: dotnet pack src/Hermetica -c Release -o out

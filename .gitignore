@@ -1,0 +1,13 @@
+node_modules/
+dist/
+__pycache__/
+*.egg-info/
+build/
+vendor/
+composer.lock
+pkg/
+Gemfile.lock
+target/
+bin/
+obj/
+out/
