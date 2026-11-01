@@ -1469,6 +1469,9 @@ namespace Hermetica
         /// <summary>GET /v1/commerce/stores/{storeId}/stats</summary>
         public Task<JsonElement?> GetV1CommerceStoresByStoreIdStatsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/commerce/stores/{storeId}/stats", p, ct);
 
+        /// <summary>GET /v1/compliance/gpc - Whether a browser Global Privacy Control / Do Not Track signal counts as a tracking opt-out (default on)</summary>
+        public Task<JsonElement?> GetV1ComplianceGpcAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/compliance/gpc", p, ct);
+
         /// <summary>GET /v1/compliance/orphan-purge - Days after which a contact with no list, message or consent history is erased (null = never)</summary>
         public Task<JsonElement?> GetV1ComplianceOrphanPurgeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/compliance/orphan-purge", p, ct);
 
@@ -2527,6 +2530,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/profiles/{id}/pgp-key - The contact's PGP public key, if any (email to them is encrypted while it is set)</summary>
         public Task<JsonElement?> GetV1ProfilesByIdPgpKeyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profiles/{id}/pgp-key", p, ct);
+
+        /// <summary>GET /v1/profiles/{id}/predicted-gender - Gender inferred from the first name (likely_female, likely_male or uncertain); an inference, not a stored fact</summary>
+        public Task<JsonElement?> GetV1ProfilesByIdPredictedGenderAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profiles/{id}/predicted-gender", p, ct);
 
         /// <summary>GET /v1/profiles/{id}/prediction</summary>
         public Task<JsonElement?> GetV1ProfilesByIdPredictionAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profiles/{id}/prediction", p, ct);
@@ -5848,6 +5854,9 @@ namespace Hermetica
 
         /// <summary>PUT /v1/commerce/stores/{storeId}/products/{productId}/variants/{variantId} - Create or replace a variant of a store product</summary>
         public Task<JsonElement?> PutV1CommerceStoresByStoreIdProductsByProductIdVariantsByVariantIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/commerce/stores/{storeId}/products/{productId}/variants/{variantId}", p, ct);
+
+        /// <summary>PUT /v1/compliance/gpc</summary>
+        public Task<JsonElement?> PutV1ComplianceGpcAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/compliance/gpc", p, ct);
 
         /// <summary>PUT /v1/compliance/orphan-purge - Clean up contacts that never joined a list, got a message or gave consent</summary>
         public Task<JsonElement?> PutV1ComplianceOrphanPurgeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/compliance/orphan-purge", p, ct);

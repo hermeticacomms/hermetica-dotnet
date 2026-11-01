@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
@@ -30,12 +31,13 @@ namespace Hermetica.Tests
     /// <summary>Records each request and answers from a queue instead of the network.</summary>
     internal sealed class FakeHandler : HttpMessageHandler
     {
-        private readonly Queue<KeyValuePair<int, string>> _answers = new Queue<KeyValuePair<int, string>>();
+        private readonly Queue<Tuple<int, string, TimeSpan?>> _answers = new Queue<Tuple<int, string, TimeSpan?>>();
         public List<SeenRequest> Seen { get; } = new List<SeenRequest>();
 
-        public FakeHandler Answer(int status, string body)
+        /// <summary>Queues an answer; status 0 throws an HttpRequestException as a dropped connection would.</summary>
+        public FakeHandler Answer(int status, string body, TimeSpan? retryAfter = null)
         {
-            _answers.Enqueue(new KeyValuePair<int, string>(status, body));
+            _answers.Enqueue(Tuple.Create(status, body, retryAfter));
             return this;
         }
 
@@ -44,14 +46,17 @@ namespace Hermetica.Tests
             var body = request.Content == null ? null : await request.Content.ReadAsStringAsync();
             Seen.Add(new SeenRequest(request, body, request.Content?.Headers.ContentType?.MediaType));
             var answer = _answers.Dequeue();
-            return new HttpResponseMessage((HttpStatusCode)answer.Key) { Content = new StringContent(answer.Value) };
+            if (answer.Item1 == 0) throw new HttpRequestException("connection reset");
+            var res = new HttpResponseMessage((HttpStatusCode)answer.Item1) { Content = new StringContent(answer.Item2) };
+            if (answer.Item3 is TimeSpan wait) res.Headers.RetryAfter = new RetryConditionHeaderValue(wait);
+            return res;
         }
     }
 
     public class ClientTests
     {
-        private static Client NewClient(FakeHandler h, string? workspaceId = null) =>
-            new Client("hm_sk_test", "https://api.example.com/", workspaceId, new HttpClient(h));
+        private static Client NewClient(FakeHandler h, string? workspaceId = null, int maxRetries = 3) =>
+            new Client("hm_sk_test", "https://api.example.com/", workspaceId, new HttpClient(h), maxRetries);
 
         [Fact]
         public async Task GetSendsAuthQueryAndNoIdempotencyKey()
@@ -109,12 +114,69 @@ namespace Hermetica.Tests
         public async Task NonJsonErrorFallsBackToHttpError()
         {
             var h = new FakeHandler().Answer(502, "Bad gateway");
-            var e = await Assert.ThrowsAsync<HermeticaException>(() => NewClient(h).RequestAsync("DELETE", "/v1/x"));
+            var e = await Assert.ThrowsAsync<HermeticaException>(() => NewClient(h, maxRetries: 0).RequestAsync("DELETE", "/v1/x"));
             Assert.Equal(502, e.Status);
             Assert.Equal("http_error", e.Code);
             Assert.Equal("Bad gateway", e.ErrorMessage);
             Assert.Null(e.Details);
             Assert.NotNull(h.Seen[0].Header("Idempotency-Key"));
+        }
+
+        [Fact]
+        public async Task RetriesWithTheSameIdempotencyKey()
+        {
+            var h = new FakeHandler().Answer(503, "", TimeSpan.Zero).Answer(429, "", TimeSpan.Zero).Answer(0, "").Answer(200, "{\"ok\":true}");
+            var res = await NewClient(h).RequestAsync("POST", "/v1/x", new Params { Body = new { a = 1 } });
+            Assert.True(res!.Value.GetProperty("ok").GetBoolean());
+            Assert.Equal(4, h.Seen.Count);
+            var key = h.Seen[0].Header("Idempotency-Key");
+            Assert.False(string.IsNullOrEmpty(key));
+            foreach (var s in h.Seen)
+            {
+                Assert.Equal(key, s.Header("Idempotency-Key"));
+                Assert.Equal("{\"a\":1}", s.Body);
+            }
+        }
+
+        [Fact]
+        public async Task GivesUpAfterMaxRetries()
+        {
+            var h = new FakeHandler().Answer(502, "a", TimeSpan.Zero).Answer(502, "b", TimeSpan.Zero);
+            var e = await Assert.ThrowsAsync<HermeticaException>(() => NewClient(h, maxRetries: 1).RequestAsync("GET", "/v1/x"));
+            Assert.Equal(502, e.Status);
+            Assert.Equal("b", e.ErrorMessage);
+            Assert.Equal(2, h.Seen.Count);
+        }
+
+        [Fact]
+        public async Task DoesNotRetry4xx()
+        {
+            var h = new FakeHandler().Answer(404, "{}").Answer(200, "{}");
+            await Assert.ThrowsAsync<HermeticaException>(() => NewClient(h).RequestAsync("GET", "/v1/x"));
+            Assert.Single(h.Seen);
+        }
+
+        [Fact]
+        public async Task NetworkErrorIsThrownOnceRetriesRunOut()
+        {
+            var h = new FakeHandler().Answer(0, "");
+            await Assert.ThrowsAsync<HttpRequestException>(() => NewClient(h, maxRetries: 0).RequestAsync("GET", "/v1/x"));
+            Assert.Single(h.Seen);
+        }
+
+        [Fact]
+        public void ParsesRetryAfter()
+        {
+            var now = new DateTimeOffset(2026, 1, 1, 0, 0, 0, TimeSpan.Zero);
+            var res = new HttpResponseMessage(HttpStatusCode.ServiceUnavailable);
+            Assert.Null(Client.RetryAfter(res, now));
+            res.Headers.RetryAfter = new RetryConditionHeaderValue(TimeSpan.FromSeconds(2));
+            Assert.Equal((TimeSpan?)TimeSpan.FromSeconds(2), Client.RetryAfter(res, now));
+            res.Headers.RetryAfter = new RetryConditionHeaderValue(now.AddSeconds(5));
+            Assert.Equal((TimeSpan?)TimeSpan.FromSeconds(5), Client.RetryAfter(res, now));
+            res.Headers.RetryAfter = new RetryConditionHeaderValue(now.AddSeconds(-5));
+            Assert.Equal((TimeSpan?)TimeSpan.Zero, Client.RetryAfter(res, now));
+            for (var i = 0; i < 20; i++) Assert.True(Client.Backoff(i) < TimeSpan.FromSeconds(8));
         }
 
         [Fact]
