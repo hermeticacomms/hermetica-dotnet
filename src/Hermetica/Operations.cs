@@ -8,6 +8,12 @@ namespace Hermetica
 {
     public partial class Client
     {
+        /// <summary>DELETE /hub/{ws}/api/wishlist/{productId}</summary>
+        public Task<JsonElement?> DeleteHubByWsApiWishlistByProductIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/hub/{ws}/api/wishlist/{productId}", p, ct);
+
+        /// <summary>DELETE /mcp - Not offered: the hosted MCP server is stateless (POST only).</summary>
+        public Task<JsonElement?> DeleteMcpAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/mcp", p, ct);
+
         /// <summary>DELETE /p/n/{ref}/p/{slug}/highlights/{id} - Remove one of the reader's own highlights</summary>
         public Task<JsonElement?> DeletePNByRefPBySlugHighlightsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/p/n/{ref}/p/{slug}/highlights/{id}", p, ct);
 
@@ -23,6 +29,9 @@ namespace Hermetica
         /// <summary>DELETE /v1/ads/audiences/{id} - Stop syncing (the platform audience is left as it is)</summary>
         public Task<JsonElement?> DeleteV1AdsAudiencesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/ads/audiences/{id}", p, ct);
 
+        /// <summary>DELETE /v1/ads/lead-syncs/{id} - Stop syncing a lead-ad form</summary>
+        public Task<JsonElement?> DeleteV1AdsLeadSyncsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/ads/lead-syncs/{id}", p, ct);
+
         /// <summary>DELETE /v1/ad-spend - Remove imported spend for a platform and date range</summary>
         public Task<JsonElement?> DeleteV1AdSpendAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/ad-spend", p, ct);
 
@@ -31,6 +40,12 @@ namespace Hermetica
 
         /// <summary>DELETE /v1/agency/members/{userId}</summary>
         public Task<JsonElement?> DeleteV1AgencyMembersByUserIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/agency/members/{userId}", p, ct);
+
+        /// <summary>DELETE /v1/ai-agents/{id}</summary>
+        public Task<JsonElement?> DeleteV1AiAgentsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/ai-agents/{id}", p, ct);
+
+        /// <summary>DELETE /v1/ai-agents/{id}/guidances/{guidanceId}</summary>
+        public Task<JsonElement?> DeleteV1AiAgentsByIdGuidancesByGuidanceIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/ai-agents/{id}/guidances/{guidanceId}", p, ct);
 
         /// <summary>DELETE /v1/ai/prompt-templates/{id}</summary>
         public Task<JsonElement?> DeleteV1AiPromptTemplatesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/ai/prompt-templates/{id}", p, ct);
@@ -62,6 +77,12 @@ namespace Hermetica
         /// <summary>DELETE /v1/assets/{id}</summary>
         public Task<JsonElement?> DeleteV1AssetsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/assets/{id}", p, ct);
 
+        /// <summary>DELETE /v1/association-labels/{id}</summary>
+        public Task<JsonElement?> DeleteV1AssociationLabelsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/association-labels/{id}", p, ct);
+
+        /// <summary>DELETE /v1/associations/{fromType}/{fromId}/{toType}/{toId}</summary>
+        public Task<JsonElement?> DeleteV1AssociationsByFromTypeByFromIdByToTypeByToIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/associations/{fromType}/{fromId}/{toType}/{toId}", p, ct);
+
         /// <summary>DELETE /v1/attributes/computed/{key}</summary>
         public Task<JsonElement?> DeleteV1AttributesComputedByKeyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/attributes/computed/{key}", p, ct);
 
@@ -79,6 +100,9 @@ namespace Hermetica
 
         /// <summary>DELETE /v1/authorized-apps/{clientId}</summary>
         public Task<JsonElement?> DeleteV1AuthorizedAppsByClientIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/authorized-apps/{clientId}", p, ct);
+
+        /// <summary>DELETE /v1/batches/{id} - Cancel: calls not yet run are skipped (one already in flight completes)</summary>
+        public Task<JsonElement?> DeleteV1BatchesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/batches/{id}", p, ct);
 
         /// <summary>DELETE /v1/blocklist/{id}</summary>
         public Task<JsonElement?> DeleteV1BlocklistByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/blocklist/{id}", p, ct);
@@ -98,6 +122,9 @@ namespace Hermetica
         /// <summary>DELETE /v1/budgets/{id}/spend/{spendId}</summary>
         public Task<JsonElement?> DeleteV1BudgetsByIdSpendBySpendIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/budgets/{id}/spend/{spendId}", p, ct);
 
+        /// <summary>DELETE /v1/calendar-feeds/{id}</summary>
+        public Task<JsonElement?> DeleteV1CalendarFeedsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/calendar-feeds/{id}", p, ct);
+
         /// <summary>DELETE /v1/calendar/mine/{id}</summary>
         public Task<JsonElement?> DeleteV1CalendarMineByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/calendar/mine/{id}", p, ct);
 
@@ -110,11 +137,17 @@ namespace Hermetica
         /// <summary>DELETE /v1/campaigns/{id}</summary>
         public Task<JsonElement?> DeleteV1CampaignsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/campaigns/{id}", p, ct);
 
+        /// <summary>DELETE /v1/campaigns/{id}/audiences/{audienceId}</summary>
+        public Task<JsonElement?> DeleteV1CampaignsByIdAudiencesByAudienceIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/campaigns/{id}/audiences/{audienceId}", p, ct);
+
         /// <summary>DELETE /v1/campaigns/{id}/feedback/{feedbackId}</summary>
         public Task<JsonElement?> DeleteV1CampaignsByIdFeedbackByFeedbackIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/campaigns/{id}/feedback/{feedbackId}", p, ct);
 
         /// <summary>DELETE /v1/campaigns/{id}/messages/{messageId}</summary>
         public Task<JsonElement?> DeleteV1CampaignsByIdMessagesByMessageIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/campaigns/{id}/messages/{messageId}", p, ct);
+
+        /// <summary>DELETE /v1/campaigns/{id}/messages/{messageId}/variants/{key}</summary>
+        public Task<JsonElement?> DeleteV1CampaignsByIdMessagesByMessageIdVariantsByKeyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/campaigns/{id}/messages/{messageId}/variants/{key}", p, ct);
 
         /// <summary>DELETE /v1/campaigns/{id}/permanent</summary>
         public Task<JsonElement?> DeleteV1CampaignsByIdPermanentAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/campaigns/{id}/permanent", p, ct);
@@ -176,6 +209,9 @@ namespace Hermetica
         /// <summary>DELETE /v1/content-slots/{key}</summary>
         public Task<JsonElement?> DeleteV1ContentSlotsByKeyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/content-slots/{key}", p, ct);
 
+        /// <summary>DELETE /v1/content-slots/pushes/{id} - Withdraw pushed content (the slot falls back to its rules)</summary>
+        public Task<JsonElement?> DeleteV1ContentSlotsPushesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/content-slots/pushes/{id}", p, ct);
+
         /// <summary>DELETE /v1/coupon-pools/{id}</summary>
         public Task<JsonElement?> DeleteV1CouponPoolsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/coupon-pools/{id}", p, ct);
 
@@ -212,6 +248,12 @@ namespace Hermetica
         /// <summary>DELETE /v1/deliverability/sources/{id}</summary>
         public Task<JsonElement?> DeleteV1DeliverabilitySourcesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/deliverability/sources/{id}", p, ct);
 
+        /// <summary>DELETE /v1/destinations/{id}</summary>
+        public Task<JsonElement?> DeleteV1DestinationsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/destinations/{id}", p, ct);
+
+        /// <summary>DELETE /v1/do-not-contact/{id}</summary>
+        public Task<JsonElement?> DeleteV1DoNotContactByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/do-not-contact/{id}", p, ct);
+
         /// <summary>DELETE /v1/event-definitions/{name} - Remove the declaration only; stored events stay</summary>
         public Task<JsonElement?> DeleteV1EventDefinitionsByNameAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/event-definitions/{name}", p, ct);
 
@@ -220,6 +262,9 @@ namespace Hermetica
 
         /// <summary>DELETE /v1/forms/{id}</summary>
         public Task<JsonElement?> DeleteV1FormsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/forms/{id}", p, ct);
+
+        /// <summary>DELETE /v1/forms/{id}/submissions/{submissionId} - Delete one submission (the consent records it created stay as proof)</summary>
+        public Task<JsonElement?> DeleteV1FormsByIdSubmissionsBySubmissionIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/forms/{id}/submissions/{submissionId}", p, ct);
 
         /// <summary>DELETE /v1/frequency-settings/{id}</summary>
         public Task<JsonElement?> DeleteV1FrequencySettingsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/frequency-settings/{id}", p, ct);
@@ -239,6 +284,9 @@ namespace Hermetica
         /// <summary>DELETE /v1/import-schedules/{id}</summary>
         public Task<JsonElement?> DeleteV1ImportSchedulesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/import-schedules/{id}", p, ct);
 
+        /// <summary>DELETE /v1/in-app-components/{id} - Delete a component</summary>
+        public Task<JsonElement?> DeleteV1InAppComponentsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/in-app-components/{id}", p, ct);
+
         /// <summary>DELETE /v1/in-app-messages/{id} - Delete an in-app message and its events</summary>
         public Task<JsonElement?> DeleteV1InAppMessagesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/in-app-messages/{id}", p, ct);
 
@@ -248,11 +296,20 @@ namespace Hermetica
         /// <summary>DELETE /v1/inbound/routes/{id}</summary>
         public Task<JsonElement?> DeleteV1InboundRoutesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/inbound/routes/{id}", p, ct);
 
+        /// <summary>DELETE /v1/inbox-messages/{id} - Withdraw an inbox message</summary>
+        public Task<JsonElement?> DeleteV1InboxMessagesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/inbox-messages/{id}", p, ct);
+
         /// <summary>DELETE /v1/integrations/connections/{id}</summary>
         public Task<JsonElement?> DeleteV1IntegrationsConnectionsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/integrations/connections/{id}", p, ct);
 
         /// <summary>DELETE /v1/integrations/connections/{id}/hubspot/lists/{syncId} - Stop mirroring (the HubSpot list is left in place)</summary>
         public Task<JsonElement?> DeleteV1IntegrationsConnectionsByIdHubspotListsBySyncIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/integrations/connections/{id}/hubspot/lists/{syncId}", p, ct);
+
+        /// <summary>DELETE /v1/integrations/crm-imports/{id}</summary>
+        public Task<JsonElement?> DeleteV1IntegrationsCrmImportsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/integrations/crm-imports/{id}", p, ct);
+
+        /// <summary>DELETE /v1/integrations/packages/{packageId} - Uninstall; refused while connections use it</summary>
+        public Task<JsonElement?> DeleteV1IntegrationsPackagesByPackageIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/integrations/packages/{packageId}", p, ct);
 
         /// <summary>DELETE /v1/integrations/secrets/{name} - Delete a secret no endpoint uses</summary>
         public Task<JsonElement?> DeleteV1IntegrationsSecretsByNameAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/integrations/secrets/{name}", p, ct);
@@ -262,6 +319,9 @@ namespace Hermetica
 
         /// <summary>DELETE /v1/jobs/{id} - Delete a finished job</summary>
         public Task<JsonElement?> DeleteV1JobsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/jobs/{id}", p, ct);
+
+        /// <summary>DELETE /v1/landing-page-clusters/{id}</summary>
+        public Task<JsonElement?> DeleteV1LandingPageClustersByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/landing-page-clusters/{id}", p, ct);
 
         /// <summary>DELETE /v1/landing-page-folders/{id} - Pages move to the root; nothing is deleted</summary>
         public Task<JsonElement?> DeleteV1LandingPageFoldersByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/landing-page-folders/{id}", p, ct);
@@ -275,11 +335,17 @@ namespace Hermetica
         /// <summary>DELETE /v1/leads/companies/{id}</summary>
         public Task<JsonElement?> DeleteV1LeadsCompaniesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/leads/companies/{id}", p, ct);
 
+        /// <summary>DELETE /v1/leads/companies/{id}/files/{fileId}</summary>
+        public Task<JsonElement?> DeleteV1LeadsCompaniesByIdFilesByFileIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/leads/companies/{id}/files/{fileId}", p, ct);
+
         /// <summary>DELETE /v1/leads/companies/{id}/link/{profileId}</summary>
         public Task<JsonElement?> DeleteV1LeadsCompaniesByIdLinkByProfileIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/leads/companies/{id}/link/{profileId}", p, ct);
 
         /// <summary>DELETE /v1/leads/companies/{id}/notes/{noteId}</summary>
         public Task<JsonElement?> DeleteV1LeadsCompaniesByIdNotesByNoteIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/leads/companies/{id}/notes/{noteId}", p, ct);
+
+        /// <summary>DELETE /v1/leads/company-fields/{key}</summary>
+        public Task<JsonElement?> DeleteV1LeadsCompanyFieldsByKeyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/leads/company-fields/{key}", p, ct);
 
         /// <summary>DELETE /v1/leads/company-lists/{id}</summary>
         public Task<JsonElement?> DeleteV1LeadsCompanyListsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/leads/company-lists/{id}", p, ct);
@@ -314,8 +380,23 @@ namespace Hermetica
         /// <summary>DELETE /v1/lists/{id}/optin-template</summary>
         public Task<JsonElement?> DeleteV1ListsByIdOptinTemplateAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/lists/{id}/optin-template", p, ct);
 
+        /// <summary>DELETE /v1/loyalty/programs/{id} - Delete a programme with its ledger (balances are lost)</summary>
+        public Task<JsonElement?> DeleteV1LoyaltyProgramsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/loyalty/programs/{id}", p, ct);
+
+        /// <summary>DELETE /v1/loyalty/programs/{id}/rewards/{subId}</summary>
+        public Task<JsonElement?> DeleteV1LoyaltyProgramsByIdRewardsBySubIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/loyalty/programs/{id}/rewards/{subId}", p, ct);
+
+        /// <summary>DELETE /v1/loyalty/programs/{id}/rules/{subId}</summary>
+        public Task<JsonElement?> DeleteV1LoyaltyProgramsByIdRulesBySubIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/loyalty/programs/{id}/rules/{subId}", p, ct);
+
+        /// <summary>DELETE /v1/loyalty/programs/{id}/tiers/{subId}</summary>
+        public Task<JsonElement?> DeleteV1LoyaltyProgramsByIdTiersBySubIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/loyalty/programs/{id}/tiers/{subId}", p, ct);
+
         /// <summary>DELETE /v1/mapped-metrics/{role} - Reset a role to its default event</summary>
         public Task<JsonElement?> DeleteV1MappedMetricsByRoleAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/mapped-metrics/{role}", p, ct);
+
+        /// <summary>DELETE /v1/marketing-events/apps/{id}</summary>
+        public Task<JsonElement?> DeleteV1MarketingEventsAppsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/marketing-events/apps/{id}", p, ct);
 
         /// <summary>DELETE /v1/marketing-events/{id}</summary>
         public Task<JsonElement?> DeleteV1MarketingEventsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/marketing-events/{id}", p, ct);
@@ -328,6 +409,9 @@ namespace Hermetica
 
         /// <summary>DELETE /v1/marketing-events/by-ref/{ref}/lists/{listId}</summary>
         public Task<JsonElement?> DeleteV1MarketingEventsByRefByRefListsByListIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/marketing-events/by-ref/{ref}/lists/{listId}", p, ct);
+
+        /// <summary>DELETE /v1/me/identities/{id}</summary>
+        public Task<JsonElement?> DeleteV1MeIdentitiesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/me/identities/{id}", p, ct);
 
         /// <summary>DELETE /v1/members/{userId}</summary>
         public Task<JsonElement?> DeleteV1MembersByUserIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/members/{userId}", p, ct);
@@ -380,7 +464,7 @@ namespace Hermetica
         /// <summary>DELETE /v1/newsletter/stripe</summary>
         public Task<JsonElement?> DeleteV1NewsletterStripeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/newsletter/stripe", p, ct);
 
-        /// <summary>DELETE /v1/notes/{id}</summary>
+        /// <summary>DELETE /v1/notes/{id} - Delete a contact or company note</summary>
         public Task<JsonElement?> DeleteV1NotesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/notes/{id}", p, ct);
 
         /// <summary>DELETE /v1/oauth/clients/{id}</summary>
@@ -407,11 +491,20 @@ namespace Hermetica
         /// <summary>DELETE /v1/object-types/{id}/relationships/{target}</summary>
         public Task<JsonElement?> DeleteV1ObjectTypesByIdRelationshipsByTargetAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/object-types/{id}/relationships/{target}", p, ct);
 
+        /// <summary>DELETE /v1/operator/waitlist/{id}</summary>
+        public Task<JsonElement?> DeleteV1OperatorWaitlistByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/operator/waitlist/{id}", p, ct);
+
         /// <summary>DELETE /v1/outbound/ai-key</summary>
         public Task<JsonElement?> DeleteV1OutboundAiKeyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/outbound/ai-key", p, ct);
 
+        /// <summary>DELETE /v1/outbound/booking-pages/{id}</summary>
+        public Task<JsonElement?> DeleteV1OutboundBookingPagesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/outbound/booking-pages/{id}", p, ct);
+
         /// <summary>DELETE /v1/outbound/call-dispositions/{key}</summary>
         public Task<JsonElement?> DeleteV1OutboundCallDispositionsByKeyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/outbound/call-dispositions/{key}", p, ct);
+
+        /// <summary>DELETE /v1/outbound/calls/{id}/recording - Delete the recording link and transcript of a logged call (outcome, length and notes stay)</summary>
+        public Task<JsonElement?> DeleteV1OutboundCallsByIdRecordingAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/outbound/calls/{id}/recording", p, ct);
 
         /// <summary>DELETE /v1/outbound/domain-caps/{id}</summary>
         public Task<JsonElement?> DeleteV1OutboundDomainCapsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/outbound/domain-caps/{id}", p, ct);
@@ -446,8 +539,26 @@ namespace Hermetica
         /// <summary>DELETE /v1/outbound/tasks/{id} - Delete a task (skip keeps it as history)</summary>
         public Task<JsonElement?> DeleteV1OutboundTasksByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/outbound/tasks/{id}", p, ct);
 
+        /// <summary>DELETE /v1/outbound/task-types/{id}</summary>
+        public Task<JsonElement?> DeleteV1OutboundTaskTypesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/outbound/task-types/{id}", p, ct);
+
+        /// <summary>DELETE /v1/outbound/telephony</summary>
+        public Task<JsonElement?> DeleteV1OutboundTelephonyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/outbound/telephony", p, ct);
+
+        /// <summary>DELETE /v1/outbound/voice-clips/{id}</summary>
+        public Task<JsonElement?> DeleteV1OutboundVoiceClipsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/outbound/voice-clips/{id}", p, ct);
+
+        /// <summary>DELETE /v1/page-sites/{id} - Delete the site (its pages stay, unassigned) and stop serving its domain</summary>
+        public Task<JsonElement?> DeleteV1PageSitesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/page-sites/{id}", p, ct);
+
+        /// <summary>DELETE /v1/page-sites/{id}/domain</summary>
+        public Task<JsonElement?> DeleteV1PageSitesByIdDomainAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/page-sites/{id}/domain", p, ct);
+
         /// <summary>DELETE /v1/postal-addresses/{id} - Delete an address; lists that used it print the workspace address again</summary>
         public Task<JsonElement?> DeleteV1PostalAddressesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/postal-addresses/{id}", p, ct);
+
+        /// <summary>DELETE /v1/profile-filters/{id}</summary>
+        public Task<JsonElement?> DeleteV1ProfileFiltersByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/profile-filters/{id}", p, ct);
 
         /// <summary>DELETE /v1/profiles/by/{idType}/{value} - Delete a profile addressed by any identifier</summary>
         public Task<JsonElement?> DeleteV1ProfilesByByIdTypeByValueAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/profiles/by/{idType}/{value}", p, ct);
@@ -460,6 +571,9 @@ namespace Hermetica
 
         /// <summary>DELETE /v1/profiles/{id}/engagement - Delete a person's open and/or click history (privacy request); deliveries, bounces and consent stay</summary>
         public Task<JsonElement?> DeleteV1ProfilesByIdEngagementAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/profiles/{id}/engagement", p, ct);
+
+        /// <summary>DELETE /v1/profiles/{id}/files/{fileId}</summary>
+        public Task<JsonElement?> DeleteV1ProfilesByIdFilesByFileIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/profiles/{id}/files/{fileId}", p, ct);
 
         /// <summary>DELETE /v1/profiles/{id}/notes/{noteId}</summary>
         public Task<JsonElement?> DeleteV1ProfilesByIdNotesByNoteIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/profiles/{id}/notes/{noteId}", p, ct);
@@ -512,8 +626,14 @@ namespace Hermetica
         /// <summary>DELETE /v1/segments/{id}</summary>
         public Task<JsonElement?> DeleteV1SegmentsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/segments/{id}", p, ct);
 
+        /// <summary>DELETE /v1/segments/{id}/members - Remove contacts from a hand-picked segment by profile id or email</summary>
+        public Task<JsonElement?> DeleteV1SegmentsByIdMembersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/segments/{id}/members", p, ct);
+
         /// <summary>DELETE /v1/sender-pools/{id}</summary>
         public Task<JsonElement?> DeleteV1SenderPoolsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/sender-pools/{id}", p, ct);
+
+        /// <summary>DELETE /v1/senders/{id}/signing/{kind}</summary>
+        public Task<JsonElement?> DeleteV1SendersByIdSigningByKindAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/senders/{id}/signing/{kind}", p, ct);
 
         /// <summary>DELETE /v1/sending-domains/{id} - Delete a sending domain (refused while senders still use it)</summary>
         public Task<JsonElement?> DeleteV1SendingDomainsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/sending-domains/{id}", p, ct);
@@ -521,14 +641,26 @@ namespace Hermetica
         /// <summary>DELETE /v1/send-options/{sourceKind}/{sourceId}</summary>
         public Task<JsonElement?> DeleteV1SendOptionsBySourceKindBySourceIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/send-options/{sourceKind}/{sourceId}", p, ct);
 
+        /// <summary>DELETE /v1/shared-object-schemas/{id} - Stop sharing (only from the workspace that published it; installed copies stay)</summary>
+        public Task<JsonElement?> DeleteV1SharedObjectSchemasByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/shared-object-schemas/{id}", p, ct);
+
         /// <summary>DELETE /v1/shares/{type}/{id}/{userId} - Stop sharing with one member; when the last share goes the resource is open again</summary>
         public Task<JsonElement?> DeleteV1SharesByTypeByIdByUserIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/shares/{type}/{id}/{userId}", p, ct);
 
         /// <summary>DELETE /v1/siem</summary>
         public Task<JsonElement?> DeleteV1SiemAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/siem", p, ct);
 
+        /// <summary>DELETE /v1/site-messages/{id}</summary>
+        public Task<JsonElement?> DeleteV1SiteMessagesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/site-messages/{id}", p, ct);
+
         /// <summary>DELETE /v1/sites/{id} - Revokes the site key</summary>
         public Task<JsonElement?> DeleteV1SitesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/sites/{id}", p, ct);
+
+        /// <summary>DELETE /v1/slack/installs/{id} - Remove a Slack workspace and delete its token</summary>
+        public Task<JsonElement?> DeleteV1SlackInstallsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/slack/installs/{id}", p, ct);
+
+        /// <summary>DELETE /v1/slack/templates/{id} - Delete a Slack message template</summary>
+        public Task<JsonElement?> DeleteV1SlackTemplatesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/slack/templates/{id}", p, ct);
 
         /// <summary>DELETE /v1/sms/canned-replies/{id}</summary>
         public Task<JsonElement?> DeleteV1SmsCannedRepliesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/sms/canned-replies/{id}", p, ct);
@@ -545,8 +677,14 @@ namespace Hermetica
         /// <summary>DELETE /v1/snippets/{id}</summary>
         public Task<JsonElement?> DeleteV1SnippetsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/snippets/{id}", p, ct);
 
+        /// <summary>DELETE /v1/social/accounts/{id} - Disconnect an account and delete its token</summary>
+        public Task<JsonElement?> DeleteV1SocialAccountsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/social/accounts/{id}", p, ct);
+
         /// <summary>DELETE /v1/soft-bounce-allowlist/{id}</summary>
         public Task<JsonElement?> DeleteV1SoftBounceAllowlistByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/soft-bounce-allowlist/{id}", p, ct);
+
+        /// <summary>DELETE /v1/sql-sources/{id}</summary>
+        public Task<JsonElement?> DeleteV1SqlSourcesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/sql-sources/{id}", p, ct);
 
         /// <summary>DELETE /v1/sso</summary>
         public Task<JsonElement?> DeleteV1SsoAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/sso", p, ct);
@@ -602,6 +740,9 @@ namespace Hermetica
         /// <summary>DELETE /v1/transactional/definitions/{id}</summary>
         public Task<JsonElement?> DeleteV1TransactionalDefinitionsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/transactional/definitions/{id}", p, ct);
 
+        /// <summary>DELETE /v1/transactional/metadata-fields/{name} - Stop showing a metadata key in the log; messages keep their metadata</summary>
+        public Task<JsonElement?> DeleteV1TransactionalMetadataFieldsByNameAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/transactional/metadata-fields/{name}", p, ct);
+
         /// <summary>DELETE /v1/transactional/tags/{tag} - Remove a tag from every message that carries it</summary>
         public Task<JsonElement?> DeleteV1TransactionalTagsByTagAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/transactional/tags/{tag}", p, ct);
 
@@ -617,6 +758,9 @@ namespace Hermetica
         /// <summary>DELETE /v1/web-feeds/{id}</summary>
         public Task<JsonElement?> DeleteV1WebFeedsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/web-feeds/{id}", p, ct);
 
+        /// <summary>DELETE /v1/webhooks/endpoints - Delete every webhook subscription in the workspace (pending deliveries are cancelled)</summary>
+        public Task<JsonElement?> DeleteV1WebhooksEndpointsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/webhooks/endpoints", p, ct);
+
         /// <summary>DELETE /v1/webhooks/endpoints/{id}</summary>
         public Task<JsonElement?> DeleteV1WebhooksEndpointsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/webhooks/endpoints/{id}", p, ct);
 
@@ -628,6 +772,12 @@ namespace Hermetica
 
         /// <summary>DELETE /v1/whatsapp/templates/{id} - Delete a template at the provider and here (localOnly=true skips the provider call); the linked Hermetica template is archived</summary>
         public Task<JsonElement?> DeleteV1WhatsappTemplatesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/whatsapp/templates/{id}", p, ct);
+
+        /// <summary>DELETE /v1/workflow-custom-types/{id}</summary>
+        public Task<JsonElement?> DeleteV1WorkflowCustomTypesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/workflow-custom-types/{id}", p, ct);
+
+        /// <summary>DELETE /v1/workflows/{id} - Delete a draft or archived journey for good (versions and history go with it); archive a live one first</summary>
+        public Task<JsonElement?> DeleteV1WorkflowsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/workflows/{id}", p, ct);
 
         /// <summary>DELETE /v1/workflows/{id}/ab</summary>
         public Task<JsonElement?> DeleteV1WorkflowsByIdAbAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/workflows/{id}/ab", p, ct);
@@ -653,11 +803,23 @@ namespace Hermetica
         /// <summary>DELETE /v1/workspaces/current/schedule-for-removal - Owner only: cancel a scheduled removal and resume sending</summary>
         public Task<JsonElement?> DeleteV1WorkspacesCurrentScheduleForRemovalAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/v1/workspaces/current/schedule-for-removal", p, ct);
 
+        /// <summary>DELETE /wallet/apple/{ws}/v1/devices/{device}/registrations/{passType}/{serial}</summary>
+        public Task<JsonElement?> DeleteWalletAppleByWsV1DevicesByDeviceRegistrationsByPassTypeBySerialAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("DELETE", "/wallet/apple/{ws}/v1/devices/{device}/registrations/{passType}/{serial}", p, ct);
+
+        /// <summary>GET /book/{ws}/{slug} - Hosted booking page</summary>
+        public Task<JsonElement?> GetBookByWsBySlugAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/book/{ws}/{slug}", p, ct);
+
         /// <summary>GET /client/geofences - Active geofences the app should monitor (Klaviyo JSON:API list)</summary>
         public Task<JsonElement?> GetClientGeofencesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/client/geofences", p, ct);
 
         /// <summary>GET /client/in-app-messages - In-app messages for an identified or anonymous visitor at a trigger</summary>
         public Task<JsonElement?> GetClientInAppMessagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/client/in-app-messages", p, ct);
+
+        /// <summary>GET /client/in-app-trackers - Active tracker components for the contact (journey tracker steps)</summary>
+        public Task<JsonElement?> GetClientInAppTrackersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/client/in-app-trackers", p, ct);
+
+        /// <summary>GET /client/inbox - The contact's inbox, newest first, with the unread count</summary>
+        public Task<JsonElement?> GetClientInboxAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/client/inbox", p, ct);
 
         /// <summary>GET /client/push-config - The workspace's VAPID public key, for browsers subscribing to web push</summary>
         public Task<JsonElement?> GetClientPushConfigAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/client/push-config", p, ct);
@@ -671,6 +833,9 @@ namespace Hermetica
         /// <summary>GET /e/results/{ws}/{id} - Poll results page</summary>
         public Task<JsonElement?> GetEResultsByWsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/e/results/{ws}/{id}", p, ct);
 
+        /// <summary>GET /e/s/{ws}/{token} - Anonymous survey link: a blank form (never earlier answers or results)</summary>
+        public Task<JsonElement?> GetESByWsByTokenAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/e/s/{ws}/{token}", p, ct);
+
         /// <summary>GET /e/survey/{ws}/{id} - Hosted survey page</summary>
         public Task<JsonElement?> GetESurveyByWsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/e/survey/{ws}/{id}", p, ct);
 
@@ -680,17 +845,44 @@ namespace Hermetica
         /// <summary>GET /e/widget.js - Embed script: turns &lt;div data-hermetica-comments="workspace/post"&gt; into the comments widget</summary>
         public Task<JsonElement?> GetEWidgetJsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/e/widget.js", p, ct);
 
+        /// <summary>GET /f/{ws}/{id}/{*} - A not-indexable or private library file: private files need a valid signed link (?t=); always answered with noindex</summary>
+        public Task<JsonElement?> GetFByWsByIdWildcardAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/f/{ws}/{id}/{*}", p, ct);
+
+        /// <summary>GET /feeds/reviews/{token} - Google Shopping product reviews feed (the signed link from /v1/review-feeds/google)</summary>
+        public Task<JsonElement?> GetFeedsReviewsByTokenAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/feeds/reviews/{token}", p, ct);
+
         /// <summary>GET /healthz</summary>
         public Task<JsonElement?> GetHealthzAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/healthz", p, ct);
 
+        /// <summary>GET /hub/{ws} - The customer hub page (or its sign-in form)</summary>
+        public Task<JsonElement?> GetHubByWsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/hub/{ws}", p, ct);
+
+        /// <summary>GET /hub/{ws}/api/me - Everything the signed-in shopper sees</summary>
+        public Task<JsonElement?> GetHubByWsApiMeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/hub/{ws}/api/me", p, ct);
+
+        /// <summary>GET /hub/{ws}/auth/{token}</summary>
+        public Task<JsonElement?> GetHubByWsAuthByTokenAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/hub/{ws}/auth/{token}", p, ct);
+
+        /// <summary>GET /ical/{ws}/{file} - The ICS feed itself (token in the URL). Titles and times only, never message bodies</summary>
+        public Task<JsonElement?> GetIcalByWsByFileAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/ical/{ws}/{file}", p, ct);
+
         /// <summary>GET /ingest/v1/forms</summary>
         public Task<JsonElement?> GetIngestV1FormsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/ingest/v1/forms", p, ct);
+
+        /// <summary>GET /ingest/v1/forms/{id}/companies - Company name suggestions for a form company field (names only)</summary>
+        public Task<JsonElement?> GetIngestV1FormsByIdCompaniesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/ingest/v1/forms/{id}/companies", p, ct);
+
+        /// <summary>GET /ingest/v1/forms/visitor - Audience flags for on-site targeting: booleans only (known, subscriber, membership of each targeted list/segment, targeted countries)</summary>
+        public Task<JsonElement?> GetIngestV1FormsVisitorAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/ingest/v1/forms/visitor", p, ct);
 
         /// <summary>GET /ingest/v1/reviews - Published reviews of one product, newest first</summary>
         public Task<JsonElement?> GetIngestV1ReviewsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/ingest/v1/reviews", p, ct);
 
         /// <summary>GET /ingest/v1/review-values-reports - Count, average and 1-5 histogram of published reviews, per product</summary>
         public Task<JsonElement?> GetIngestV1ReviewValuesReportsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/ingest/v1/review-values-reports", p, ct);
+
+        /// <summary>GET /ingest/v1/site-messages - Site messages for this visitor: published ones, plus those a journey queued for them</summary>
+        public Task<JsonElement?> GetIngestV1SiteMessagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/ingest/v1/site-messages", p, ct);
 
         /// <summary>GET /ingest/v1/slots - Slot content for the visitor: identified profiles get their segment rules</summary>
         public Task<JsonElement?> GetIngestV1SlotsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/ingest/v1/slots", p, ct);
@@ -707,11 +899,23 @@ namespace Hermetica
         /// <summary>GET /integrations/shopify/callback</summary>
         public Task<JsonElement?> GetIntegrationsShopifyCallbackAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/integrations/shopify/callback", p, ct);
 
+        /// <summary>GET /integrations/slack/callback</summary>
+        public Task<JsonElement?> GetIntegrationsSlackCallbackAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/integrations/slack/callback", p, ct);
+
+        /// <summary>GET /integrations/social/{platform}/callback</summary>
+        public Task<JsonElement?> GetIntegrationsSocialByPlatformCallbackAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/integrations/social/{platform}/callback", p, ct);
+
         /// <summary>GET /integrations/x/callback</summary>
         public Task<JsonElement?> GetIntegrationsXCallbackAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/integrations/x/callback", p, ct);
 
         /// <summary>GET /l/c/{*} - List double opt-in confirmation page (does not change state)</summary>
         public Task<JsonElement?> GetLCWildcardAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/l/c/{*}", p, ct);
+
+        /// <summary>GET /loyalty/v1/program - Programme name, tiers and rewards for a storefront widget (no member data)</summary>
+        public Task<JsonElement?> GetLoyaltyV1ProgramAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/loyalty/v1/program", p, ct);
+
+        /// <summary>GET /mcp - Not offered: the hosted MCP server is stateless (POST only).</summary>
+        public Task<JsonElement?> GetMcpAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/mcp", p, ct);
 
         /// <summary>GET /metrics - Prometheus text exposition; bearer METRICS_TOKEN (404 when unset)</summary>
         public Task<JsonElement?> GetMetricsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/metrics", p, ct);
@@ -749,6 +953,9 @@ namespace Hermetica
         /// <summary>GET /p/f/{ref} - Hosted form page (`pp` = signed progressive-profiling token)</summary>
         public Task<JsonElement?> GetPFByRefAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/p/f/{ref}", p, ct);
 
+        /// <summary>GET /p/f/{ref}/companies - Company suggestions for a hosted form</summary>
+        public Task<JsonElement?> GetPFByRefCompaniesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/p/f/{ref}/companies", p, ct);
+
         /// <summary>GET /p/gift/{ws}/{code} - Gift redeem page</summary>
         public Task<JsonElement?> GetPGiftByWsByCodeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/p/gift/{ws}/{code}", p, ct);
 
@@ -757,6 +964,9 @@ namespace Hermetica
 
         /// <summary>GET /p/l/{ref} - Hosted landing page (language and A/B variant chosen per visitor; `pp` = signed progressive-profiling token)</summary>
         public Task<JsonElement?> GetPLByRefAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/p/l/{ref}", p, ct);
+
+        /// <summary>GET /p/l/{ref}/companies - Company suggestions for the form on a hosted page</summary>
+        public Task<JsonElement?> GetPLByRefCompaniesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/p/l/{ref}/companies", p, ct);
 
         /// <summary>GET /p/lists/{ws} - Public lists directory: pick lists and subscribe</summary>
         public Task<JsonElement?> GetPListsByWsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/p/lists/{ws}", p, ct);
@@ -812,11 +1022,23 @@ namespace Hermetica
         /// <summary>GET /p/ng/{ws}/{pub}/widget.js - Popup, slide-in and scroll-trigger script for a publication</summary>
         public Task<JsonElement?> GetPNgByWsByPubWidgetJsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/p/ng/{ws}/{pub}/widget.js", p, ct);
 
-        /// <summary>GET /p/s/{token} - Shared read-only outline of a sequence</summary>
+        /// <summary>GET /p/robots/{ws} - robots.txt for a site on its custom domain</summary>
+        public Task<JsonElement?> GetPRobotsByWsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/p/robots/{ws}", p, ct);
+
+        /// <summary>GET /p/s/{token} - Public share link of a campaign report: the hosted copy, tracked</summary>
         public Task<JsonElement?> GetPSByTokenAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/p/s/{token}", p, ct);
+
+        /// <summary>GET /p/s/{token}/c - A click on a link of the shared copy: recorded, then redirected (only to a link the copy really contains)</summary>
+        public Task<JsonElement?> GetPSByTokenCAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/p/s/{token}/c", p, ct);
+
+        /// <summary>GET /p/seq/{token} - Shared read-only outline of a sequence</summary>
+        public Task<JsonElement?> GetPSeqByTokenAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/p/seq/{token}", p, ct);
 
         /// <summary>GET /p/signin/{ws} - Sign in to read or manage a subscription (emails a link)</summary>
         public Task<JsonElement?> GetPSigninByWsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/p/signin/{ws}", p, ct);
+
+        /// <summary>GET /p/sitemap/{ws} - sitemap.xml for hosted pages (one site with `site`)</summary>
+        public Task<JsonElement?> GetPSitemapByWsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/p/sitemap/{ws}", p, ct);
 
         /// <summary>GET /p/sr/{ws}/{token} - Shareable sponsor report (impressions, opens, clicks, CTR)</summary>
         public Task<JsonElement?> GetPSrByWsByTokenAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/p/sr/{ws}/{token}", p, ct);
@@ -884,11 +1106,14 @@ namespace Hermetica
         /// <summary>GET /v1/account/summary - Sent, delivered, bounced, complained, opens and clicks for today and the last 7, 30, 60 and 90 days, with bounce and complaint rates</summary>
         public Task<JsonElement?> GetV1AccountSummaryAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/account/summary", p, ct);
 
-        /// <summary>GET /v1/activity - Recent workspace activity feed built from the audit log</summary>
+        /// <summary>GET /v1/activity - Recent workspace activity feed built from the audit log; filter by target type, action and person</summary>
         public Task<JsonElement?> GetV1ActivityAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/activity", p, ct);
 
-        /// <summary>GET /v1/activity/highlights - Marketer feed: recently finished sends, daily sign-ups over the last 14 days and the audience size milestone reached</summary>
+        /// <summary>GET /v1/activity/highlights - Marketer feed over the chosen window: finished sends, each sign-up one by one, daily list growth and the audience milestone reached; paged b</summary>
         public Task<JsonElement?> GetV1ActivityHighlightsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/activity/highlights", p, ct);
+
+        /// <summary>GET /v1/activity/people - Activity of everyone in the workspace; filter by type, name, person and deleted people</summary>
+        public Task<JsonElement?> GetV1ActivityPeopleAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/activity/people", p, ct);
 
         /// <summary>GET /v1/ads/accounts - Connected ad accounts</summary>
         public Task<JsonElement?> GetV1AdsAccountsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ads/accounts", p, ct);
@@ -899,6 +1124,12 @@ namespace Hermetica
         /// <summary>GET /v1/ads/accounts/{id}/conversions/log - Conversion delivery log</summary>
         public Task<JsonElement?> GetV1AdsAccountsByIdConversionsLogAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ads/accounts/{id}/conversions/log", p, ct);
 
+        /// <summary>GET /v1/ads/accounts/{id}/lead-forms - Lead-ad forms on the account's Facebook page, with their questions and consent checkboxes</summary>
+        public Task<JsonElement?> GetV1AdsAccountsByIdLeadFormsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ads/accounts/{id}/lead-forms", p, ct);
+
+        /// <summary>GET /v1/ads/accounts/{id}/objects - Campaigns, ad sets and ads on the platform with last-30-day reach, spend and ROAS</summary>
+        public Task<JsonElement?> GetV1AdsAccountsByIdObjectsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ads/accounts/{id}/objects", p, ct);
+
         /// <summary>GET /v1/ads/audiences - Segment -&gt; ad audience syncs</summary>
         public Task<JsonElement?> GetV1AdsAudiencesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ads/audiences", p, ct);
 
@@ -907,6 +1138,18 @@ namespace Hermetica
 
         /// <summary>GET /v1/ads/audiences/{id}/runs - Sync history with counts and errors</summary>
         public Task<JsonElement?> GetV1AdsAudiencesByIdRunsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ads/audiences/{id}/runs", p, ct);
+
+        /// <summary>GET /v1/ads/campaigns - Campaigns built here</summary>
+        public Task<JsonElement?> GetV1AdsCampaignsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ads/campaigns", p, ct);
+
+        /// <summary>GET /v1/ads/campaigns/{id} - One campaign</summary>
+        public Task<JsonElement?> GetV1AdsCampaignsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ads/campaigns/{id}", p, ct);
+
+        /// <summary>GET /v1/ads/lead-syncs - Lead-ad forms synced into forms</summary>
+        public Task<JsonElement?> GetV1AdsLeadSyncsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ads/lead-syncs", p, ct);
+
+        /// <summary>GET /v1/ads/lead-syncs/{id}/imports - Leads imported by a sync</summary>
+        public Task<JsonElement?> GetV1AdsLeadSyncsByIdImportsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ads/lead-syncs/{id}/imports", p, ct);
 
         /// <summary>GET /v1/ads/oauth/apps - Which ad platforms can be connected by sign-in on this install</summary>
         public Task<JsonElement?> GetV1AdsOauthAppsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ads/oauth/apps", p, ct);
@@ -932,6 +1175,9 @@ namespace Hermetica
         /// <summary>GET /v1/agency/clients/{workspaceId}/modules - Which modules this client may use (the rest are switched off)</summary>
         public Task<JsonElement?> GetV1AgencyClientsByWorkspaceIdModulesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/agency/clients/{workspaceId}/modules", p, ct);
 
+        /// <summary>GET /v1/agency/clients/{workspaceId}/snippet - The client's website snippet (site key) and the state of its integrations</summary>
+        public Task<JsonElement?> GetV1AgencyClientsByWorkspaceIdSnippetAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/agency/clients/{workspaceId}/snippet", p, ct);
+
         /// <summary>GET /v1/agency/groups</summary>
         public Task<JsonElement?> GetV1AgencyGroupsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/agency/groups", p, ct);
 
@@ -946,6 +1192,45 @@ namespace Hermetica
 
         /// <summary>GET /v1/agency/outbound - Last 30 days of outbound results per client workspace of your agency (null when you are not in an agency). Each client is read in its own te</summary>
         public Task<JsonElement?> GetV1AgencyOutboundAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/agency/outbound", p, ct);
+
+        /// <summary>GET /v1/ai-agents</summary>
+        public Task<JsonElement?> GetV1AiAgentsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ai-agents", p, ct);
+
+        /// <summary>GET /v1/ai-agents/{id}</summary>
+        public Task<JsonElement?> GetV1AiAgentsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ai-agents/{id}", p, ct);
+
+        /// <summary>GET /v1/ai-agents/{id}/analytics/summary</summary>
+        public Task<JsonElement?> GetV1AiAgentsByIdAnalyticsSummaryAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ai-agents/{id}/analytics/summary", p, ct);
+
+        /// <summary>GET /v1/ai-agents/{id}/guidances</summary>
+        public Task<JsonElement?> GetV1AiAgentsByIdGuidancesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ai-agents/{id}/guidances", p, ct);
+
+        /// <summary>GET /v1/ai-agents/{id}/guidances/{guidanceId}</summary>
+        public Task<JsonElement?> GetV1AiAgentsByIdGuidancesByGuidanceIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ai-agents/{id}/guidances/{guidanceId}", p, ct);
+
+        /// <summary>GET /v1/ai-agents/{id}/leads</summary>
+        public Task<JsonElement?> GetV1AiAgentsByIdLeadsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ai-agents/{id}/leads", p, ct);
+
+        /// <summary>GET /v1/ai-agents/{id}/leads/{profileId}/research - What the agent knew about a lead when it wrote to them, and every proposal it made</summary>
+        public Task<JsonElement?> GetV1AiAgentsByIdLeadsByProfileIdResearchAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ai-agents/{id}/leads/{profileId}/research", p, ct);
+
+        /// <summary>GET /v1/ai-agents/{id}/opportunities - Where the leads a sales agent emailed stand now</summary>
+        public Task<JsonElement?> GetV1AiAgentsByIdOpportunitiesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ai-agents/{id}/opportunities", p, ct);
+
+        /// <summary>GET /v1/ai-agents/items</summary>
+        public Task<JsonElement?> GetV1AiAgentsItemsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ai-agents/items", p, ct);
+
+        /// <summary>GET /v1/ai-agents/items/{id}</summary>
+        public Task<JsonElement?> GetV1AiAgentsItemsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ai-agents/items/{id}", p, ct);
+
+        /// <summary>GET /v1/ai-agents/status - Whether agents can run: operator switch and workspace AI opt-in</summary>
+        public Task<JsonElement?> GetV1AiAgentsStatusAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ai-agents/status", p, ct);
+
+        /// <summary>GET /v1/ai/flow-builds - History of AI journey builds, newest first</summary>
+        public Task<JsonElement?> GetV1AiFlowBuildsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ai/flow-builds", p, ct);
+
+        /// <summary>GET /v1/ai/flow-builds/{id}</summary>
+        public Task<JsonElement?> GetV1AiFlowBuildsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ai/flow-builds/{id}", p, ct);
 
         /// <summary>GET /v1/ai/jobs</summary>
         public Task<JsonElement?> GetV1AiJobsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ai/jobs", p, ct);
@@ -986,6 +1271,9 @@ namespace Hermetica
         /// <summary>GET /v1/analytics/content-slots - Impressions per dynamic content slot and per matching rule</summary>
         public Task<JsonElement?> GetV1AnalyticsContentSlotsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/analytics/content-slots", p, ct);
 
+        /// <summary>GET /v1/analytics/conversion-folders - Conversions grouped by folder, with each conversion's count and value in the range</summary>
+        public Task<JsonElement?> GetV1AnalyticsConversionFoldersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/analytics/conversion-folders", p, ct);
+
         /// <summary>GET /v1/analytics/conversion-labels</summary>
         public Task<JsonElement?> GetV1AnalyticsConversionLabelsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/analytics/conversion-labels", p, ct);
 
@@ -1001,7 +1289,7 @@ namespace Hermetica
         /// <summary>GET /v1/analytics/conversions - Attributed conversion rows, filterable by profile, conversion and date</summary>
         public Task<JsonElement?> GetV1AnalyticsConversionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/analytics/conversions", p, ct);
 
-        /// <summary>GET /v1/analytics/conversions/{id} - One conversion with the touches credited for it</summary>
+        /// <summary>GET /v1/analytics/conversions/{id} - One conversion with the touches credited for it, the event that triggered it and the activity around it</summary>
         public Task<JsonElement?> GetV1AnalyticsConversionsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/analytics/conversions/{id}", p, ct);
 
         /// <summary>GET /v1/analytics/customer-insights - Buyers, repeat rate, order value, days between orders, new versus returning buyers and customers at risk</summary>
@@ -1012,6 +1300,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/analytics/dashboards/{id}</summary>
         public Task<JsonElement?> GetV1AnalyticsDashboardsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/analytics/dashboards/{id}", p, ct);
+
+        /// <summary>GET /v1/analytics/dashboards/{id}/definition/export - The dashboard and its reports as portable JSON (no schedules, recipients or sharing)</summary>
+        public Task<JsonElement?> GetV1AnalyticsDashboardsByIdDefinitionExportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/analytics/dashboards/{id}/definition/export", p, ct);
 
         /// <summary>GET /v1/analytics/dashboards/{id}/export - Every widget as one CSV</summary>
         public Task<JsonElement?> GetV1AnalyticsDashboardsByIdExportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/analytics/dashboards/{id}/export", p, ct);
@@ -1034,6 +1325,9 @@ namespace Hermetica
         /// <summary>GET /v1/analytics/forms</summary>
         public Task<JsonElement?> GetV1AnalyticsFormsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/analytics/forms", p, ct);
 
+        /// <summary>GET /v1/analytics/landing-pages - Landing page report: visits, unique visitors, sign-ups and conversion rate per page over a date range</summary>
+        public Task<JsonElement?> GetV1AnalyticsLandingPagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/analytics/landing-pages", p, ct);
+
         /// <summary>GET /v1/analytics/messages</summary>
         public Task<JsonElement?> GetV1AnalyticsMessagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/analytics/messages", p, ct);
 
@@ -1042,6 +1336,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/analytics/predictions/status - Whether the workspace has enough order history for predictive analytics, and how many profiles are scored</summary>
         public Task<JsonElement?> GetV1AnalyticsPredictionsStatusAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/analytics/predictions/status", p, ct);
+
+        /// <summary>GET /v1/analytics/record-sources - Report builder record sources (contacts, companies, form results, page hits, asset downloads, workflow log, point log, frequency rules) and </summary>
+        public Task<JsonElement?> GetV1AnalyticsRecordSourcesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/analytics/record-sources", p, ct);
 
         /// <summary>GET /v1/analytics/reports - Saved reports; ?archived=true lists the archived ones</summary>
         public Task<JsonElement?> GetV1AnalyticsReportsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/analytics/reports", p, ct);
@@ -1082,6 +1379,9 @@ namespace Hermetica
         /// <summary>GET /v1/analytics/sources/{kind}/{id}/summary</summary>
         public Task<JsonElement?> GetV1AnalyticsSourcesByKindByIdSummaryAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/analytics/sources/{kind}/{id}/summary", p, ct);
 
+        /// <summary>GET /v1/analytics/surveys/{id}/report - Survey report: responses and answer breakdown per question, optionally for the members of one list or segment</summary>
+        public Task<JsonElement?> GetV1AnalyticsSurveysByIdReportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/analytics/surveys/{id}/report", p, ct);
+
         /// <summary>GET /v1/analytics/time-to-convert</summary>
         public Task<JsonElement?> GetV1AnalyticsTimeToConvertAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/analytics/time-to-convert", p, ct);
 
@@ -1111,6 +1411,12 @@ namespace Hermetica
 
         /// <summary>GET /v1/assets/by-path - Look an asset up by /Folder/Sub/filename</summary>
         public Task<JsonElement?> GetV1AssetsByPathAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/assets/by-path", p, ct);
+
+        /// <summary>GET /v1/association-labels</summary>
+        public Task<JsonElement?> GetV1AssociationLabelsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/association-labels", p, ct);
+
+        /// <summary>GET /v1/associations/{type}/{id} - Everything a profile or object record is associated with, with labels</summary>
+        public Task<JsonElement?> GetV1AssociationsByTypeByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/associations/{type}/{id}", p, ct);
 
         /// <summary>GET /v1/attributes - Attribute catalogue for the segment builder: standard fields, observed custom attribute keys + inferred types, event names with property key</summary>
         public Task<JsonElement?> GetV1AttributesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/attributes", p, ct);
@@ -1147,6 +1453,24 @@ namespace Hermetica
 
         /// <summary>GET /v1/authorized-apps/{clientId}</summary>
         public Task<JsonElement?> GetV1AuthorizedAppsByClientIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/authorized-apps/{clientId}", p, ct);
+
+        /// <summary>GET /v1/auth/signup-info - Whether sign-up is open, which social sign-in buttons to show</summary>
+        public Task<JsonElement?> GetV1AuthSignupInfoAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/auth/signup-info", p, ct);
+
+        /// <summary>GET /v1/auth/social/{provider}/callback - Provider callback: signs in, links by verified email, or creates an account</summary>
+        public Task<JsonElement?> GetV1AuthSocialByProviderCallbackAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/auth/social/{provider}/callback", p, ct);
+
+        /// <summary>GET /v1/auth/social/{provider}/start - Start Google or GitHub sign-in (redirects to the provider)</summary>
+        public Task<JsonElement?> GetV1AuthSocialByProviderStartAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/auth/social/{provider}/start", p, ct);
+
+        /// <summary>GET /v1/batches</summary>
+        public Task<JsonElement?> GetV1BatchesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/batches", p, ct);
+
+        /// <summary>GET /v1/batches/{id}</summary>
+        public Task<JsonElement?> GetV1BatchesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/batches/{id}", p, ct);
+
+        /// <summary>GET /v1/batches/{id}/results - Each call's status and response body, in call order (page with `after`)</summary>
+        public Task<JsonElement?> GetV1BatchesByIdResultsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/batches/{id}/results", p, ct);
 
         /// <summary>GET /v1/benchmarks - Peer benchmarks (overview): your last 90 days against peer percentiles, falling back to a labelled static reference table</summary>
         public Task<JsonElement?> GetV1BenchmarksAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/benchmarks", p, ct);
@@ -1229,6 +1553,9 @@ namespace Hermetica
         /// <summary>GET /v1/calendar</summary>
         public Task<JsonElement?> GetV1CalendarAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/calendar", p, ct);
 
+        /// <summary>GET /v1/calendar-feeds</summary>
+        public Task<JsonElement?> GetV1CalendarFeedsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/calendar-feeds", p, ct);
+
         /// <summary>GET /v1/calendar/mine - My own calendar entries</summary>
         public Task<JsonElement?> GetV1CalendarMineAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/calendar/mine", p, ct);
 
@@ -1244,6 +1571,15 @@ namespace Hermetica
         /// <summary>GET /v1/campaign-folders/{id}/assets/{assetType}</summary>
         public Task<JsonElement?> GetV1CampaignFoldersByIdAssetsByAssetTypeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaign-folders/{id}/assets/{assetType}", p, ct);
 
+        /// <summary>GET /v1/campaign-folders/{id}/budgets</summary>
+        public Task<JsonElement?> GetV1CampaignFoldersByIdBudgetsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaign-folders/{id}/budgets", p, ct);
+
+        /// <summary>GET /v1/campaign-folders/{id}/report - Roll-up of everything filed in a campaign folder: contacts reached (first touch, last touch, influenced), message, form and page metrics, an</summary>
+        public Task<JsonElement?> GetV1CampaignFoldersByIdReportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaign-folders/{id}/report", p, ct);
+
+        /// <summary>GET /v1/campaign-messages - Every campaign message in the workspace, filtered by campaign, channel, status, text and updated time</summary>
+        public Task<JsonElement?> GetV1CampaignMessagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaign-messages", p, ct);
+
         /// <summary>GET /v1/campaign-messages/{id}/tags</summary>
         public Task<JsonElement?> GetV1CampaignMessagesByIdTagsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaign-messages/{id}/tags", p, ct);
 
@@ -1256,6 +1592,12 @@ namespace Hermetica
         /// <summary>GET /v1/campaigns/{id}/ab-report</summary>
         public Task<JsonElement?> GetV1CampaignsByIdAbReportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaigns/{id}/ab-report", p, ct);
 
+        /// <summary>GET /v1/campaigns/{id}/audiences</summary>
+        public Task<JsonElement?> GetV1CampaignsByIdAudiencesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaigns/{id}/audiences", p, ct);
+
+        /// <summary>GET /v1/campaigns/{id}/audiences/{audienceId}</summary>
+        public Task<JsonElement?> GetV1CampaignsByIdAudiencesByAudienceIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaigns/{id}/audiences/{audienceId}", p, ct);
+
         /// <summary>GET /v1/campaigns/{id}/checklist</summary>
         public Task<JsonElement?> GetV1CampaignsByIdChecklistAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaigns/{id}/checklist", p, ct);
 
@@ -1264,6 +1606,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/campaigns/{id}/content-check - Writing and layout checks on the first message of an email campaign: subject length, reading ease, call to action, length</summary>
         public Task<JsonElement?> GetV1CampaignsByIdContentCheckAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaigns/{id}/content-check", p, ct);
+
+        /// <summary>GET /v1/campaigns/{id}/drafts</summary>
+        public Task<JsonElement?> GetV1CampaignsByIdDraftsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaigns/{id}/drafts", p, ct);
 
         /// <summary>GET /v1/campaigns/{id}/feedback</summary>
         public Task<JsonElement?> GetV1CampaignsByIdFeedbackAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaigns/{id}/feedback", p, ct);
@@ -1283,6 +1628,15 @@ namespace Hermetica
         /// <summary>GET /v1/campaigns/{id}/messages/{messageId}</summary>
         public Task<JsonElement?> GetV1CampaignsByIdMessagesByMessageIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaigns/{id}/messages/{messageId}", p, ct);
 
+        /// <summary>GET /v1/campaigns/{id}/messages/{messageId}/variants</summary>
+        public Task<JsonElement?> GetV1CampaignsByIdMessagesByMessageIdVariantsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaigns/{id}/messages/{messageId}/variants", p, ct);
+
+        /// <summary>GET /v1/campaigns/{id}/postcard</summary>
+        public Task<JsonElement?> GetV1CampaignsByIdPostcardAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaigns/{id}/postcard", p, ct);
+
+        /// <summary>GET /v1/campaigns/{id}/postcard/report</summary>
+        public Task<JsonElement?> GetV1CampaignsByIdPostcardReportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaigns/{id}/postcard/report", p, ct);
+
         /// <summary>GET /v1/campaigns/{id}/push - A push campaign's title, body and extras (image, link, data, badge, sound, TTL, per-platform overrides)</summary>
         public Task<JsonElement?> GetV1CampaignsByIdPushAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaigns/{id}/push", p, ct);
 
@@ -1291,6 +1645,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/campaigns/{id}/recipient-estimations/{jobId}</summary>
         public Task<JsonElement?> GetV1CampaignsByIdRecipientEstimationsByJobIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaigns/{id}/recipient-estimations/{jobId}", p, ct);
+
+        /// <summary>GET /v1/campaigns/{id}/recipient-estimations/latest - The most recent recipient estimation of this campaign</summary>
+        public Task<JsonElement?> GetV1CampaignsByIdRecipientEstimationsLatestAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaigns/{id}/recipient-estimations/latest", p, ct);
 
         /// <summary>GET /v1/campaigns/{id}/recipients</summary>
         public Task<JsonElement?> GetV1CampaignsByIdRecipientsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaigns/{id}/recipients", p, ct);
@@ -1337,13 +1694,13 @@ namespace Hermetica
         /// <summary>GET /v1/campaigns/{id}/variants/{key}</summary>
         public Task<JsonElement?> GetV1CampaignsByIdVariantsByKeyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/campaigns/{id}/variants/{key}", p, ct);
 
-        /// <summary>GET /v1/catalog/bulk-jobs</summary>
+        /// <summary>GET /v1/catalog/bulk-jobs - Filter by resource, op and status; page with nextCursor</summary>
         public Task<JsonElement?> GetV1CatalogBulkJobsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/catalog/bulk-jobs", p, ct);
 
         /// <summary>GET /v1/catalog/bulk-jobs/{id}</summary>
         public Task<JsonElement?> GetV1CatalogBulkJobsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/catalog/bulk-jobs/{id}", p, ct);
 
-        /// <summary>GET /v1/catalog/categories</summary>
+        /// <summary>GET /v1/catalog/categories - Filter by ids, name (contains) or item; page with nextCursor</summary>
         public Task<JsonElement?> GetV1CatalogCategoriesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/catalog/categories", p, ct);
 
         /// <summary>GET /v1/catalog/categories/{id}</summary>
@@ -1364,7 +1721,7 @@ namespace Hermetica
         /// <summary>GET /v1/catalog/items/{id} - By row id or external id</summary>
         public Task<JsonElement?> GetV1CatalogItemsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/catalog/items/{id}", p, ct);
 
-        /// <summary>GET /v1/catalog/items/{id}/categories</summary>
+        /// <summary>GET /v1/catalog/items/{id}/categories - The category objects this item is in</summary>
         public Task<JsonElement?> GetV1CatalogItemsByIdCategoriesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/catalog/items/{id}/categories", p, ct);
 
         /// <summary>GET /v1/catalog/items/{id}/images</summary>
@@ -1376,14 +1733,11 @@ namespace Hermetica
         /// <summary>GET /v1/catalog/items/{id}/variants</summary>
         public Task<JsonElement?> GetV1CatalogItemsByIdVariantsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/catalog/items/{id}/variants", p, ct);
 
-        /// <summary>GET /v1/catalog/variants</summary>
+        /// <summary>GET /v1/catalog/variants - Filter by ids, sku, title, published or item; page with nextCursor</summary>
         public Task<JsonElement?> GetV1CatalogVariantsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/catalog/variants", p, ct);
 
         /// <summary>GET /v1/catalog/variants/{id}</summary>
         public Task<JsonElement?> GetV1CatalogVariantsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/catalog/variants/{id}", p, ct);
-
-        /// <summary>GET /v1/client-previews/{externalId}</summary>
-        public Task<JsonElement?> GetV1ClientPreviewsByExternalIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/client-previews/{externalId}", p, ct);
 
         /// <summary>GET /v1/collections</summary>
         public Task<JsonElement?> GetV1CollectionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/collections", p, ct);
@@ -1469,6 +1823,9 @@ namespace Hermetica
         /// <summary>GET /v1/commerce/stores/{storeId}/stats</summary>
         public Task<JsonElement?> GetV1CommerceStoresByStoreIdStatsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/commerce/stores/{storeId}/stats", p, ct);
 
+        /// <summary>GET /v1/compliance/export-retention - Days an export file is kept before it is deleted</summary>
+        public Task<JsonElement?> GetV1ComplianceExportRetentionAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/compliance/export-retention", p, ct);
+
         /// <summary>GET /v1/compliance/gpc - Whether a browser Global Privacy Control / Do Not Track signal counts as a tracking opt-out (default on)</summary>
         public Task<JsonElement?> GetV1ComplianceGpcAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/compliance/gpc", p, ct);
 
@@ -1480,6 +1837,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/compliance/trash-retention - Days deleted campaigns, lists and archived templates stay restorable (0 = forever)</summary>
         public Task<JsonElement?> GetV1ComplianceTrashRetentionAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/compliance/trash-retention", p, ct);
+
+        /// <summary>GET /v1/compliance/unconfirmed-purge - Days after which contacts that never confirmed an opt-in are deleted (null = off)</summary>
+        public Task<JsonElement?> GetV1ComplianceUnconfirmedPurgeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/compliance/unconfirmed-purge", p, ct);
 
         /// <summary>GET /v1/compliance/unsubscribe-purge - Days after which an unsubscribed contact is erased (null = never)</summary>
         public Task<JsonElement?> GetV1ComplianceUnsubscribePurgeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/compliance/unsubscribe-purge", p, ct);
@@ -1508,6 +1868,9 @@ namespace Hermetica
         /// <summary>GET /v1/content-slots</summary>
         public Task<JsonElement?> GetV1ContentSlotsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/content-slots", p, ct);
 
+        /// <summary>GET /v1/content-slots/pushes - Live content journeys pushed into individual visitors' slots</summary>
+        public Task<JsonElement?> GetV1ContentSlotsPushesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/content-slots/pushes", p, ct);
+
         /// <summary>GET /v1/conversations - Replies to marketing campaigns</summary>
         public Task<JsonElement?> GetV1ConversationsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/conversations", p, ct);
 
@@ -1519,6 +1882,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/conversations/{id}/messages/{messageId}</summary>
         public Task<JsonElement?> GetV1ConversationsByIdMessagesByMessageIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/conversations/{id}/messages/{messageId}", p, ct);
+
+        /// <summary>GET /v1/coupon-codes - Codes across every pool: by profile, status, expiry range</summary>
+        public Task<JsonElement?> GetV1CouponCodesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/coupon-codes", p, ct);
 
         /// <summary>GET /v1/coupon-pools</summary>
         public Task<JsonElement?> GetV1CouponPoolsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/coupon-pools", p, ct);
@@ -1604,6 +1970,9 @@ namespace Hermetica
         /// <summary>GET /v1/deliverability/rdns</summary>
         public Task<JsonElement?> GetV1DeliverabilityRdnsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/deliverability/rdns", p, ct);
 
+        /// <summary>GET /v1/deliverability/recommendations</summary>
+        public Task<JsonElement?> GetV1DeliverabilityRecommendationsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/deliverability/recommendations", p, ct);
+
         /// <summary>GET /v1/deliverability/reputation</summary>
         public Task<JsonElement?> GetV1DeliverabilityReputationAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/deliverability/reputation", p, ct);
 
@@ -1628,20 +1997,59 @@ namespace Hermetica
         /// <summary>GET /v1/delivery/settings - Soft-bounce escalation, unsubscribe mailbox and reserved transactional share</summary>
         public Task<JsonElement?> GetV1DeliverySettingsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/delivery/settings", p, ct);
 
+        /// <summary>GET /v1/destinations</summary>
+        public Task<JsonElement?> GetV1DestinationsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/destinations", p, ct);
+
+        /// <summary>GET /v1/destinations/{id}</summary>
+        public Task<JsonElement?> GetV1DestinationsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/destinations/{id}", p, ct);
+
+        /// <summary>GET /v1/destinations/{id}/deliveries - Recent deliveries with their status and last error</summary>
+        public Task<JsonElement?> GetV1DestinationsByIdDeliveriesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/destinations/{id}/deliveries", p, ct);
+
         /// <summary>GET /v1/developer/requests - API request log for debugging: method, route, status and duration of authenticated calls, kept 30 days</summary>
         public Task<JsonElement?> GetV1DeveloperRequestsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/developer/requests", p, ct);
 
-        /// <summary>GET /v1/emails - Campaigns as one email list with state and channel filters</summary>
+        /// <summary>GET /v1/do-not-contact - LinkedIn do-not-contact list (emails and phones are listed under suppressions)</summary>
+        public Task<JsonElement?> GetV1DoNotContactAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/do-not-contact", p, ct);
+
+        /// <summary>GET /v1/do-not-contact/check</summary>
+        public Task<JsonElement?> GetV1DoNotContactCheckAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/do-not-contact/check", p, ct);
+
+        /// <summary>GET /v1/emails - Campaigns as one email list: state, type, channel, created/updated/scheduled ranges, archived and sort</summary>
         public Task<JsonElement?> GetV1EmailsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/emails", p, ct);
 
         /// <summary>GET /v1/emails/{id}/draft - The editable content of an email that has not been sent</summary>
         public Task<JsonElement?> GetV1EmailsByIdDraftAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/emails/{id}/draft", p, ct);
 
-        /// <summary>GET /v1/emails/statistics/histogram - Day-by-day sent, delivered, bounced, opened and clicked for one email</summary>
+        /// <summary>GET /v1/emails/statistics/histogram - Sent, delivered, bounced, opened and clicked for one email per day, week or month between start and end</summary>
         public Task<JsonElement?> GetV1EmailsStatisticsHistogramAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/emails/statistics/histogram", p, ct);
 
-        /// <summary>GET /v1/emails/statistics/list - Totals for several emails at once (comma separated ids)</summary>
+        /// <summary>GET /v1/emails/statistics/list - Totals for up to 50 emails (comma separated ids) in a date window, plus their sum</summary>
         public Task<JsonElement?> GetV1EmailsStatisticsListAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/emails/statistics/list", p, ct);
+
+        /// <summary>GET /v1/embed-api/{token}/ai</summary>
+        public Task<JsonElement?> GetV1EmbedApiByTokenAiAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/embed-api/{token}/ai", p, ct);
+
+        /// <summary>GET /v1/embed-api/{token}/deliveries</summary>
+        public Task<JsonElement?> GetV1EmbedApiByTokenDeliveriesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/embed-api/{token}/deliveries", p, ct);
+
+        /// <summary>GET /v1/embed-api/{token}/journey</summary>
+        public Task<JsonElement?> GetV1EmbedApiByTokenJourneyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/embed-api/{token}/journey", p, ct);
+
+        /// <summary>GET /v1/embed-api/{token}/sections - Saved sections to insert a copy of</summary>
+        public Task<JsonElement?> GetV1EmbedApiByTokenSectionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/embed-api/{token}/sections", p, ct);
+
+        /// <summary>GET /v1/embed-api/{token}/seed-lists</summary>
+        public Task<JsonElement?> GetV1EmbedApiByTokenSeedListsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/embed-api/{token}/seed-lists", p, ct);
+
+        /// <summary>GET /v1/embed-api/{token}/template</summary>
+        public Task<JsonElement?> GetV1EmbedApiByTokenTemplateAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/embed-api/{token}/template", p, ct);
+
+        /// <summary>GET /v1/embed-api/{token}/template/versions</summary>
+        public Task<JsonElement?> GetV1EmbedApiByTokenTemplateVersionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/embed-api/{token}/template/versions", p, ct);
+
+        /// <summary>GET /v1/embed-api/frame-policy - Internal: frame-ancestors for the web embed page, from the token in x-embed-token</summary>
+        public Task<JsonElement?> GetV1EmbedApiFramePolicyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/embed-api/frame-policy", p, ct);
 
         /// <summary>GET /v1/event-definitions</summary>
         public Task<JsonElement?> GetV1EventDefinitionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/event-definitions", p, ct);
@@ -1652,11 +2060,17 @@ namespace Hermetica
         /// <summary>GET /v1/event-definitions/{name}/usage - Journeys that start on this event</summary>
         public Task<JsonElement?> GetV1EventDefinitionsByNameUsageAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/event-definitions/{name}/usage", p, ct);
 
-        /// <summary>GET /v1/events - Workspace-wide event list (filter by name, profile, time range, properties)</summary>
+        /// <summary>GET /v1/events - Workspace-wide event list: filter by name, profile, time range, properties, journey or broadcast; sort by datetime; include=metric,profile</summary>
         public Task<JsonElement?> GetV1EventsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/events", p, ct);
 
         /// <summary>GET /v1/events/{id}</summary>
         public Task<JsonElement?> GetV1EventsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/events/{id}", p, ct);
+
+        /// <summary>GET /v1/events/export - The same filters as GET /v1/events, as CSV text (first 50,000 events); POST /v1/events/export-jobs exports every match as a file</summary>
+        public Task<JsonElement?> GetV1EventsExportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/events/export", p, ct);
+
+        /// <summary>GET /v1/events/settings - Whether server-side event ingest is on, and the custom field used as each person's primary key</summary>
+        public Task<JsonElement?> GetV1EventsSettingsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/events/settings", p, ct);
 
         /// <summary>GET /v1/experiments</summary>
         public Task<JsonElement?> GetV1ExperimentsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/experiments", p, ct);
@@ -1679,7 +2093,7 @@ namespace Hermetica
         /// <summary>GET /v1/files</summary>
         public Task<JsonElement?> GetV1FilesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/files", p, ct);
 
-        /// <summary>GET /v1/forms</summary>
+        /// <summary>GET /v1/forms - Filter by name, status, kind, ad id and created/updated ranges; sort by created, updated or name</summary>
         public Task<JsonElement?> GetV1FormsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/forms", p, ct);
 
         /// <summary>GET /v1/forms/{id}</summary>
@@ -1696,6 +2110,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/forms/{id}/submissions/{submissionId}</summary>
         public Task<JsonElement?> GetV1FormsByIdSubmissionsBySubmissionIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/forms/{id}/submissions/{submissionId}", p, ct);
+
+        /// <summary>GET /v1/forms/{id}/submissions/export.csv - Every submission as CSV, oldest first (one column per field)</summary>
+        public Task<JsonElement?> GetV1FormsByIdSubmissionsExportCsvAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/forms/{id}/submissions/export.csv", p, ct);
 
         /// <summary>GET /v1/forms/{id}/summary</summary>
         public Task<JsonElement?> GetV1FormsByIdSummaryAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/forms/{id}/summary", p, ct);
@@ -1751,6 +2168,9 @@ namespace Hermetica
         /// <summary>GET /v1/hooks/triggers/{trigger}/sample - Sample payload used by Zapier/Make to map fields</summary>
         public Task<JsonElement?> GetV1HooksTriggersByTriggerSampleAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/hooks/triggers/{trigger}/sample", p, ct);
 
+        /// <summary>GET /v1/identifier-blocks - Identifiers of suppressed-and-deleted contacts (values are kept hashed only)</summary>
+        public Task<JsonElement?> GetV1IdentifierBlocksAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/identifier-blocks", p, ct);
+
         /// <summary>GET /v1/id-mappings - Old ids (from HubSpot, for example) and the lists or journeys they became</summary>
         public Task<JsonElement?> GetV1IdMappingsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/id-mappings", p, ct);
 
@@ -1774,6 +2194,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/import-schedules</summary>
         public Task<JsonElement?> GetV1ImportSchedulesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/import-schedules", p, ct);
+
+        /// <summary>GET /v1/in-app-components - Developer-defined in-app components</summary>
+        public Task<JsonElement?> GetV1InAppComponentsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/in-app-components", p, ct);
 
         /// <summary>GET /v1/in-app-messages - In-app messages</summary>
         public Task<JsonElement?> GetV1InAppMessagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/in-app-messages", p, ct);
@@ -1805,11 +2228,20 @@ namespace Hermetica
         /// <summary>GET /v1/inbound/routes</summary>
         public Task<JsonElement?> GetV1InboundRoutesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/inbound/routes", p, ct);
 
+        /// <summary>GET /v1/info/ip-addresses - Egress IP addresses to allowlist for webhooks and connectors; compare syncToken to detect changes</summary>
+        public Task<JsonElement?> GetV1InfoIpAddressesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/info/ip-addresses", p, ct);
+
         /// <summary>GET /v1/integrations/catalog - Declarative connectors available to connect</summary>
         public Task<JsonElement?> GetV1IntegrationsCatalogAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/integrations/catalog", p, ct);
 
         /// <summary>GET /v1/integrations/connections</summary>
         public Task<JsonElement?> GetV1IntegrationsConnectionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/integrations/connections", p, ct);
+
+        /// <summary>GET /v1/integrations/connections/{id}/crm/sources - Lists, reports, list views, campaigns or filters that can be imported</summary>
+        public Task<JsonElement?> GetV1IntegrationsConnectionsByIdCrmSourcesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/integrations/connections/{id}/crm/sources", p, ct);
+
+        /// <summary>GET /v1/integrations/connections/{id}/crm/users</summary>
+        public Task<JsonElement?> GetV1IntegrationsConnectionsByIdCrmUsersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/integrations/connections/{id}/crm/users", p, ct);
 
         /// <summary>GET /v1/integrations/connections/{id}/declarative - Sync cursors, last error and the webhook URL + secret to paste into the vendor</summary>
         public Task<JsonElement?> GetV1IntegrationsConnectionsByIdDeclarativeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/integrations/connections/{id}/declarative", p, ct);
@@ -1819,6 +2251,24 @@ namespace Hermetica
 
         /// <summary>GET /v1/integrations/connections/{id}/webhook-url - The URL the source (e.g. Segment) should send events to</summary>
         public Task<JsonElement?> GetV1IntegrationsConnectionsByIdWebhookUrlAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/integrations/connections/{id}/webhook-url", p, ct);
+
+        /// <summary>GET /v1/integrations/crm-imports</summary>
+        public Task<JsonElement?> GetV1IntegrationsCrmImportsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/integrations/crm-imports", p, ct);
+
+        /// <summary>GET /v1/integrations/crm-log - Per-record CRM sync log, newest first</summary>
+        public Task<JsonElement?> GetV1IntegrationsCrmLogAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/integrations/crm-log", p, ct);
+
+        /// <summary>GET /v1/integrations/crm-settings - Workspace CRM settings (sync log retention)</summary>
+        public Task<JsonElement?> GetV1IntegrationsCrmSettingsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/integrations/crm-settings", p, ct);
+
+        /// <summary>GET /v1/integrations/google/callback</summary>
+        public Task<JsonElement?> GetV1IntegrationsGoogleCallbackAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/integrations/google/callback", p, ct);
+
+        /// <summary>GET /v1/integrations/marketplace - Catalogue packages, whether each passes signature and review checks, and the installed version</summary>
+        public Task<JsonElement?> GetV1IntegrationsMarketplaceAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/integrations/marketplace", p, ct);
+
+        /// <summary>GET /v1/integrations/packages</summary>
+        public Task<JsonElement?> GetV1IntegrationsPackagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/integrations/packages", p, ct);
 
         /// <summary>GET /v1/integrations/secrets - Secret names (values are never returned)</summary>
         public Task<JsonElement?> GetV1IntegrationsSecretsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/integrations/secrets", p, ct);
@@ -1838,6 +2288,12 @@ namespace Hermetica
         /// <summary>GET /v1/jobs/{id}/stream - Live progress of a bulk job or export as server-sent events (event: progress, then event: done)</summary>
         public Task<JsonElement?> GetV1JobsByIdStreamAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/jobs/{id}/stream", p, ct);
 
+        /// <summary>GET /v1/landing-page-clusters</summary>
+        public Task<JsonElement?> GetV1LandingPageClustersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/landing-page-clusters", p, ct);
+
+        /// <summary>GET /v1/landing-page-clusters/{id}</summary>
+        public Task<JsonElement?> GetV1LandingPageClustersByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/landing-page-clusters/{id}", p, ct);
+
         /// <summary>GET /v1/landing-page-folders</summary>
         public Task<JsonElement?> GetV1LandingPageFoldersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/landing-page-folders", p, ct);
 
@@ -1850,7 +2306,7 @@ namespace Hermetica
         /// <summary>GET /v1/landing-page-folders/{id}/revisions/{revisionId}</summary>
         public Task<JsonElement?> GetV1LandingPageFoldersByIdRevisionsByRevisionIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/landing-page-folders/{id}/revisions/{revisionId}", p, ct);
 
-        /// <summary>GET /v1/landing-pages</summary>
+        /// <summary>GET /v1/landing-pages - Filter by name, state, site, folder, language, archived and created/updated ranges; sort by created, updated or name</summary>
         public Task<JsonElement?> GetV1LandingPagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/landing-pages", p, ct);
 
         /// <summary>GET /v1/landing-pages/{id}</summary>
@@ -1871,6 +2327,9 @@ namespace Hermetica
         /// <summary>GET /v1/landing-pages/{id}/clicks - Links clicked on a hosted page</summary>
         public Task<JsonElement?> GetV1LandingPagesByIdClicksAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/landing-pages/{id}/clicks", p, ct);
 
+        /// <summary>GET /v1/landing-pages/{id}/content - The page rendered to HTML (draft by default), with its block document</summary>
+        public Task<JsonElement?> GetV1LandingPagesByIdContentAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/landing-pages/{id}/content", p, ct);
+
         /// <summary>GET /v1/landing-pages/{id}/languages</summary>
         public Task<JsonElement?> GetV1LandingPagesByIdLanguagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/landing-pages/{id}/languages", p, ct);
 
@@ -1883,11 +2342,20 @@ namespace Hermetica
         /// <summary>GET /v1/landing-pages/{id}/revisions/{revisionId}</summary>
         public Task<JsonElement?> GetV1LandingPagesByIdRevisionsByRevisionIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/landing-pages/{id}/revisions/{revisionId}", p, ct);
 
+        /// <summary>GET /v1/landing-pages/{id}/seo - SEO recommendations for one page (draft)</summary>
+        public Task<JsonElement?> GetV1LandingPagesByIdSeoAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/landing-pages/{id}/seo", p, ct);
+
         /// <summary>GET /v1/landing-pages/not-found - Page addresses visitors requested that serve nothing, most requested first</summary>
         public Task<JsonElement?> GetV1LandingPagesNotFoundAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/landing-pages/not-found", p, ct);
 
         /// <summary>GET /v1/landing-pages/report - Visits, sign-ups, conversion and video plays for every page over a window</summary>
         public Task<JsonElement?> GetV1LandingPagesReportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/landing-pages/report", p, ct);
+
+        /// <summary>GET /v1/landing-pages/seo/audit - SEO audit of every page: score and recommendations</summary>
+        public Task<JsonElement?> GetV1LandingPagesSeoAuditAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/landing-pages/seo/audit", p, ct);
+
+        /// <summary>GET /v1/landing-page-templates - Built-in page presets for `template_id`, and a link to more</summary>
+        public Task<JsonElement?> GetV1LandingPageTemplatesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/landing-page-templates", p, ct);
 
         /// <summary>GET /v1/leads</summary>
         public Task<JsonElement?> GetV1LeadsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/leads", p, ct);
@@ -1901,8 +2369,29 @@ namespace Hermetica
         /// <summary>GET /v1/leads/companies/{id}</summary>
         public Task<JsonElement?> GetV1LeadsCompaniesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/leads/companies/{id}", p, ct);
 
+        /// <summary>GET /v1/leads/companies/{id}/crm</summary>
+        public Task<JsonElement?> GetV1LeadsCompaniesByIdCrmAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/leads/companies/{id}/crm", p, ct);
+
+        /// <summary>GET /v1/leads/companies/{id}/files</summary>
+        public Task<JsonElement?> GetV1LeadsCompaniesByIdFilesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/leads/companies/{id}/files", p, ct);
+
+        /// <summary>GET /v1/leads/companies/{id}/files/{fileId}/url - A download link valid for five minutes</summary>
+        public Task<JsonElement?> GetV1LeadsCompaniesByIdFilesByFileIdUrlAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/leads/companies/{id}/files/{fileId}/url", p, ct);
+
         /// <summary>GET /v1/leads/companies/{id}/notes</summary>
         public Task<JsonElement?> GetV1LeadsCompaniesByIdNotesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/leads/companies/{id}/notes", p, ct);
+
+        /// <summary>GET /v1/leads/companies/{id}/score - Account score plus the roll-up of linked contacts' scores (profile attribute `key`)</summary>
+        public Task<JsonElement?> GetV1LeadsCompaniesByIdScoreAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/leads/companies/{id}/score", p, ct);
+
+        /// <summary>GET /v1/leads/companies/export - Every company as CSV, with score and custom fields</summary>
+        public Task<JsonElement?> GetV1LeadsCompaniesExportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/leads/companies/export", p, ct);
+
+        /// <summary>GET /v1/leads/companies/search - Companies whose name or domain starts with q</summary>
+        public Task<JsonElement?> GetV1LeadsCompaniesSearchAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/leads/companies/search", p, ct);
+
+        /// <summary>GET /v1/leads/company-fields - Custom company fields</summary>
+        public Task<JsonElement?> GetV1LeadsCompanyFieldsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/leads/company-fields", p, ct);
 
         /// <summary>GET /v1/leads/company-lists</summary>
         public Task<JsonElement?> GetV1LeadsCompanyListsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/leads/company-lists", p, ct);
@@ -1967,7 +2456,7 @@ namespace Hermetica
         /// <summary>GET /v1/list-folders/{id}</summary>
         public Task<JsonElement?> GetV1ListFoldersByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/list-folders/{id}", p, ct);
 
-        /// <summary>GET /v1/lists</summary>
+        /// <summary>GET /v1/lists - Lists with member counts; `count`/`offset` page them, `stats=true` adds send and unsubscribe stats</summary>
         public Task<JsonElement?> GetV1ListsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/lists", p, ct);
 
         /// <summary>GET /v1/lists/{id}</summary>
@@ -1988,6 +2477,9 @@ namespace Hermetica
         /// <summary>GET /v1/lists/{id}/clients - Opens or clicks by email client, device or country for this list</summary>
         public Task<JsonElement?> GetV1ListsByIdClientsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/lists/{id}/clients", p, ct);
 
+        /// <summary>GET /v1/lists/{id}/growth-history - Daily sign-ups, imports, other adds, removals, pending opt-ins and the running member total of one list</summary>
+        public Task<JsonElement?> GetV1ListsByIdGrowthHistoryAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/lists/{id}/growth-history", p, ct);
+
         /// <summary>GET /v1/lists/{id}/members - List members, with the same filters as GET /v1/profiles</summary>
         public Task<JsonElement?> GetV1ListsByIdMembersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/lists/{id}/members", p, ct);
 
@@ -2006,11 +2498,50 @@ namespace Hermetica
         /// <summary>GET /v1/lists/{id}/pending - People who asked to join a double opt-in list and have not confirmed yet</summary>
         public Task<JsonElement?> GetV1ListsByIdPendingAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/lists/{id}/pending", p, ct);
 
-        /// <summary>GET /v1/lists/{id}/size-history - List size at the end of each of the last N days</summary>
+        /// <summary>GET /v1/lists/{id}/size-history - List size at the end of each of the last N days, or of each day between `from` and `to`</summary>
         public Task<JsonElement?> GetV1ListsByIdSizeHistoryAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/lists/{id}/size-history", p, ct);
 
         /// <summary>GET /v1/lists/deleted - Lists deleted and still restorable</summary>
         public Task<JsonElement?> GetV1ListsDeletedAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/lists/deleted", p, ct);
+
+        /// <summary>GET /v1/looker/datasets - Saved reports Looker Studio can use as data sources</summary>
+        public Task<JsonElement?> GetV1LookerDatasetsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/looker/datasets", p, ct);
+
+        /// <summary>GET /v1/looker/manifest - Apps Script files (appsscript.json, Code.gs) for the Looker Studio community connector</summary>
+        public Task<JsonElement?> GetV1LookerManifestAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/looker/manifest", p, ct);
+
+        /// <summary>GET /v1/loyalty/hub - Customer hub settings and its public URL</summary>
+        public Task<JsonElement?> GetV1LoyaltyHubAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/loyalty/hub", p, ct);
+
+        /// <summary>GET /v1/loyalty/programs</summary>
+        public Task<JsonElement?> GetV1LoyaltyProgramsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/loyalty/programs", p, ct);
+
+        /// <summary>GET /v1/loyalty/programs/{id}</summary>
+        public Task<JsonElement?> GetV1LoyaltyProgramsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/loyalty/programs/{id}", p, ct);
+
+        /// <summary>GET /v1/loyalty/programs/{id}/members</summary>
+        public Task<JsonElement?> GetV1LoyaltyProgramsByIdMembersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/loyalty/programs/{id}/members", p, ct);
+
+        /// <summary>GET /v1/loyalty/programs/{id}/members/{profileId}</summary>
+        public Task<JsonElement?> GetV1LoyaltyProgramsByIdMembersByProfileIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/loyalty/programs/{id}/members/{profileId}", p, ct);
+
+        /// <summary>GET /v1/loyalty/programs/{id}/members/{profileId}/vouchers</summary>
+        public Task<JsonElement?> GetV1LoyaltyProgramsByIdMembersByProfileIdVouchersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/loyalty/programs/{id}/members/{profileId}/vouchers", p, ct);
+
+        /// <summary>GET /v1/loyalty/programs/{id}/rewards</summary>
+        public Task<JsonElement?> GetV1LoyaltyProgramsByIdRewardsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/loyalty/programs/{id}/rewards", p, ct);
+
+        /// <summary>GET /v1/loyalty/programs/{id}/rules</summary>
+        public Task<JsonElement?> GetV1LoyaltyProgramsByIdRulesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/loyalty/programs/{id}/rules", p, ct);
+
+        /// <summary>GET /v1/loyalty/programs/{id}/tiers</summary>
+        public Task<JsonElement?> GetV1LoyaltyProgramsByIdTiersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/loyalty/programs/{id}/tiers", p, ct);
+
+        /// <summary>GET /v1/loyalty/programs/{id}/transactions - The points ledger (append-only), newest first</summary>
+        public Task<JsonElement?> GetV1LoyaltyProgramsByIdTransactionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/loyalty/programs/{id}/transactions", p, ct);
+
+        /// <summary>GET /v1/loyalty/programs/{id}/wallet - Wallet pass settings (never the certificate or keys)</summary>
+        public Task<JsonElement?> GetV1LoyaltyProgramsByIdWalletAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/loyalty/programs/{id}/wallet", p, ct);
 
         /// <summary>GET /v1/mapped-metrics</summary>
         public Task<JsonElement?> GetV1MappedMetricsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/mapped-metrics", p, ct);
@@ -2020,6 +2551,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/marketing-events</summary>
         public Task<JsonElement?> GetV1MarketingEventsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/marketing-events", p, ct);
+
+        /// <summary>GET /v1/marketing-events/apps - Event apps and their event-details URL templates</summary>
+        public Task<JsonElement?> GetV1MarketingEventsAppsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/marketing-events/apps", p, ct);
 
         /// <summary>GET /v1/marketing-events/{id}</summary>
         public Task<JsonElement?> GetV1MarketingEventsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/marketing-events/{id}", p, ct);
@@ -2054,7 +2588,10 @@ namespace Hermetica
         /// <summary>GET /v1/me</summary>
         public Task<JsonElement?> GetV1MeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/me", p, ct);
 
-        /// <summary>GET /v1/members</summary>
+        /// <summary>GET /v1/me/identities - Google/GitHub sign-ins linked to your account</summary>
+        public Task<JsonElement?> GetV1MeIdentitiesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/me/identities", p, ct);
+
+        /// <summary>GET /v1/members - Members of this workspace; ?email= or ?username= (display name or the part of the email before @) narrows to exact matches</summary>
         public Task<JsonElement?> GetV1MembersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/members", p, ct);
 
         /// <summary>GET /v1/members/by-email/{email}/permissions - One call: a member found by email with their role and effective module read/write grid</summary>
@@ -2074,6 +2611,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/messages/{id}/content - Rendered subject/body/headers of a sent message, while inside the retention window</summary>
         public Task<JsonElement?> GetV1MessagesByIdContentAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/messages/{id}/content", p, ct);
+
+        /// <summary>GET /v1/messages/{id}/preview - A message re-rendered for its recipient (any purpose and channel; stored content is transactional email only). Unsubscribe links stay placeh</summary>
+        public Task<JsonElement?> GetV1MessagesByIdPreviewAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/messages/{id}/preview", p, ct);
 
         /// <summary>GET /v1/messages/events/export - CSV export of message events (delivered, bounced, opened, clicked...) for a date range</summary>
         public Task<JsonElement?> GetV1MessagesEventsExportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/messages/events/export", p, ct);
@@ -2131,6 +2671,12 @@ namespace Hermetica
 
         /// <summary>GET /v1/newsletter/engagement/surveys/{id} - One poll or survey, with the poll block for editors</summary>
         public Task<JsonElement?> GetV1NewsletterEngagementSurveysByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/newsletter/engagement/surveys/{id}", p, ct);
+
+        /// <summary>GET /v1/newsletter/engagement/surveys/{id}/responses - Individual responses (respondent, time, answers), newest first</summary>
+        public Task<JsonElement?> GetV1NewsletterEngagementSurveysByIdResponsesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/newsletter/engagement/surveys/{id}/responses", p, ct);
+
+        /// <summary>GET /v1/newsletter/engagement/surveys/{id}/responses/{respondent} - One respondent's answers</summary>
+        public Task<JsonElement?> GetV1NewsletterEngagementSurveysByIdResponsesByRespondentAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/newsletter/engagement/surveys/{id}/responses/{respondent}", p, ct);
 
         /// <summary>GET /v1/newsletter/engagement/surveys/{id}/results - Results per question</summary>
         public Task<JsonElement?> GetV1NewsletterEngagementSurveysByIdResultsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/newsletter/engagement/surveys/{id}/results", p, ct);
@@ -2225,8 +2771,11 @@ namespace Hermetica
         /// <summary>GET /v1/notes - Newest notes across contacts and companies, newest first; page with `before`</summary>
         public Task<JsonElement?> GetV1NotesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/notes", p, ct);
 
-        /// <summary>GET /v1/notes/{id}</summary>
+        /// <summary>GET /v1/notes/{id} - A contact or company note by its id</summary>
         public Task<JsonElement?> GetV1NotesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/notes/{id}", p, ct);
+
+        /// <summary>GET /v1/notifications - Your in-app notifications in this workspace, newest first, with the unread count</summary>
+        public Task<JsonElement?> GetV1NotificationsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/notifications", p, ct);
 
         /// <summary>GET /v1/oauth/authorize - Validate an authorization request and describe what the app asks for</summary>
         public Task<JsonElement?> GetV1OauthAuthorizeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/oauth/authorize", p, ct);
@@ -2264,6 +2813,18 @@ namespace Hermetica
         /// <summary>GET /v1/object-types/{id}/versions</summary>
         public Task<JsonElement?> GetV1ObjectTypesByIdVersionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/object-types/{id}/versions", p, ct);
 
+        /// <summary>GET /v1/operator/settings</summary>
+        public Task<JsonElement?> GetV1OperatorSettingsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/operator/settings", p, ct);
+
+        /// <summary>GET /v1/operator/stats - Platform analytics: accounts, sign-ups, sessions, queue health</summary>
+        public Task<JsonElement?> GetV1OperatorStatsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/operator/stats", p, ct);
+
+        /// <summary>GET /v1/operator/teams - Every workspace on this instance with its organization, members and status</summary>
+        public Task<JsonElement?> GetV1OperatorTeamsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/operator/teams", p, ct);
+
+        /// <summary>GET /v1/operator/waitlist</summary>
+        public Task<JsonElement?> GetV1OperatorWaitlistAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/operator/waitlist", p, ct);
+
         /// <summary>GET /v1/ops/dlq - Failed (retries exhausted) jobs belonging to the caller's workspace</summary>
         public Task<JsonElement?> GetV1OpsDlqAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/ops/dlq", p, ct);
 
@@ -2300,6 +2861,12 @@ namespace Hermetica
         /// <summary>GET /v1/outbound/blocklist/download</summary>
         public Task<JsonElement?> GetV1OutboundBlocklistDownloadAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/outbound/blocklist/download", p, ct);
 
+        /// <summary>GET /v1/outbound/booking-pages</summary>
+        public Task<JsonElement?> GetV1OutboundBookingPagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/outbound/booking-pages", p, ct);
+
+        /// <summary>GET /v1/outbound/booking-pages/{id}/bookings</summary>
+        public Task<JsonElement?> GetV1OutboundBookingPagesByIdBookingsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/outbound/booking-pages/{id}/bookings", p, ct);
+
         /// <summary>GET /v1/outbound/call-dispositions</summary>
         public Task<JsonElement?> GetV1OutboundCallDispositionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/outbound/call-dispositions", p, ct);
 
@@ -2335,6 +2902,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/outbound/inbox-mail/sent - Replies and forwards sent from the inbox</summary>
         public Task<JsonElement?> GetV1OutboundInboxMailSentAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/outbound/inbox-mail/sent", p, ct);
+
+        /// <summary>GET /v1/outbound/inbox-routing</summary>
+        public Task<JsonElement?> GetV1OutboundInboxRoutingAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/outbound/inbox-routing", p, ct);
 
         /// <summary>GET /v1/outbound/inbox/untracked - Replies that matched no send or prospect</summary>
         public Task<JsonElement?> GetV1OutboundInboxUntrackedAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/outbound/inbox/untracked", p, ct);
@@ -2377,6 +2947,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/outbound/pools - Sender pools (readable with outbound:read, for sequence mailbox pickers)</summary>
         public Task<JsonElement?> GetV1OutboundPoolsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/outbound/pools", p, ct);
+
+        /// <summary>GET /v1/outbound/proposals - Messages proposed by AI agents, waiting for a person</summary>
+        public Task<JsonElement?> GetV1OutboundProposalsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/outbound/proposals", p, ct);
 
         /// <summary>GET /v1/outbound/prospects</summary>
         public Task<JsonElement?> GetV1OutboundProspectsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/outbound/prospects", p, ct);
@@ -2456,6 +3029,24 @@ namespace Hermetica
         /// <summary>GET /v1/outbound/tasks/filters - Filter fields the task list accepts</summary>
         public Task<JsonElement?> GetV1OutboundTasksFiltersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/outbound/tasks/filters", p, ct);
 
+        /// <summary>GET /v1/outbound/task-types</summary>
+        public Task<JsonElement?> GetV1OutboundTaskTypesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/outbound/task-types", p, ct);
+
+        /// <summary>GET /v1/outbound/telephony - The connected Twilio Voice account (the auth token is never returned)</summary>
+        public Task<JsonElement?> GetV1OutboundTelephonyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/outbound/telephony", p, ct);
+
+        /// <summary>GET /v1/outbound/telephony/my-phone - Your own phone for click-to-call (Twilio rings it first)</summary>
+        public Task<JsonElement?> GetV1OutboundTelephonyMyPhoneAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/outbound/telephony/my-phone", p, ct);
+
+        /// <summary>GET /v1/outbound/voice-clips</summary>
+        public Task<JsonElement?> GetV1OutboundVoiceClipsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/outbound/voice-clips", p, ct);
+
+        /// <summary>GET /v1/page-sites</summary>
+        public Task<JsonElement?> GetV1PageSitesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/page-sites", p, ct);
+
+        /// <summary>GET /v1/page-sites/{id}</summary>
+        public Task<JsonElement?> GetV1PageSitesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/page-sites/{id}", p, ct);
+
         /// <summary>GET /v1/planner/goals - Business goals the planner can build a starter plan for</summary>
         public Task<JsonElement?> GetV1PlannerGoalsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/planner/goals", p, ct);
 
@@ -2467,6 +3058,15 @@ namespace Hermetica
 
         /// <summary>GET /v1/postal-addresses/{id}</summary>
         public Task<JsonElement?> GetV1PostalAddressesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/postal-addresses/{id}", p, ct);
+
+        /// <summary>GET /v1/postal-addresses/usable - Ids of the saved addresses the caller may pick (open ones, plus those of the caller's user groups)</summary>
+        public Task<JsonElement?> GetV1PostalAddressesUsableAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/postal-addresses/usable", p, ct);
+
+        /// <summary>GET /v1/postal-address-groups - Address id -&gt; user groups that may use it (absent = everyone)</summary>
+        public Task<JsonElement?> GetV1PostalAddressGroupsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/postal-address-groups", p, ct);
+
+        /// <summary>GET /v1/profile-filters</summary>
+        public Task<JsonElement?> GetV1ProfileFiltersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profile-filters", p, ct);
 
         /// <summary>GET /v1/profiles</summary>
         public Task<JsonElement?> GetV1ProfilesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profiles", p, ct);
@@ -2480,7 +3080,7 @@ namespace Hermetica
         /// <summary>GET /v1/profiles/{id}</summary>
         public Task<JsonElement?> GetV1ProfilesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profiles/{id}", p, ct);
 
-        /// <summary>GET /v1/profiles/{id}/activity</summary>
+        /// <summary>GET /v1/profiles/{id}/activity - Timeline, newest first; filter by activity type and by event / ref name</summary>
         public Task<JsonElement?> GetV1ProfilesByIdActivityAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profiles/{id}/activity", p, ct);
 
         /// <summary>GET /v1/profiles/{id}/attribute-changes - History of attribute changes (old and new value, source, time), newest first; filter by key</summary>
@@ -2489,7 +3089,7 @@ namespace Hermetica
         /// <summary>GET /v1/profiles/{id}/campaign-stats - Per-contact campaign engagement: sent, delivered, opens, clicks, bounces by campaign</summary>
         public Task<JsonElement?> GetV1ProfilesByIdCampaignStatsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profiles/{id}/campaign-stats", p, ct);
 
-        /// <summary>GET /v1/profiles/{id}/companies - The company this contact belongs to (at most one)</summary>
+        /// <summary>GET /v1/profiles/{id}/companies - Every company this contact is linked to, primary first, with the link fields</summary>
         public Task<JsonElement?> GetV1ProfilesByIdCompaniesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profiles/{id}/companies", p, ct);
 
         /// <summary>GET /v1/profiles/{id}/consent</summary>
@@ -2497,6 +3097,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/profiles/{id}/contact-prefs - Snooze, preferred channel and per-channel frequency; all enforced by the eligibility gate</summary>
         public Task<JsonElement?> GetV1ProfilesByIdContactPrefsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profiles/{id}/contact-prefs", p, ct);
+
+        /// <summary>GET /v1/profiles/{id}/crm - CRM records this contact is linked to</summary>
+        public Task<JsonElement?> GetV1ProfilesByIdCrmAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profiles/{id}/crm", p, ct);
 
         /// <summary>GET /v1/profiles/{id}/devices - Device records entered by hand for this person (flagged manual; real visits are in the device_* attributes)</summary>
         public Task<JsonElement?> GetV1ProfilesByIdDevicesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profiles/{id}/devices", p, ct);
@@ -2507,11 +3110,17 @@ namespace Hermetica
         /// <summary>GET /v1/profiles/{id}/export</summary>
         public Task<JsonElement?> GetV1ProfilesByIdExportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profiles/{id}/export", p, ct);
 
+        /// <summary>GET /v1/profiles/{id}/files</summary>
+        public Task<JsonElement?> GetV1ProfilesByIdFilesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profiles/{id}/files", p, ct);
+
         /// <summary>GET /v1/profiles/{id}/geo-ips</summary>
         public Task<JsonElement?> GetV1ProfilesByIdGeoIpsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profiles/{id}/geo-ips", p, ct);
 
         /// <summary>GET /v1/profiles/{id}/identifiers - Every email, phone and external id attached to a person, including those that came with a merge</summary>
         public Task<JsonElement?> GetV1ProfilesByIdIdentifiersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profiles/{id}/identifiers", p, ct);
+
+        /// <summary>GET /v1/profiles/{id}/inbox - A contact's inbox, including read and deleted messages</summary>
+        public Task<JsonElement?> GetV1ProfilesByIdInboxAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profiles/{id}/inbox", p, ct);
 
         /// <summary>GET /v1/profiles/{id}/lists</summary>
         public Task<JsonElement?> GetV1ProfilesByIdListsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/profiles/{id}/lists", p, ct);
@@ -2579,6 +3188,9 @@ namespace Hermetica
         /// <summary>GET /v1/providers</summary>
         public Task<JsonElement?> GetV1ProvidersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/providers", p, ct);
 
+        /// <summary>GET /v1/public/booking/{ws}/{slug}/slots - Open start times of a booking page (JSON)</summary>
+        public Task<JsonElement?> GetV1PublicBookingByWsBySlugSlotsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/public/booking/{ws}/{slug}/slots", p, ct);
+
         /// <summary>GET /v1/public/brand - Name, logo and colours for a verified dashboard host (null otherwise)</summary>
         public Task<JsonElement?> GetV1PublicBrandAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/public/brand", p, ct);
 
@@ -2588,6 +3200,12 @@ namespace Hermetica
         /// <summary>GET /v1/public/sponsor-report/{ws}/{token} - Sponsor report as JSON (same token as the shareable page)</summary>
         public Task<JsonElement?> GetV1PublicSponsorReportByWsByTokenAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/public/sponsor-report/{ws}/{token}", p, ct);
 
+        /// <summary>GET /v1/push/live - Live notifications, newest first</summary>
+        public Task<JsonElement?> GetV1PushLiveAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/push/live", p, ct);
+
+        /// <summary>GET /v1/push/live/{id} - One live notification and its status</summary>
+        public Task<JsonElement?> GetV1PushLiveByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/push/live/{id}", p, ct);
+
         /// <summary>GET /v1/push/stats - Push sends, deliveries, failures, opens and retired devices for a window</summary>
         public Task<JsonElement?> GetV1PushStatsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/push/stats", p, ct);
 
@@ -2596,6 +3214,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/push-tokens/{id} - One registered device; `profileId` names the profile it belongs to</summary>
         public Task<JsonElement?> GetV1PushTokensByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/push-tokens/{id}", p, ct);
+
+        /// <summary>GET /v1/qa-preview/clients - Mail clients the connected preview service offers, and its credit balance when it reports one</summary>
+        public Task<JsonElement?> GetV1QaPreviewClientsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/qa-preview/clients", p, ct);
 
         /// <summary>GET /v1/qa-preview/connection</summary>
         public Task<JsonElement?> GetV1QaPreviewConnectionAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/qa-preview/connection", p, ct);
@@ -2615,10 +3236,10 @@ namespace Hermetica
         /// <summary>GET /v1/registrar/search - Availability and one-year price for a name across extensions</summary>
         public Task<JsonElement?> GetV1RegistrarSearchAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/registrar/search", p, ct);
 
-        /// <summary>GET /v1/reports</summary>
+        /// <summary>GET /v1/reports - Sent campaigns with opens, clicks, bounces, unsubscribes, complaints and rates; filter by channel, type and send time</summary>
         public Task<JsonElement?> GetV1ReportsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/reports", p, ct);
 
-        /// <summary>GET /v1/reports/{id}</summary>
+        /// <summary>GET /v1/reports/{id} - One campaign report: domains, locations by country and region, links, abuse, revenue, rates, list-average and industry comparison, and the s</summary>
         public Task<JsonElement?> GetV1ReportsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/reports/{id}", p, ct);
 
         /// <summary>GET /v1/reports/{id}/abuse-reports - Spam complaints for one campaign as a paged list</summary>
@@ -2633,11 +3254,23 @@ namespace Hermetica
         /// <summary>GET /v1/reports/{id}/click-details</summary>
         public Task<JsonElement?> GetV1ReportsByIdClickDetailsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/reports/{id}/click-details", p, ct);
 
+        /// <summary>GET /v1/reports/{id}/links - Every link: clicks, unique clickers, last click, share of all clicks, and the split per A/B variant</summary>
+        public Task<JsonElement?> GetV1ReportsByIdLinksAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/reports/{id}/links", p, ct);
+
         /// <summary>GET /v1/reports/{id}/products</summary>
         public Task<JsonElement?> GetV1ReportsByIdProductsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/reports/{id}/products", p, ct);
 
-        /// <summary>GET /v1/reports/{id}/sub-reports</summary>
+        /// <summary>GET /v1/reports/{id}/share-stats - Views, unique visitors, referrers and link clicks of the public share link</summary>
+        public Task<JsonElement?> GetV1ReportsByIdShareStatsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/reports/{id}/share-stats", p, ct);
+
+        /// <summary>GET /v1/reports/{id}/sub-reports - A/B variants, resends and RSS issues of this campaign</summary>
         public Task<JsonElement?> GetV1ReportsByIdSubReportsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/reports/{id}/sub-reports", p, ct);
+
+        /// <summary>GET /v1/reports/{id}/unsubscribed - Who unsubscribed from this campaign, when, and how (link, List-Unsubscribe header, reply ...)</summary>
+        public Task<JsonElement?> GetV1ReportsByIdUnsubscribedAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/reports/{id}/unsubscribed", p, ct);
+
+        /// <summary>GET /v1/review-feeds/google - URLs of the Google Shopping product reviews feed (XML, schema 2.3, 5,000 reviews per file) to give Merchant Center</summary>
+        public Task<JsonElement?> GetV1ReviewFeedsGoogleAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/review-feeds/google", p, ct);
 
         /// <summary>GET /v1/reviews</summary>
         public Task<JsonElement?> GetV1ReviewsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/reviews", p, ct);
@@ -2651,6 +3284,9 @@ namespace Hermetica
         /// <summary>GET /v1/reviews/{id}</summary>
         public Task<JsonElement?> GetV1ReviewsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/reviews/{id}", p, ct);
 
+        /// <summary>GET /v1/review-settings - Review-for-coupon incentive</summary>
+        public Task<JsonElement?> GetV1ReviewSettingsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/review-settings", p, ct);
+
         /// <summary>GET /v1/roles</summary>
         public Task<JsonElement?> GetV1RolesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/roles", p, ct);
 
@@ -2663,7 +3299,7 @@ namespace Hermetica
         /// <summary>GET /v1/route-policies/{id}</summary>
         public Task<JsonElement?> GetV1RoutePoliciesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/route-policies/{id}", p, ct);
 
-        /// <summary>GET /v1/saved-sections</summary>
+        /// <summary>GET /v1/saved-sections - Filter by name, block type and created / updated dates; sort newest, oldest, name or updated</summary>
         public Task<JsonElement?> GetV1SavedSectionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/saved-sections", p, ct);
 
         /// <summary>GET /v1/saved-sections/{id}</summary>
@@ -2677,6 +3313,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/scores/{id}</summary>
         public Task<JsonElement?> GetV1ScoresByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/scores/{id}", p, ct);
+
+        /// <summary>GET /v1/scores/{id}/companies - Company scores rolled up from their contacts (sum, max or average), highest first</summary>
+        public Task<JsonElement?> GetV1ScoresByIdCompaniesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/scores/{id}/companies", p, ct);
 
         /// <summary>GET /v1/scores/{id}/draft</summary>
         public Task<JsonElement?> GetV1ScoresByIdDraftAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/scores/{id}/draft", p, ct);
@@ -2711,7 +3350,7 @@ namespace Hermetica
         /// <summary>GET /v1/segments/{id}/explain-match/{profileId} - Why a profile is or is not in this segment, condition by condition, next to its stored membership</summary>
         public Task<JsonElement?> GetV1SegmentsByIdExplainMatchByProfileIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/segments/{id}/explain-match/{profileId}", p, ct);
 
-        /// <summary>GET /v1/segments/{id}/export - Current members as CSV text (first 50,000)</summary>
+        /// <summary>GET /v1/segments/{id}/export - Current members as CSV text (first 50,000); POST /v1/segments/:id/export-jobs exports every member as a file</summary>
         public Task<JsonElement?> GetV1SegmentsByIdExportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/segments/{id}/export", p, ct);
 
         /// <summary>GET /v1/segments/{id}/match/{profileId} - Does this contact match the segment right now?</summary>
@@ -2720,8 +3359,11 @@ namespace Hermetica
         /// <summary>GET /v1/segments/{id}/match-runs</summary>
         public Task<JsonElement?> GetV1SegmentsByIdMatchRunsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/segments/{id}/match-runs", p, ct);
 
-        /// <summary>GET /v1/segments/{id}/members</summary>
+        /// <summary>GET /v1/segments/{id}/members - Current members with the time each joined; filter by email, phone or join date, sort by join date</summary>
         public Task<JsonElement?> GetV1SegmentsByIdMembersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/segments/{id}/members", p, ct);
+
+        /// <summary>GET /v1/segments/{id}/objects - Members of an object segment, each with the profiles linked to it</summary>
+        public Task<JsonElement?> GetV1SegmentsByIdObjectsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/segments/{id}/objects", p, ct);
 
         /// <summary>GET /v1/segments/{id}/snapshots - Saved snapshots of a segment, newest first</summary>
         public Task<JsonElement?> GetV1SegmentsByIdSnapshotsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/segments/{id}/snapshots", p, ct);
@@ -2756,6 +3398,9 @@ namespace Hermetica
         /// <summary>GET /v1/senders/{id}</summary>
         public Task<JsonElement?> GetV1SendersByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/senders/{id}", p, ct);
 
+        /// <summary>GET /v1/senders/{id}/signing - S/MIME certificate and PGP signing key of an email sender (metadata only; private parts never leave the vault)</summary>
+        public Task<JsonElement?> GetV1SendersByIdSigningAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/senders/{id}/signing", p, ct);
+
         /// <summary>GET /v1/senders/{id}/stats</summary>
         public Task<JsonElement?> GetV1SendersByIdStatsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/senders/{id}/stats", p, ct);
 
@@ -2768,6 +3413,9 @@ namespace Hermetica
         /// <summary>GET /v1/send-options/{sourceKind}/{sourceId} - Attachments and custom headers applied to every send of a campaign, journey or sequence</summary>
         public Task<JsonElement?> GetV1SendOptionsBySourceKindBySourceIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/send-options/{sourceKind}/{sourceId}", p, ct);
 
+        /// <summary>GET /v1/shared-object-schemas - Object schemas shared across the workspaces of this organization</summary>
+        public Task<JsonElement?> GetV1SharedObjectSchemasAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/shared-object-schemas", p, ct);
+
         /// <summary>GET /v1/shares/{type}/{id} - Who a list, template, campaign or segment is shared with (none = open to all roles that can use it)</summary>
         public Task<JsonElement?> GetV1SharesByTypeByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/shares/{type}/{id}", p, ct);
 
@@ -2776,6 +3424,12 @@ namespace Hermetica
 
         /// <summary>GET /v1/signup-domains</summary>
         public Task<JsonElement?> GetV1SignupDomainsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/signup-domains", p, ct);
+
+        /// <summary>GET /v1/site-messages</summary>
+        public Task<JsonElement?> GetV1SiteMessagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/site-messages", p, ct);
+
+        /// <summary>GET /v1/site-messages/{id}</summary>
+        public Task<JsonElement?> GetV1SiteMessagesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/site-messages/{id}", p, ct);
 
         /// <summary>GET /v1/sites</summary>
         public Task<JsonElement?> GetV1SitesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/sites", p, ct);
@@ -2788,6 +3442,15 @@ namespace Hermetica
 
         /// <summary>GET /v1/sites/{id}/health</summary>
         public Task<JsonElement?> GetV1SitesByIdHealthAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/sites/{id}/health", p, ct);
+
+        /// <summary>GET /v1/slack/installs - Slack workspaces the app is installed in</summary>
+        public Task<JsonElement?> GetV1SlackInstallsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/slack/installs", p, ct);
+
+        /// <summary>GET /v1/slack/sends - Recent Slack sends with their outcome</summary>
+        public Task<JsonElement?> GetV1SlackSendsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/slack/sends", p, ct);
+
+        /// <summary>GET /v1/slack/templates - Slack message templates</summary>
+        public Task<JsonElement?> GetV1SlackTemplatesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/slack/templates", p, ct);
 
         /// <summary>GET /v1/sms/ai-drafts/{id}</summary>
         public Task<JsonElement?> GetV1SmsAiDraftsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/sms/ai-drafts/{id}", p, ct);
@@ -2843,6 +3506,24 @@ namespace Hermetica
         /// <summary>GET /v1/snippets/{id}</summary>
         public Task<JsonElement?> GetV1SnippetsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/snippets/{id}", p, ct);
 
+        /// <summary>GET /v1/social/accounts - Connected social accounts</summary>
+        public Task<JsonElement?> GetV1SocialAccountsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/social/accounts", p, ct);
+
+        /// <summary>GET /v1/social/apps - Which networks (and Slack) can be connected by sign-in on this install</summary>
+        public Task<JsonElement?> GetV1SocialAppsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/social/apps", p, ct);
+
+        /// <summary>GET /v1/social/oauth/pending/{id} - Pages and accounts a finished sign-in can post as, to pick from (yours, for 15 minutes)</summary>
+        public Task<JsonElement?> GetV1SocialOauthPendingByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/social/oauth/pending/{id}", p, ct);
+
+        /// <summary>GET /v1/social/posts - Posts scheduled or published in a date range (the calendar)</summary>
+        public Task<JsonElement?> GetV1SocialPostsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/social/posts", p, ct);
+
+        /// <summary>GET /v1/social/posts/{id} - One post with its publish status and metrics</summary>
+        public Task<JsonElement?> GetV1SocialPostsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/social/posts/{id}", p, ct);
+
+        /// <summary>GET /v1/social/posts/{id}/comments - Comments on a published post (pulled with its metrics)</summary>
+        public Task<JsonElement?> GetV1SocialPostsByIdCommentsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/social/posts/{id}/comments", p, ct);
+
         /// <summary>GET /v1/soft-bounce-allowlist</summary>
         public Task<JsonElement?> GetV1SoftBounceAllowlistAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/soft-bounce-allowlist", p, ct);
 
@@ -2885,6 +3566,12 @@ namespace Hermetica
         /// <summary>GET /v1/sponsors/publications/{publicationId}/rules - Ad slot rules of a publication</summary>
         public Task<JsonElement?> GetV1SponsorsPublicationsByPublicationIdRulesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/sponsors/publications/{publicationId}/rules", p, ct);
 
+        /// <summary>GET /v1/sql-sources</summary>
+        public Task<JsonElement?> GetV1SqlSourcesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/sql-sources", p, ct);
+
+        /// <summary>GET /v1/sql-sources/{id}</summary>
+        public Task<JsonElement?> GetV1SqlSourcesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/sql-sources/{id}", p, ct);
+
         /// <summary>GET /v1/sso</summary>
         public Task<JsonElement?> GetV1SsoAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/sso", p, ct);
 
@@ -2902,6 +3589,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/stages - Lifecycle stages in order of weight</summary>
         public Task<JsonElement?> GetV1StagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/stages", p, ct);
+
+        /// <summary>GET /v1/standard-fields - Required / visible / default settings of email, first name, last name and phone</summary>
+        public Task<JsonElement?> GetV1StandardFieldsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/standard-fields", p, ct);
 
         /// <summary>GET /v1/subscription-channels - Channels a person can subscribe to, with the purposes each is consented for</summary>
         public Task<JsonElement?> GetV1SubscriptionChannelsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/subscription-channels", p, ct);
@@ -2945,11 +3635,14 @@ namespace Hermetica
         /// <summary>GET /v1/template-gallery</summary>
         public Task<JsonElement?> GetV1TemplateGalleryAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/template-gallery", p, ct);
 
-        /// <summary>GET /v1/templates</summary>
+        /// <summary>GET /v1/templates - Filter by channel, folder, tag, text, creator (`createdBy=me`), format and creation date; sort newest, oldest, name or updated</summary>
         public Task<JsonElement?> GetV1TemplatesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/templates", p, ct);
 
         /// <summary>GET /v1/templates/{id}</summary>
         public Task<JsonElement?> GetV1TemplatesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/templates/{id}", p, ct);
+
+        /// <summary>GET /v1/templates/{id}/client-preview-runs - Inbox preview run history for a template, newest first</summary>
+        public Task<JsonElement?> GetV1TemplatesByIdClientPreviewRunsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/templates/{id}/client-preview-runs", p, ct);
 
         /// <summary>GET /v1/templates/{id}/default-content - The fill-in parts of the current version: each block of a block design, or each marked region of HTML</summary>
         public Task<JsonElement?> GetV1TemplatesByIdDefaultContentAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/templates/{id}/default-content", p, ct);
@@ -2959,6 +3652,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/templates/{id}/languages/{locale}</summary>
         public Task<JsonElement?> GetV1TemplatesByIdLanguagesByLocaleAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/templates/{id}/languages/{locale}", p, ct);
+
+        /// <summary>GET /v1/templates/{id}/optimizer - Writing checks on the saved version, weighed by how similar senders' email campaigns perform (peer benchmarks, or the static reference range</summary>
+        public Task<JsonElement?> GetV1TemplatesByIdOptimizerAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/templates/{id}/optimizer", p, ct);
 
         /// <summary>GET /v1/templates/{id}/publish-status - Live version, unpublished changes and versions waiting for approval</summary>
         public Task<JsonElement?> GetV1TemplatesByIdPublishStatusAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/templates/{id}/publish-status", p, ct);
@@ -2993,7 +3689,7 @@ namespace Hermetica
         /// <summary>GET /v1/topic-groups/{id}</summary>
         public Task<JsonElement?> GetV1TopicGroupsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/topic-groups/{id}", p, ct);
 
-        /// <summary>GET /v1/topics</summary>
+        /// <summary>GET /v1/topics - Topics; `groupId` filters by group, `counts=true` adds how many people are subscribed to each</summary>
         public Task<JsonElement?> GetV1TopicsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/topics", p, ct);
 
         /// <summary>GET /v1/topics/{id}</summary>
@@ -3031,6 +3727,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/transactional/definitions/{id}/translations</summary>
         public Task<JsonElement?> GetV1TransactionalDefinitionsByIdTranslationsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/transactional/definitions/{id}/translations", p, ct);
+
+        /// <summary>GET /v1/transactional/metadata-fields - Declared metadata keys shown as message-log columns, each with an optional view template ({{ value }})</summary>
+        public Task<JsonElement?> GetV1TransactionalMetadataFieldsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/transactional/metadata-fields", p, ct);
 
         /// <summary>GET /v1/transactional/metadata-keys</summary>
         public Task<JsonElement?> GetV1TransactionalMetadataKeysAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/transactional/metadata-keys", p, ct);
@@ -3070,6 +3769,12 @@ namespace Hermetica
 
         /// <summary>GET /v1/user-groups/{id}</summary>
         public Task<JsonElement?> GetV1UserGroupsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/user-groups/{id}", p, ct);
+
+        /// <summary>GET /v1/user-groups/{id}/access</summary>
+        public Task<JsonElement?> GetV1UserGroupsByIdAccessAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/user-groups/{id}/access", p, ct);
+
+        /// <summary>GET /v1/version - Running version, whether a newer release exists, and the operator banner</summary>
+        public Task<JsonElement?> GetV1VersionAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/version", p, ct);
 
         /// <summary>GET /v1/web-feeds</summary>
         public Task<JsonElement?> GetV1WebFeedsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/web-feeds", p, ct);
@@ -3128,11 +3833,26 @@ namespace Hermetica
         /// <summary>GET /v1/webhook-templates/{id}</summary>
         public Task<JsonElement?> GetV1WebhookTemplatesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/webhook-templates/{id}", p, ct);
 
+        /// <summary>GET /v1/webhook-templates/{id}/inputs/{key}/options - Dropdown values for an enum input (fixed options, or loaded from its options URL)</summary>
+        public Task<JsonElement?> GetV1WebhookTemplatesByIdInputsByKeyOptionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/webhook-templates/{id}/inputs/{key}/options", p, ct);
+
         /// <summary>GET /v1/webhook-templates/{id}/revisions - Every saved state of a call template / custom action, newest first</summary>
         public Task<JsonElement?> GetV1WebhookTemplatesByIdRevisionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/webhook-templates/{id}/revisions", p, ct);
 
         /// <summary>GET /v1/webhook-templates/{id}/revisions/{revisionId}</summary>
         public Task<JsonElement?> GetV1WebhookTemplatesByIdRevisionsByRevisionIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/webhook-templates/{id}/revisions/{revisionId}", p, ct);
+
+        /// <summary>GET /v1/whatsapp/connections/{connectionId}/account - Business and phone-number status, messaging-limit tier and the raw quality rating, read live from Meta</summary>
+        public Task<JsonElement?> GetV1WhatsappConnectionsByConnectionIdAccountAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/whatsapp/connections/{connectionId}/account", p, ct);
+
+        /// <summary>GET /v1/whatsapp/flows - WhatsApp Flows</summary>
+        public Task<JsonElement?> GetV1WhatsappFlowsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/whatsapp/flows", p, ct);
+
+        /// <summary>GET /v1/whatsapp/flows/{id} - One Flow</summary>
+        public Task<JsonElement?> GetV1WhatsappFlowsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/whatsapp/flows/{id}", p, ct);
+
+        /// <summary>GET /v1/whatsapp/flows/{id}/runs - Who was sent the Flow and what they answered</summary>
+        public Task<JsonElement?> GetV1WhatsappFlowsByIdRunsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/whatsapp/flows/{id}/runs", p, ct);
 
         /// <summary>GET /v1/whatsapp/stats - WhatsApp delivery numbers per day (accepted, delivered, failed, blocked, replies) with the reasons messages were blocked; default last 30 da</summary>
         public Task<JsonElement?> GetV1WhatsappStatsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/whatsapp/stats", p, ct);
@@ -3140,11 +3860,20 @@ namespace Hermetica
         /// <summary>GET /v1/whatsapp/templates - Registered WhatsApp templates with their approval state</summary>
         public Task<JsonElement?> GetV1WhatsappTemplatesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/whatsapp/templates", p, ct);
 
+        /// <summary>GET /v1/whatsapp/templates/{id} - One registered template with its approval status (refresh=true pulls the latest status from the provider first)</summary>
+        public Task<JsonElement?> GetV1WhatsappTemplatesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/whatsapp/templates/{id}", p, ct);
+
         /// <summary>GET /v1/whatsapp/window/{id} - Is the 24-hour session window open for this contact (can free text be sent)?</summary>
         public Task<JsonElement?> GetV1WhatsappWindowByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/whatsapp/window/{id}", p, ct);
 
         /// <summary>GET /v1/white-label - Product name, logo and colours shown in the app and on hosted pages</summary>
         public Task<JsonElement?> GetV1WhiteLabelAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/white-label", p, ct);
+
+        /// <summary>GET /v1/workflow-custom-types - The workspace's own action and trigger types (palette and trigger picker)</summary>
+        public Task<JsonElement?> GetV1WorkflowCustomTypesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/workflow-custom-types", p, ct);
+
+        /// <summary>GET /v1/workflow-custom-types/{id}</summary>
+        public Task<JsonElement?> GetV1WorkflowCustomTypesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/workflow-custom-types/{id}", p, ct);
 
         /// <summary>GET /v1/workflows</summary>
         public Task<JsonElement?> GetV1WorkflowsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/workflows", p, ct);
@@ -3163,6 +3892,9 @@ namespace Hermetica
 
         /// <summary>GET /v1/workflows/{id}/enrollments/{enrollmentId}/steps - The step trail of one enrollment</summary>
         public Task<JsonElement?> GetV1WorkflowsByIdEnrollmentsByEnrollmentIdStepsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/workflows/{id}/enrollments/{enrollmentId}/steps", p, ct);
+
+        /// <summary>GET /v1/workflows/{id}/entry-skips - People who could not enter (journey not live, outside its window, no start step, profile gone, cap reached), newest first</summary>
+        public Task<JsonElement?> GetV1WorkflowsByIdEntrySkipsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/workflows/{id}/entry-skips", p, ct);
 
         /// <summary>GET /v1/workflows/{id}/export</summary>
         public Task<JsonElement?> GetV1WorkflowsByIdExportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/workflows/{id}/export", p, ct);
@@ -3227,11 +3959,32 @@ namespace Hermetica
         /// <summary>GET /v1/workspace/ip-allowlist</summary>
         public Task<JsonElement?> GetV1WorkspaceIpAllowlistAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/workspace/ip-allowlist", p, ct);
 
+        /// <summary>GET /v1/workspaces/current/resets</summary>
+        public Task<JsonElement?> GetV1WorkspacesCurrentResetsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/workspaces/current/resets", p, ct);
+
+        /// <summary>GET /v1/workspaces/current/resets/{id}</summary>
+        public Task<JsonElement?> GetV1WorkspacesCurrentResetsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/workspaces/current/resets/{id}", p, ct);
+
         /// <summary>GET /v1/workspaces/current/schedule-for-removal - When this workspace will be erased, if its removal is scheduled</summary>
         public Task<JsonElement?> GetV1WorkspacesCurrentScheduleForRemovalAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/workspaces/current/schedule-for-removal", p, ct);
 
         /// <summary>GET /v1/workspace/test-mode</summary>
         public Task<JsonElement?> GetV1WorkspaceTestModeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/v1/workspace/test-mode", p, ct);
+
+        /// <summary>GET /wallet/apple/{ws}/v1/devices/{device}/registrations/{passType} - Serial numbers of this device's passes changed since the tag</summary>
+        public Task<JsonElement?> GetWalletAppleByWsV1DevicesByDeviceRegistrationsByPassTypeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/wallet/apple/{ws}/v1/devices/{device}/registrations/{passType}", p, ct);
+
+        /// <summary>GET /wallet/apple/{ws}/v1/passes/{passType}/{serial} - The latest version of a pass</summary>
+        public Task<JsonElement?> GetWalletAppleByWsV1PassesByPassTypeBySerialAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/wallet/apple/{ws}/v1/passes/{passType}/{serial}", p, ct);
+
+        /// <summary>GET /wallet/install/{token} - Add a pass to Apple Wallet (download) or Google Wallet (redirect)</summary>
+        public Task<JsonElement?> GetWalletInstallByTokenAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/wallet/install/{token}", p, ct);
+
+        /// <summary>GET /wallet/logo/{ws}/{file} - A programme's wallet logo (Google Wallet fetches it from here)</summary>
+        public Task<JsonElement?> GetWalletLogoByWsByFileAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/wallet/logo/{ws}/{file}", p, ct);
+
+        /// <summary>GET /webhooks/ads/meta/leadgen - Meta leadgen webhook verification handshake</summary>
+        public Task<JsonElement?> GetWebhooksAdsMetaLeadgenAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/webhooks/ads/meta/leadgen", p, ct);
 
         /// <summary>GET /webhooks/{workspaceId}/{connectionId} - WhatsApp (Meta) webhook verification handshake</summary>
         public Task<JsonElement?> GetWebhooksByWorkspaceIdByConnectionIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("GET", "/webhooks/{workspaceId}/{connectionId}", p, ct);
@@ -3251,8 +4004,23 @@ namespace Hermetica
         /// <summary>PATCH /v1/ads/audiences/{id} - Change schedule, consent filter or pause a sync</summary>
         public Task<JsonElement?> PatchV1AdsAudiencesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/ads/audiences/{id}", p, ct);
 
+        /// <summary>PATCH /v1/ads/campaigns/{id} - Edit a draft campaign</summary>
+        public Task<JsonElement?> PatchV1AdsCampaignsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/ads/campaigns/{id}", p, ct);
+
+        /// <summary>PATCH /v1/ads/lead-syncs/{id} - Pause or remap a lead-ad sync</summary>
+        public Task<JsonElement?> PatchV1AdsLeadSyncsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/ads/lead-syncs/{id}", p, ct);
+
         /// <summary>PATCH /v1/agency/clients/{workspaceId} - Rename a client workspace from the agency</summary>
         public Task<JsonElement?> PatchV1AgencyClientsByWorkspaceIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/agency/clients/{workspaceId}", p, ct);
+
+        /// <summary>PATCH /v1/ai-agents/{id} - Rename, switch on or off, turn auto-send on or off, or change its settings</summary>
+        public Task<JsonElement?> PatchV1AiAgentsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/ai-agents/{id}", p, ct);
+
+        /// <summary>PATCH /v1/ai-agents/{id}/guidances/{guidanceId}</summary>
+        public Task<JsonElement?> PatchV1AiAgentsByIdGuidancesByGuidanceIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/ai-agents/{id}/guidances/{guidanceId}", p, ct);
+
+        /// <summary>PATCH /v1/ai-agents/items/{id} - Edit a pending draft before approving it</summary>
+        public Task<JsonElement?> PatchV1AiAgentsItemsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/ai-agents/items/{id}", p, ct);
 
         /// <summary>PATCH /v1/analytics/attribution/settings - Conversion event, touch windows and model. Applies to conversions recorded from now on.</summary>
         public Task<JsonElement?> PatchV1AnalyticsAttributionSettingsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/analytics/attribution/settings", p, ct);
@@ -3277,6 +4045,9 @@ namespace Hermetica
 
         /// <summary>PATCH /v1/assets/{id}</summary>
         public Task<JsonElement?> PatchV1AssetsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/assets/{id}", p, ct);
+
+        /// <summary>PATCH /v1/association-labels/{id}</summary>
+        public Task<JsonElement?> PatchV1AssociationLabelsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/association-labels/{id}", p, ct);
 
         /// <summary>PATCH /v1/attributes/computed/{key}</summary>
         public Task<JsonElement?> PatchV1AttributesComputedByKeyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/attributes/computed/{key}", p, ct);
@@ -3305,6 +4076,9 @@ namespace Hermetica
         /// <summary>PATCH /v1/business-goals/{id}</summary>
         public Task<JsonElement?> PatchV1BusinessGoalsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/business-goals/{id}", p, ct);
 
+        /// <summary>PATCH /v1/calendar-feeds/{id}</summary>
+        public Task<JsonElement?> PatchV1CalendarFeedsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/calendar-feeds/{id}", p, ct);
+
         /// <summary>PATCH /v1/calendar/mine/{id}</summary>
         public Task<JsonElement?> PatchV1CalendarMineByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/calendar/mine/{id}", p, ct);
 
@@ -3313,6 +4087,12 @@ namespace Hermetica
 
         /// <summary>PATCH /v1/campaigns/{id}</summary>
         public Task<JsonElement?> PatchV1CampaignsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/campaigns/{id}", p, ct);
+
+        /// <summary>PATCH /v1/campaigns/{id}/audiences/{audienceId}</summary>
+        public Task<JsonElement?> PatchV1CampaignsByIdAudiencesByAudienceIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/campaigns/{id}/audiences/{audienceId}", p, ct);
+
+        /// <summary>PATCH /v1/campaigns/{id}/drafts/{draftId}</summary>
+        public Task<JsonElement?> PatchV1CampaignsByIdDraftsByDraftIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/campaigns/{id}/drafts/{draftId}", p, ct);
 
         /// <summary>PATCH /v1/campaigns/{id}/feedback/{feedbackId}</summary>
         public Task<JsonElement?> PatchV1CampaignsByIdFeedbackByFeedbackIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/campaigns/{id}/feedback/{feedbackId}", p, ct);
@@ -3350,8 +4130,14 @@ namespace Hermetica
         /// <summary>PATCH /v1/commerce/stores/{storeId}/orders/{id}/lines/{lineId}</summary>
         public Task<JsonElement?> PatchV1CommerceStoresByStoreIdOrdersByIdLinesByLineIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/commerce/stores/{storeId}/orders/{id}/lines/{lineId}", p, ct);
 
+        /// <summary>PATCH /v1/commerce/stores/{storeId}/products/{productId} - Change only the fields sent</summary>
+        public Task<JsonElement?> PatchV1CommerceStoresByStoreIdProductsByProductIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/commerce/stores/{storeId}/products/{productId}", p, ct);
+
         /// <summary>PATCH /v1/commerce/stores/{storeId}/products/{productId}/images/{imageId}</summary>
         public Task<JsonElement?> PatchV1CommerceStoresByStoreIdProductsByProductIdImagesByImageIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/commerce/stores/{storeId}/products/{productId}/images/{imageId}", p, ct);
+
+        /// <summary>PATCH /v1/commerce/stores/{storeId}/products/{productId}/variants/{variantId} - Change only the fields sent</summary>
+        public Task<JsonElement?> PatchV1CommerceStoresByStoreIdProductsByProductIdVariantsByVariantIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/commerce/stores/{storeId}/products/{productId}/variants/{variantId}", p, ct);
 
         /// <summary>PATCH /v1/connections/{id}</summary>
         public Task<JsonElement?> PatchV1ConnectionsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/connections/{id}", p, ct);
@@ -3383,6 +4169,9 @@ namespace Hermetica
         /// <summary>PATCH /v1/deliverability/rules/{id}</summary>
         public Task<JsonElement?> PatchV1DeliverabilityRulesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/deliverability/rules/{id}", p, ct);
 
+        /// <summary>PATCH /v1/destinations/{id}</summary>
+        public Task<JsonElement?> PatchV1DestinationsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/destinations/{id}", p, ct);
+
         /// <summary>PATCH /v1/emails/{id}/draft - Edit the draft; refused once the email is sending or sent</summary>
         public Task<JsonElement?> PatchV1EmailsByIdDraftAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/emails/{id}/draft", p, ct);
 
@@ -3397,6 +4186,9 @@ namespace Hermetica
 
         /// <summary>PATCH /v1/import-schedules/{id}</summary>
         public Task<JsonElement?> PatchV1ImportSchedulesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/import-schedules/{id}", p, ct);
+
+        /// <summary>PATCH /v1/in-app-components/{id} - Edit a component</summary>
+        public Task<JsonElement?> PatchV1InAppComponentsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/in-app-components/{id}", p, ct);
 
         /// <summary>PATCH /v1/in-app-messages/{id} - Edit an in-app message or change its status (draft, live, paused, archived)</summary>
         public Task<JsonElement?> PatchV1InAppMessagesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/in-app-messages/{id}", p, ct);
@@ -3416,8 +4208,14 @@ namespace Hermetica
         /// <summary>PATCH /v1/leads/companies/{id}</summary>
         public Task<JsonElement?> PatchV1LeadsCompaniesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/leads/companies/{id}", p, ct);
 
+        /// <summary>PATCH /v1/leads/companies/{id}/notes/{noteId} - Edit a company note</summary>
+        public Task<JsonElement?> PatchV1LeadsCompaniesByIdNotesByNoteIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/leads/companies/{id}/notes/{noteId}", p, ct);
+
         /// <summary>PATCH /v1/leads/companies/{id}/stage - Account stage and owner; written through to the outbound account so do-not-contact gates enrollment</summary>
         public Task<JsonElement?> PatchV1LeadsCompaniesByIdStageAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/leads/companies/{id}/stage", p, ct);
+
+        /// <summary>PATCH /v1/leads/company-fields/{key}</summary>
+        public Task<JsonElement?> PatchV1LeadsCompanyFieldsByKeyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/leads/company-fields/{key}", p, ct);
 
         /// <summary>PATCH /v1/leads/providers/{id}</summary>
         public Task<JsonElement?> PatchV1LeadsProvidersByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/leads/providers/{id}", p, ct);
@@ -3433,6 +4231,18 @@ namespace Hermetica
 
         /// <summary>PATCH /v1/lists/{id}</summary>
         public Task<JsonElement?> PatchV1ListsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/lists/{id}", p, ct);
+
+        /// <summary>PATCH /v1/loyalty/programs/{id}</summary>
+        public Task<JsonElement?> PatchV1LoyaltyProgramsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/loyalty/programs/{id}", p, ct);
+
+        /// <summary>PATCH /v1/loyalty/programs/{id}/rewards/{subId}</summary>
+        public Task<JsonElement?> PatchV1LoyaltyProgramsByIdRewardsBySubIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/loyalty/programs/{id}/rewards/{subId}", p, ct);
+
+        /// <summary>PATCH /v1/loyalty/programs/{id}/rules/{subId}</summary>
+        public Task<JsonElement?> PatchV1LoyaltyProgramsByIdRulesBySubIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/loyalty/programs/{id}/rules/{subId}", p, ct);
+
+        /// <summary>PATCH /v1/loyalty/programs/{id}/tiers/{subId}</summary>
+        public Task<JsonElement?> PatchV1LoyaltyProgramsByIdTiersBySubIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/loyalty/programs/{id}/tiers/{subId}", p, ct);
 
         /// <summary>PATCH /v1/marketing-events/{id}</summary>
         public Task<JsonElement?> PatchV1MarketingEventsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/marketing-events/{id}", p, ct);
@@ -3452,7 +4262,7 @@ namespace Hermetica
         /// <summary>PATCH /v1/newsletter/engagement/replies/{id} - Mark a reply read or archived</summary>
         public Task<JsonElement?> PatchV1NewsletterEngagementRepliesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/newsletter/engagement/replies/{id}", p, ct);
 
-        /// <summary>PATCH /v1/newsletter/engagement/surveys/{id} - Rename, describe, open or close</summary>
+        /// <summary>PATCH /v1/newsletter/engagement/surveys/{id} - Rename, describe, open or close, link a list, set the thank-you, turn the anonymous link on or off, edit questions</summary>
         public Task<JsonElement?> PatchV1NewsletterEngagementSurveysByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/newsletter/engagement/surveys/{id}", p, ct);
 
         /// <summary>PATCH /v1/newsletter/groups/{id} - Change the paid seat count of a team plan (prorated by Stripe)</summary>
@@ -3476,6 +4286,9 @@ namespace Hermetica
         /// <summary>PATCH /v1/object-types/{id}</summary>
         public Task<JsonElement?> PatchV1ObjectTypesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/object-types/{id}", p, ct);
 
+        /// <summary>PATCH /v1/operator/settings - Instance settings: sign-up open / waitlist / closed, required email verification for new accounts, a banner for every user</summary>
+        public Task<JsonElement?> PatchV1OperatorSettingsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/operator/settings", p, ct);
+
         /// <summary>PATCH /v1/outbound/accounts/{id}</summary>
         public Task<JsonElement?> PatchV1OutboundAccountsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/outbound/accounts/{id}", p, ct);
 
@@ -3494,8 +4307,11 @@ namespace Hermetica
         /// <summary>PATCH /v1/outbound/sequences/{id}</summary>
         public Task<JsonElement?> PatchV1OutboundSequencesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/outbound/sequences/{id}", p, ct);
 
-        /// <summary>PATCH /v1/outbound/tasks/{id} - Edit title, notes or due date of an open task</summary>
+        /// <summary>PATCH /v1/outbound/tasks/{id} - Edit an open task: title, notes, due date, kind, type, links and reminder</summary>
         public Task<JsonElement?> PatchV1OutboundTasksByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/outbound/tasks/{id}", p, ct);
+
+        /// <summary>PATCH /v1/page-sites/{id}</summary>
+        public Task<JsonElement?> PatchV1PageSitesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/page-sites/{id}", p, ct);
 
         /// <summary>PATCH /v1/postal-addresses/{id}</summary>
         public Task<JsonElement?> PatchV1PostalAddressesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/postal-addresses/{id}", p, ct);
@@ -3503,7 +4319,7 @@ namespace Hermetica
         /// <summary>PATCH /v1/profiles/by/{idType}/{value} - Update a profile addressed by any identifier</summary>
         public Task<JsonElement?> PatchV1ProfilesByByIdTypeByValueAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/profiles/by/{idType}/{value}", p, ct);
 
-        /// <summary>PATCH /v1/profiles/{id}</summary>
+        /// <summary>PATCH /v1/profiles/{id} - Update a contact; `tags` adds tags and `subscriptions` sets email / SMS marketing status through the consent ledger</summary>
         public Task<JsonElement?> PatchV1ProfilesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/profiles/{id}", p, ct);
 
         /// <summary>PATCH /v1/profiles/{id}/notes/{noteId}</summary>
@@ -3512,10 +4328,13 @@ namespace Hermetica
         /// <summary>PATCH /v1/programs/{id}</summary>
         public Task<JsonElement?> PatchV1ProgramsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/programs/{id}", p, ct);
 
+        /// <summary>PATCH /v1/push/live/{id} - Update what the live notification shows</summary>
+        public Task<JsonElement?> PatchV1PushLiveByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/push/live/{id}", p, ct);
+
         /// <summary>PATCH /v1/referral-programs/{id}</summary>
         public Task<JsonElement?> PatchV1ReferralProgramsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/referral-programs/{id}", p, ct);
 
-        /// <summary>PATCH /v1/reviews/{id} - Moderate: pending | published | rejected</summary>
+        /// <summary>PATCH /v1/reviews/{id} - Moderate (pending | published | featured | unpublished | rejected), reply publicly, or edit rating, text, images and type</summary>
         public Task<JsonElement?> PatchV1ReviewsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/reviews/{id}", p, ct);
 
         /// <summary>PATCH /v1/route-policies/{id}</summary>
@@ -3533,6 +4352,9 @@ namespace Hermetica
         /// <summary>PATCH /v1/sending-domains/{id} - Set open and click tracking for mail sent from this domain (null = follow the workspace setting)</summary>
         public Task<JsonElement?> PatchV1SendingDomainsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/sending-domains/{id}", p, ct);
 
+        /// <summary>PATCH /v1/site-messages/{id} - Edit, publish (status) or archive</summary>
+        public Task<JsonElement?> PatchV1SiteMessagesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/site-messages/{id}", p, ct);
+
         /// <summary>PATCH /v1/sites/{id} - Rename, change domain, or enable/disable tracking (the pixel)</summary>
         public Task<JsonElement?> PatchV1SitesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/sites/{id}", p, ct);
 
@@ -3548,6 +4370,9 @@ namespace Hermetica
         /// <summary>PATCH /v1/snippets/{id}/unlock</summary>
         public Task<JsonElement?> PatchV1SnippetsByIdUnlockAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/snippets/{id}/unlock", p, ct);
 
+        /// <summary>PATCH /v1/social/posts/{id} - Edit or reschedule a draft or scheduled post</summary>
+        public Task<JsonElement?> PatchV1SocialPostsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/social/posts/{id}", p, ct);
+
         /// <summary>PATCH /v1/sponsors/advertisers/{id} - Edit an advertiser</summary>
         public Task<JsonElement?> PatchV1SponsorsAdvertisersByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/sponsors/advertisers/{id}", p, ct);
 
@@ -3556,6 +4381,9 @@ namespace Hermetica
 
         /// <summary>PATCH /v1/sponsors/creatives/{id} - Edit a creative; it goes back to draft and needs approval again</summary>
         public Task<JsonElement?> PatchV1SponsorsCreativesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/sponsors/creatives/{id}", p, ct);
+
+        /// <summary>PATCH /v1/sql-sources/{id} - Edit; a blank password or token keeps the stored one</summary>
+        public Task<JsonElement?> PatchV1SqlSourcesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/sql-sources/{id}", p, ct);
 
         /// <summary>PATCH /v1/stages/{id} - Rename or reweight; a rename carries the people in it</summary>
         public Task<JsonElement?> PatchV1StagesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/stages/{id}", p, ct);
@@ -3584,6 +4412,9 @@ namespace Hermetica
         /// <summary>PATCH /v1/transactional/definitions/{id}</summary>
         public Task<JsonElement?> PatchV1TransactionalDefinitionsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/transactional/definitions/{id}", p, ct);
 
+        /// <summary>PATCH /v1/transactional/metadata-fields/{name}</summary>
+        public Task<JsonElement?> PatchV1TransactionalMetadataFieldsByNameAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/transactional/metadata-fields/{name}", p, ct);
+
         /// <summary>PATCH /v1/translations/{id}</summary>
         public Task<JsonElement?> PatchV1TranslationsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/translations/{id}", p, ct);
 
@@ -3596,8 +4427,14 @@ namespace Hermetica
         /// <summary>PATCH /v1/webhook-templates/{id}</summary>
         public Task<JsonElement?> PatchV1WebhookTemplatesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/webhook-templates/{id}", p, ct);
 
+        /// <summary>PATCH /v1/whatsapp/flows/{id} - Edit a Flow (its JSON only before publishing)</summary>
+        public Task<JsonElement?> PatchV1WhatsappFlowsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/whatsapp/flows/{id}", p, ct);
+
         /// <summary>PATCH /v1/whatsapp/templates/{id} - Edit a draft or rejected template (any field) or an approved one (merge values only); the linked Hermetica template follows</summary>
         public Task<JsonElement?> PatchV1WhatsappTemplatesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/whatsapp/templates/{id}", p, ct);
+
+        /// <summary>PATCH /v1/workflow-custom-types/{id} - Rename, change fields, or archive (archived types leave the palette but keep running)</summary>
+        public Task<JsonElement?> PatchV1WorkflowCustomTypesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/workflow-custom-types/{id}", p, ct);
 
         /// <summary>PATCH /v1/workflows/{id}</summary>
         public Task<JsonElement?> PatchV1WorkflowsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/workflows/{id}", p, ct);
@@ -3614,8 +4451,26 @@ namespace Hermetica
         /// <summary>PATCH /v1/workspace</summary>
         public Task<JsonElement?> PatchV1WorkspaceAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PATCH", "/v1/workspace", p, ct);
 
+        /// <summary>POST /book/{ws}/{slug} - Book a time on a booking page (consent is recorded only when the visitor ticks the box)</summary>
+        public Task<JsonElement?> PostBookByWsBySlugAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/book/{ws}/{slug}", p, ct);
+
+        /// <summary>POST /client/geofence-events - The app entered, left or dwelled in a geofence: recorded as geofence_entered / geofence_exited / geofence_dwelled</summary>
+        public Task<JsonElement?> PostClientGeofenceEventsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/client/geofence-events", p, ct);
+
         /// <summary>POST /client/in-app-events - Report impressions, clicks and dismissals</summary>
         public Task<JsonElement?> PostClientInAppEventsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/client/in-app-events", p, ct);
+
+        /// <summary>POST /client/in-app-trackers/{id}/events - The component reports an event; the journey waiting on it moves on</summary>
+        public Task<JsonElement?> PostClientInAppTrackersByIdEventsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/client/in-app-trackers/{id}/events", p, ct);
+
+        /// <summary>POST /client/inbox/{id}/delete - Delete an inbox message for the contact</summary>
+        public Task<JsonElement?> PostClientInboxByIdDeleteAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/client/inbox/{id}/delete", p, ct);
+
+        /// <summary>POST /client/inbox/{id}/read - Mark an inbox message read or unread</summary>
+        public Task<JsonElement?> PostClientInboxByIdReadAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/client/inbox/{id}/read", p, ct);
+
+        /// <summary>POST /client/push-live-tokens - The app reports an ActivityKit push-to-start token or a running activity's update token</summary>
+        public Task<JsonElement?> PostClientPushLiveTokensAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/client/push-live-tokens", p, ct);
 
         /// <summary>POST /client/push-tokens - Register a device push token for a profile (iOS, Android, or a web push subscription)</summary>
         public Task<JsonElement?> PostClientPushTokensAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/client/push-tokens", p, ct);
@@ -3629,11 +4484,41 @@ namespace Hermetica
         /// <summary>POST /e/link/{ws}/{kind}/{id} - Email a sign-in link (same reply whether or not the address is known)</summary>
         public Task<JsonElement?> PostELinkByWsByKindByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/e/link/{ws}/{kind}/{id}", p, ct);
 
+        /// <summary>POST /e/s/{ws}/{token} - Submit answers through the anonymous survey link</summary>
+        public Task<JsonElement?> PostESByWsByTokenAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/e/s/{ws}/{token}", p, ct);
+
         /// <summary>POST /e/survey/{ws}/{id} - Submit (or change) survey answers</summary>
         public Task<JsonElement?> PostESurveyByWsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/e/survey/{ws}/{id}", p, ct);
 
         /// <summary>POST /e/v/{poll}/{opt}/{*} - Record a poll vote from an email link (one per reader, changeable)</summary>
         public Task<JsonElement?> PostEVByPollByOptWildcardAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/e/v/{poll}/{opt}/{*}", p, ct);
+
+        /// <summary>POST /hub/{ws}/api/link - Email a hub sign-in link (same reply whether or not the address is known)</summary>
+        public Task<JsonElement?> PostHubByWsApiLinkAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/hub/{ws}/api/link", p, ct);
+
+        /// <summary>POST /hub/{ws}/api/redeem - Spend the shopper's points on a reward. Send your own `key` (8-64 of A-Z a-z 0-9 _ -) per redemption: a retry with the same key spends once</summary>
+        public Task<JsonElement?> PostHubByWsApiRedeemAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/hub/{ws}/api/redeem", p, ct);
+
+        /// <summary>POST /hub/{ws}/api/session - Swap the emailed link token for a 7-day session token</summary>
+        public Task<JsonElement?> PostHubByWsApiSessionAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/hub/{ws}/api/session", p, ct);
+
+        /// <summary>POST /hub/{ws}/api/wishlist</summary>
+        public Task<JsonElement?> PostHubByWsApiWishlistAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/hub/{ws}/api/wishlist", p, ct);
+
+        /// <summary>POST /hub/{ws}/redeem</summary>
+        public Task<JsonElement?> PostHubByWsRedeemAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/hub/{ws}/redeem", p, ct);
+
+        /// <summary>POST /hub/{ws}/signin</summary>
+        public Task<JsonElement?> PostHubByWsSigninAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/hub/{ws}/signin", p, ct);
+
+        /// <summary>POST /hub/{ws}/signout</summary>
+        public Task<JsonElement?> PostHubByWsSignoutAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/hub/{ws}/signout", p, ct);
+
+        /// <summary>POST /hub/{ws}/wishlist</summary>
+        public Task<JsonElement?> PostHubByWsWishlistAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/hub/{ws}/wishlist", p, ct);
+
+        /// <summary>POST /hub/{ws}/wishlist/remove</summary>
+        public Task<JsonElement?> PostHubByWsWishlistRemoveAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/hub/{ws}/wishlist/remove", p, ct);
 
         /// <summary>POST /ingest/v1/back-in-stock - Ask to be notified when a catalog product is back in stock or drops in price</summary>
         public Task<JsonElement?> PostIngestV1BackInStockAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/ingest/v1/back-in-stock", p, ct);
@@ -3653,14 +4538,23 @@ namespace Hermetica
         /// <summary>POST /ingest/v1/reviews - Submit a product review; it stays pending until a moderator publishes it</summary>
         public Task<JsonElement?> PostIngestV1ReviewsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/ingest/v1/reviews", p, ct);
 
+        /// <summary>POST /ingest/v1/reviews/media - Upload one review photo (multipart field "file"; JPEG, PNG, WebP or GIF); send the returned URL in the review's images</summary>
+        public Task<JsonElement?> PostIngestV1ReviewsMediaAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/ingest/v1/reviews/media", p, ct);
+
         /// <summary>POST /ingest/v1/segment - Segment/RudderStack-compatible track, identify, page</summary>
         public Task<JsonElement?> PostIngestV1SegmentAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/ingest/v1/segment", p, ct);
+
+        /// <summary>POST /ingest/v1/site-messages/{id}/shown - The visitor saw a site message (a queued one stops showing)</summary>
+        public Task<JsonElement?> PostIngestV1SiteMessagesByIdShownAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/ingest/v1/site-messages/{id}/shown", p, ct);
 
         /// <summary>POST /ingest/v1/subscribe - Subscribe an email/phone with the consent text the visitor saw</summary>
         public Task<JsonElement?> PostIngestV1SubscribeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/ingest/v1/subscribe", p, ct);
 
         /// <summary>POST /l/c/{*} - Confirm list double opt-in; idempotent</summary>
         public Task<JsonElement?> PostLCWildcardAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/l/c/{*}", p, ct);
+
+        /// <summary>POST /mcp - Hosted MCP server (JSON-RPC over HTTP). Authenticate with a secret key; tools the key's scopes do not cover are hidden and refused.</summary>
+        public Task<JsonElement?> PostMcpAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/mcp", p, ct);
 
         /// <summary>POST /oauth/revoke - RFC 7009 token revocation</summary>
         public Task<JsonElement?> PostOauthRevokeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/oauth/revoke", p, ct);
@@ -3740,6 +4634,9 @@ namespace Hermetica
         /// <summary>POST /scim/v2/Users</summary>
         public Task<JsonElement?> PostScimV2UsersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/scim/v2/Users", p, ct);
 
+        /// <summary>POST /u/resubscribe/{*} - Undo an unsubscribe from the same signed link: records a new opt-in in the consent ledger and lifts only that unsubscribe</summary>
+        public Task<JsonElement?> PostUResubscribeWildcardAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/u/resubscribe/{*}", p, ct);
+
         /// <summary>POST /u/{*} - Unsubscribe (RFC 8058 one-click); idempotent</summary>
         public Task<JsonElement?> PostUWildcardAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/u/{*}", p, ct);
 
@@ -3755,11 +4652,29 @@ namespace Hermetica
         /// <summary>POST /v1/ads/accounts/{id}/conversions/test - Send a test event in the platform's test mode</summary>
         public Task<JsonElement?> PostV1AdsAccountsByIdConversionsTestAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ads/accounts/{id}/conversions/test", p, ct);
 
+        /// <summary>POST /v1/ads/accounts/{id}/objects/refresh - Pull ad objects and insights now</summary>
+        public Task<JsonElement?> PostV1AdsAccountsByIdObjectsRefreshAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ads/accounts/{id}/objects/refresh", p, ct);
+
         /// <summary>POST /v1/ads/audiences - Sync a segment to an ad platform audience; the first run starts at once</summary>
         public Task<JsonElement?> PostV1AdsAudiencesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ads/audiences", p, ct);
 
         /// <summary>POST /v1/ads/audiences/{id}/sync - Sync now</summary>
         public Task<JsonElement?> PostV1AdsAudiencesByIdSyncAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ads/audiences/{id}/sync", p, ct);
+
+        /// <summary>POST /v1/ads/campaigns - Draft a campaign (budget, schedule, targeting, creative); nothing is sent until it is pushed</summary>
+        public Task<JsonElement?> PostV1AdsCampaignsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ads/campaigns", p, ct);
+
+        /// <summary>POST /v1/ads/campaigns/{id}/budget - Change the daily budget and end date</summary>
+        public Task<JsonElement?> PostV1AdsCampaignsByIdBudgetAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ads/campaigns/{id}/budget", p, ct);
+
+        /// <summary>POST /v1/ads/campaigns/{id}/push - Create the campaign on the platform (paused)</summary>
+        public Task<JsonElement?> PostV1AdsCampaignsByIdPushAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ads/campaigns/{id}/push", p, ct);
+
+        /// <summary>POST /v1/ads/campaigns/{id}/status - Activate, pause or archive the campaign on the platform</summary>
+        public Task<JsonElement?> PostV1AdsCampaignsByIdStatusAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ads/campaigns/{id}/status", p, ct);
+
+        /// <summary>POST /v1/ads/lead-syncs - Sync a lead-ad form into a form. Consent is recorded only from the mapped consent checkboxes</summary>
+        public Task<JsonElement?> PostV1AdsLeadSyncsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ads/lead-syncs", p, ct);
 
         /// <summary>POST /v1/ads/oauth/{platform}/start - Start the sign-in: returns the platform authorize URL (state is bound to this workspace and user)</summary>
         public Task<JsonElement?> PostV1AdsOauthByPlatformStartAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ads/oauth/{platform}/start", p, ct);
@@ -3778,6 +4693,9 @@ namespace Hermetica
 
         /// <summary>POST /v1/agency/clients/{workspaceId}/delete - Schedule deletion after a grace period; the client is paused immediately and resume cancels it</summary>
         public Task<JsonElement?> PostV1AgencyClientsByWorkspaceIdDeleteAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/agency/clients/{workspaceId}/delete", p, ct);
+
+        /// <summary>POST /v1/agency/clients/{workspaceId}/handoff - Single-use login link into a client workspace (valid 5 minutes, audited in the client workspace)</summary>
+        public Task<JsonElement?> PostV1AgencyClientsByWorkspaceIdHandoffAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/agency/clients/{workspaceId}/handoff", p, ct);
 
         /// <summary>POST /v1/agency/clients/{workspaceId}/pause - Pause a client workspace: every send request is refused until it is resumed</summary>
         public Task<JsonElement?> PostV1AgencyClientsByWorkspaceIdPauseAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/agency/clients/{workspaceId}/pause", p, ct);
@@ -3809,6 +4727,27 @@ namespace Hermetica
         /// <summary>POST /v1/agency/move-sequence - Hand a sequence or journey to a client: it is copied into the client workspace as a draft, then archived here. Templates, segments and mailb</summary>
         public Task<JsonElement?> PostV1AgencyMoveSequenceAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/agency/move-sequence", p, ct);
 
+        /// <summary>POST /v1/agency/transfer - Copy a segment, list or form from the current workspace into another workspace of the same agency (templates and journeys: /v1/agency/copy-t</summary>
+        public Task<JsonElement?> PostV1AgencyTransferAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/agency/transfer", p, ct);
+
+        /// <summary>POST /v1/ai-agents - Create an agent. It starts switched off and review-only</summary>
+        public Task<JsonElement?> PostV1AiAgentsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ai-agents", p, ct);
+
+        /// <summary>POST /v1/ai-agents/{id}/guidances - Add a guidance rule (at most 10 per agent)</summary>
+        public Task<JsonElement?> PostV1AiAgentsByIdGuidancesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ai-agents/{id}/guidances", p, ct);
+
+        /// <summary>POST /v1/ai-agents/{id}/run - Run the agent now instead of waiting for its next pass. Drafts go to the review feed unless auto-send is on</summary>
+        public Task<JsonElement?> PostV1AiAgentsByIdRunAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ai-agents/{id}/run", p, ct);
+
+        /// <summary>POST /v1/ai-agents/items/bulk-decide</summary>
+        public Task<JsonElement?> PostV1AiAgentsItemsBulkDecideAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ai-agents/items/bulk-decide", p, ct);
+
+        /// <summary>POST /v1/ai-agents/items/bulk-delete - Delete items from the feed; a deleted draft is never sent</summary>
+        public Task<JsonElement?> PostV1AiAgentsItemsBulkDeleteAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ai-agents/items/bulk-delete", p, ct);
+
+        /// <summary>POST /v1/ai-agents/items/{id}/decide - Approve (sends through consent and suppression; a blocked recipient ends as blocked) or reject (nothing is sent)</summary>
+        public Task<JsonElement?> PostV1AiAgentsItemsByIdDecideAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ai-agents/items/{id}/decide", p, ct);
+
         /// <summary>POST /v1/ai/body-from-brief</summary>
         public Task<JsonElement?> PostV1AiBodyFromBriefAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ai/body-from-brief", p, ct);
 
@@ -3820,6 +4759,9 @@ namespace Hermetica
 
         /// <summary>POST /v1/ai/first-line</summary>
         public Task<JsonElement?> PostV1AiFirstLineAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ai/first-line", p, ct);
+
+        /// <summary>POST /v1/ai/flow-builds/{id}/saved - Record which flow a build was saved as (the flow itself is created through /v1/workflows)</summary>
+        public Task<JsonElement?> PostV1AiFlowBuildsByIdSavedAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ai/flow-builds/{id}/saved", p, ct);
 
         /// <summary>POST /v1/ai/flow-edit - Propose a changed version of a flow from a plain-words instruction; validated, never saved (the editor saves it as a draft after the user ac</summary>
         public Task<JsonElement?> PostV1AiFlowEditAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ai/flow-edit", p, ct);
@@ -3881,6 +4823,9 @@ namespace Hermetica
         /// <summary>POST /v1/analytics/dashboards/{id}/clone - Copy a dashboard with its widgets</summary>
         public Task<JsonElement?> PostV1AnalyticsDashboardsByIdCloneAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/analytics/dashboards/{id}/clone", p, ct);
 
+        /// <summary>POST /v1/analytics/dashboards/import - Create a dashboard and its reports from an exported definition</summary>
+        public Task<JsonElement?> PostV1AnalyticsDashboardsImportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/analytics/dashboards/import", p, ct);
+
         /// <summary>POST /v1/analytics/dashboards/owners/batch/update - Reassign dashboards to another member (null = unassigned)</summary>
         public Task<JsonElement?> PostV1AnalyticsDashboardsOwnersBatchUpdateAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/analytics/dashboards/owners/batch/update", p, ct);
 
@@ -3889,6 +4834,9 @@ namespace Hermetica
 
         /// <summary>POST /v1/analytics/predictions/run - Refit the BG/NBD + Gamma-Gamma model (kept only if it beats the naive baseline on a holdout) and rescore every customer now; scores also ref</summary>
         public Task<JsonElement?> PostV1AnalyticsPredictionsRunAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/analytics/predictions/run", p, ct);
+
+        /// <summary>POST /v1/analytics/records/run - Run a record-source report without saving it: pick columns, filter, order and limit</summary>
+        public Task<JsonElement?> PostV1AnalyticsRecordsRunAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/analytics/records/run", p, ct);
 
         /// <summary>POST /v1/analytics/reports</summary>
         public Task<JsonElement?> PostV1AnalyticsReportsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/analytics/reports", p, ct);
@@ -3914,7 +4862,7 @@ namespace Hermetica
         /// <summary>POST /v1/asset-folders</summary>
         public Task<JsonElement?> PostV1AssetFoldersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/asset-folders", p, ct);
 
-        /// <summary>POST /v1/assets - Upload a file (multipart field "file"): PNG, JPEG, GIF, WebP up to 5 MB; PDF and MP4 up to 25 MB</summary>
+        /// <summary>POST /v1/assets - Upload a file (multipart field "file", optional fields folderId, filename, access first). Images up to 5 MB; other allowed types (Settings &gt;</summary>
         public Task<JsonElement?> PostV1AssetsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/assets", p, ct);
 
         /// <summary>POST /v1/assets/{id}/gdpr-delete - Erase an asset for a data-protection request: the stored file and its thumbnail are deleted at once with no trash. Copies in the storage hos</summary>
@@ -3935,6 +4883,12 @@ namespace Hermetica
         /// <summary>POST /v1/assets/uploads/{id}/complete - Assemble the chunks into a library asset (same checks and limits as a normal upload)</summary>
         public Task<JsonElement?> PostV1AssetsUploadsByIdCompleteAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/assets/uploads/{id}/complete", p, ct);
 
+        /// <summary>POST /v1/association-labels</summary>
+        public Task<JsonElement?> PostV1AssociationLabelsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/association-labels", p, ct);
+
+        /// <summary>POST /v1/associations/batch - Up to 100 associations in one call; any failure rolls back all</summary>
+        public Task<JsonElement?> PostV1AssociationsBatchAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/associations/batch", p, ct);
+
         /// <summary>POST /v1/attributes/computed</summary>
         public Task<JsonElement?> PostV1AttributesComputedAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/attributes/computed", p, ct);
 
@@ -3953,6 +4907,9 @@ namespace Hermetica
         /// <summary>POST /v1/attributes/fields/{key}/type-check - Dry run of a field type change: how many stored profile values fit the new type, with examples of those that do not</summary>
         public Task<JsonElement?> PostV1AttributesFieldsByKeyTypeCheckAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/attributes/fields/{key}/type-check", p, ct);
 
+        /// <summary>POST /v1/auth/handoff - Redeem a single-use agency hand-off token: opens the client workspace in a session bound to it</summary>
+        public Task<JsonElement?> PostV1AuthHandoffAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/auth/handoff", p, ct);
+
         /// <summary>POST /v1/auth/login</summary>
         public Task<JsonElement?> PostV1AuthLoginAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/auth/login", p, ct);
 
@@ -3968,7 +4925,13 @@ namespace Hermetica
         /// <summary>POST /v1/auth/signup</summary>
         public Task<JsonElement?> PostV1AuthSignupAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/auth/signup", p, ct);
 
-        /// <summary>POST /v1/batches - Run up to 50 API calls in one request, in order, each with your own credentials and permissions (not atomic)</summary>
+        /// <summary>POST /v1/auth/verify-email - Confirm an email address with the link token</summary>
+        public Task<JsonElement?> PostV1AuthVerifyEmailAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/auth/verify-email", p, ct);
+
+        /// <summary>POST /v1/auth/waitlist - Join the waitlist while sign-up is invitation-only</summary>
+        public Task<JsonElement?> PostV1AuthWaitlistAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/auth/waitlist", p, ct);
+
+        /// <summary>POST /v1/batches - Queue up to 1,000 API calls; they run in order in the background (not atomic). Poll the batch or subscribe to batch.finished</summary>
         public Task<JsonElement?> PostV1BatchesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/batches", p, ct);
 
         /// <summary>POST /v1/billing/checkout</summary>
@@ -4010,6 +4973,12 @@ namespace Hermetica
         /// <summary>POST /v1/business-goals/batch/restore</summary>
         public Task<JsonElement?> PostV1BusinessGoalsBatchRestoreAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/business-goals/batch/restore", p, ct);
 
+        /// <summary>POST /v1/calendar-feeds - Create a feed; the response holds the only copy of its subscription URL</summary>
+        public Task<JsonElement?> PostV1CalendarFeedsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/calendar-feeds", p, ct);
+
+        /// <summary>POST /v1/calendar-feeds/{id}/rotate - New subscription URL; the old one stops working</summary>
+        public Task<JsonElement?> PostV1CalendarFeedsByIdRotateAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/calendar-feeds/{id}/rotate", p, ct);
+
         /// <summary>POST /v1/calendar/mine - Add an entry to my calendar</summary>
         public Task<JsonElement?> PostV1CalendarMineAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/calendar/mine", p, ct);
 
@@ -4025,11 +4994,23 @@ namespace Hermetica
         /// <summary>POST /v1/campaigns/bulk-delete - Soft-delete many drafts; non-drafts are skipped with a reason</summary>
         public Task<JsonElement?> PostV1CampaignsBulkDeleteAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/bulk-delete", p, ct);
 
+        /// <summary>POST /v1/campaigns/bulk-update - Move, re-own, archive or tag many campaigns; each one that cannot change is reported</summary>
+        public Task<JsonElement?> PostV1CampaignsBulkUpdateAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/bulk-update", p, ct);
+
         /// <summary>POST /v1/campaigns/{id}/ab-rollout</summary>
         public Task<JsonElement?> PostV1CampaignsByIdAbRolloutAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/{id}/ab-rollout", p, ct);
 
         /// <summary>POST /v1/campaigns/{id}/ai-summary - A plain-language summary of the campaign report, written from its own figures only. Needs AI assist switched on; sends the figures (no recip</summary>
         public Task<JsonElement?> PostV1CampaignsByIdAiSummaryAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/{id}/ai-summary", p, ct);
+
+        /// <summary>POST /v1/campaigns/{id}/archive</summary>
+        public Task<JsonElement?> PostV1CampaignsByIdArchiveAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/{id}/archive", p, ct);
+
+        /// <summary>POST /v1/campaigns/{id}/audiences</summary>
+        public Task<JsonElement?> PostV1CampaignsByIdAudiencesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/{id}/audiences", p, ct);
+
+        /// <summary>POST /v1/campaigns/{id}/audiences/{audienceId}/clone</summary>
+        public Task<JsonElement?> PostV1CampaignsByIdAudiencesByAudienceIdCloneAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/{id}/audiences/{audienceId}/clone", p, ct);
 
         /// <summary>POST /v1/campaigns/{id}/cancel</summary>
         public Task<JsonElement?> PostV1CampaignsByIdCancelAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/{id}/cancel", p, ct);
@@ -4043,6 +5024,9 @@ namespace Hermetica
         /// <summary>POST /v1/campaigns/{id}/draft/reset - Discard the latest edit: restore the newest kept revision (draft only; the current content is kept as a revision, so this can be undone)</summary>
         public Task<JsonElement?> PostV1CampaignsByIdDraftResetAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/{id}/draft/reset", p, ct);
 
+        /// <summary>POST /v1/campaigns/{id}/drafts/decide - Approve (send) or reject the selected drafts</summary>
+        public Task<JsonElement?> PostV1CampaignsByIdDraftsDecideAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/{id}/drafts/decide", p, ct);
+
         /// <summary>POST /v1/campaigns/{id}/feedback</summary>
         public Task<JsonElement?> PostV1CampaignsByIdFeedbackAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/{id}/feedback", p, ct);
 
@@ -4054,6 +5038,9 @@ namespace Hermetica
 
         /// <summary>POST /v1/campaigns/{id}/pause</summary>
         public Task<JsonElement?> PostV1CampaignsByIdPauseAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/{id}/pause", p, ct);
+
+        /// <summary>POST /v1/campaigns/{id}/postcard/proof - Render both sides for one contact (or sample data) and show the address it would go to</summary>
+        public Task<JsonElement?> PostV1CampaignsByIdPostcardProofAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/{id}/postcard/proof", p, ct);
 
         /// <summary>POST /v1/campaigns/{id}/recipient-estimations</summary>
         public Task<JsonElement?> PostV1CampaignsByIdRecipientEstimationsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/{id}/recipient-estimations", p, ct);
@@ -4094,8 +5081,14 @@ namespace Hermetica
         /// <summary>POST /v1/campaigns/{id}/triggers/{triggerId}/cancel</summary>
         public Task<JsonElement?> PostV1CampaignsByIdTriggersByTriggerIdCancelAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/{id}/triggers/{triggerId}/cancel", p, ct);
 
+        /// <summary>POST /v1/campaigns/{id}/unarchive</summary>
+        public Task<JsonElement?> PostV1CampaignsByIdUnarchiveAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/{id}/unarchive", p, ct);
+
         /// <summary>POST /v1/campaigns/{id}/unschedule</summary>
         public Task<JsonElement?> PostV1CampaignsByIdUnscheduleAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/{id}/unschedule", p, ct);
+
+        /// <summary>POST /v1/campaigns/{id}/variants/grid - Multivariate test: one variant per combination of templates, subjects, from names and preview texts</summary>
+        public Task<JsonElement?> PostV1CampaignsByIdVariantsGridAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/{id}/variants/grid", p, ct);
 
         /// <summary>POST /v1/campaigns/query - Filter campaigns with a typed where / orderBy / limit / offset (fields are an allowlist; read "fields" in the result)</summary>
         public Task<JsonElement?> PostV1CampaignsQueryAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/campaigns/query", p, ct);
@@ -4124,14 +5117,20 @@ namespace Hermetica
         /// <summary>POST /v1/catalog/items/{id}/variants</summary>
         public Task<JsonElement?> PostV1CatalogItemsByIdVariantsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/catalog/items/{id}/variants", p, ct);
 
-        /// <summary>POST /v1/catalog/subscriptions - Notify a profile (catalog.back_in_stock / catalog.price_drop event) when the product changes</summary>
+        /// <summary>POST /v1/catalog/subscriptions - Notify a profile (by id, email or phone; one variant or the whole product; by email, SMS or push) when the product is back in stock or drops</summary>
         public Task<JsonElement?> PostV1CatalogSubscriptionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/catalog/subscriptions", p, ct);
+
+        /// <summary>POST /v1/client-previews/{externalId} - Poll the preview service for a run and save its latest result</summary>
+        public Task<JsonElement?> PostV1ClientPreviewsByExternalIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/client-previews/{externalId}", p, ct);
 
         /// <summary>POST /v1/collections</summary>
         public Task<JsonElement?> PostV1CollectionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/collections", p, ct);
 
         /// <summary>POST /v1/commerce/activate - Turn ecommerce on: creates the first store if the workspace has none (safe to repeat)</summary>
         public Task<JsonElement?> PostV1CommerceActivateAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/commerce/activate", p, ct);
+
+        /// <summary>POST /v1/commerce/orders/{id}/ai-summary - A plain-language status of one order (payment, fulfilment, refunds, contents). Needs AI assist switched on; the shipping address and links n</summary>
+        public Task<JsonElement?> PostV1CommerceOrdersByIdAiSummaryAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/commerce/orders/{id}/ai-summary", p, ct);
 
         /// <summary>POST /v1/commerce/stores</summary>
         public Task<JsonElement?> PostV1CommerceStoresAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/commerce/stores", p, ct);
@@ -4157,8 +5156,14 @@ namespace Hermetica
         /// <summary>POST /v1/commerce/stores/{storeId}/orders/{id}/lines</summary>
         public Task<JsonElement?> PostV1CommerceStoresByStoreIdOrdersByIdLinesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/commerce/stores/{storeId}/orders/{id}/lines", p, ct);
 
+        /// <summary>POST /v1/commerce/stores/{storeId}/products - Add a product to this store under its store id</summary>
+        public Task<JsonElement?> PostV1CommerceStoresByStoreIdProductsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/commerce/stores/{storeId}/products", p, ct);
+
         /// <summary>POST /v1/commerce/stores/{storeId}/products/{productId}/images</summary>
         public Task<JsonElement?> PostV1CommerceStoresByStoreIdProductsByProductIdImagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/commerce/stores/{storeId}/products/{productId}/images", p, ct);
+
+        /// <summary>POST /v1/commerce/stores/{storeId}/products/{productId}/variants - Add a variant to a store product under its store id</summary>
+        public Task<JsonElement?> PostV1CommerceStoresByStoreIdProductsByProductIdVariantsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/commerce/stores/{storeId}/products/{productId}/variants", p, ct);
 
         /// <summary>POST /v1/connections</summary>
         public Task<JsonElement?> PostV1ConnectionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/connections", p, ct);
@@ -4244,6 +5249,18 @@ namespace Hermetica
         /// <summary>POST /v1/deliverability/placement-tests/{id}/stop</summary>
         public Task<JsonElement?> PostV1DeliverabilityPlacementTestsByIdStopAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/deliverability/placement-tests/{id}/stop", p, ct);
 
+        /// <summary>POST /v1/deliverability/recommendations/{id}/complete</summary>
+        public Task<JsonElement?> PostV1DeliverabilityRecommendationsByIdCompleteAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/deliverability/recommendations/{id}/complete", p, ct);
+
+        /// <summary>POST /v1/deliverability/recommendations/{id}/dismiss</summary>
+        public Task<JsonElement?> PostV1DeliverabilityRecommendationsByIdDismissAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/deliverability/recommendations/{id}/dismiss", p, ct);
+
+        /// <summary>POST /v1/deliverability/recommendations/{id}/pause-14-days - Pause sending from the affected mailboxes for 14 days; they resume on their own. Repeating it keeps the first resume date</summary>
+        public Task<JsonElement?> PostV1DeliverabilityRecommendationsByIdPause14DaysAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/deliverability/recommendations/{id}/pause-14-days", p, ct);
+
+        /// <summary>POST /v1/deliverability/recommendations/{id}/pause-mailboxes - Pause the mailboxes on the affected domain until you resume them. Repeating it changes nothing</summary>
+        public Task<JsonElement?> PostV1DeliverabilityRecommendationsByIdPauseMailboxesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/deliverability/recommendations/{id}/pause-mailboxes", p, ct);
+
         /// <summary>POST /v1/deliverability/rules</summary>
         public Task<JsonElement?> PostV1DeliverabilityRulesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/deliverability/rules", p, ct);
 
@@ -4253,14 +5270,50 @@ namespace Hermetica
         /// <summary>POST /v1/deliverability/sources</summary>
         public Task<JsonElement?> PostV1DeliverabilitySourcesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/deliverability/sources", p, ct);
 
-        /// <summary>POST /v1/deliverability/spam-report - Spam test of a draft: score by section (subject, wording, links, formatting) with a fix per finding</summary>
+        /// <summary>POST /v1/deliverability/spam-report - Spam test of a draft: score by section (subject, wording, links, formatting) with a fix per finding. Uses the operator's SpamAssassin (SPAMD</summary>
         public Task<JsonElement?> PostV1DeliverabilitySpamReportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/deliverability/spam-report", p, ct);
+
+        /// <summary>POST /v1/destinations - Add a destination; profiles that opted out of tracking are never forwarded</summary>
+        public Task<JsonElement?> PostV1DestinationsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/destinations", p, ct);
+
+        /// <summary>POST /v1/destinations/{id}/test - Send one test event to the destination</summary>
+        public Task<JsonElement?> PostV1DestinationsByIdTestAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/destinations/{id}/test", p, ct);
+
+        /// <summary>POST /v1/do-not-contact - Add do-not-contact values; phones block SMS and WhatsApp, LinkedIn URLs block LinkedIn outreach</summary>
+        public Task<JsonElement?> PostV1DoNotContactAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/do-not-contact", p, ct);
 
         /// <summary>POST /v1/eligibility/check - Debug: would this send be allowed?</summary>
         public Task<JsonElement?> PostV1EligibilityCheckAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/eligibility/check", p, ct);
 
+        /// <summary>POST /v1/embed-api/{token}/ai/brief</summary>
+        public Task<JsonElement?> PostV1EmbedApiByTokenAiBriefAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/embed-api/{token}/ai/brief", p, ct);
+
+        /// <summary>POST /v1/embed-api/{token}/ai/rewrite</summary>
+        public Task<JsonElement?> PostV1EmbedApiByTokenAiRewriteAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/embed-api/{token}/ai/rewrite", p, ct);
+
+        /// <summary>POST /v1/embed-api/{token}/ai/subjects</summary>
+        public Task<JsonElement?> PostV1EmbedApiByTokenAiSubjectsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/embed-api/{token}/ai/subjects", p, ct);
+
+        /// <summary>POST /v1/embed-api/{token}/ai/translate</summary>
+        public Task<JsonElement?> PostV1EmbedApiByTokenAiTranslateAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/embed-api/{token}/ai/translate", p, ct);
+
+        /// <summary>POST /v1/embed-api/{token}/journey/publish - Publish the saved draft as a new version; body.inFlight chooses stay / migrate / exit for enrollments already inside</summary>
+        public Task<JsonElement?> PostV1EmbedApiByTokenJourneyPublishAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/embed-api/{token}/journey/publish", p, ct);
+
+        /// <summary>POST /v1/embed-api/{token}/journey/simulate - Dry-run the journey (or an unsaved definition) for sample profiles; nothing is sent or stored</summary>
+        public Task<JsonElement?> PostV1EmbedApiByTokenJourneySimulateAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/embed-api/{token}/journey/simulate", p, ct);
+
+        /// <summary>POST /v1/embed-api/{token}/template/test-send - Send the template's current version to one of the workspace's seed lists (normal routing, consent and suppression apply)</summary>
+        public Task<JsonElement?> PostV1EmbedApiByTokenTemplateTestSendAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/embed-api/{token}/template/test-send", p, ct);
+
+        /// <summary>POST /v1/embed-api/{token}/template/versions</summary>
+        public Task<JsonElement?> PostV1EmbedApiByTokenTemplateVersionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/embed-api/{token}/template/versions", p, ct);
+
         /// <summary>POST /v1/embeds - Signed, expiring link to embed a read-only segment or journey view in another site (only the given origin may frame it)</summary>
         public Task<JsonElement?> PostV1EmbedsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/embeds", p, ct);
+
+        /// <summary>POST /v1/embeds/editors - Signed, expiring link that embeds the template editor, the journey editor or the deliveries table in another site (only the given origin may</summary>
+        public Task<JsonElement?> PostV1EmbedsEditorsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/embeds/editors", p, ct);
 
         /// <summary>POST /v1/event-definitions - Declare an event (and optionally its properties) before it is first sent</summary>
         public Task<JsonElement?> PostV1EventDefinitionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/event-definitions", p, ct);
@@ -4277,17 +5330,26 @@ namespace Hermetica
         /// <summary>POST /v1/events/batch/items - Same as /v1/events/batch, plus a status for every submitted event by position (a duplicate counts as stored: it was already there)</summary>
         public Task<JsonElement?> PostV1EventsBatchItemsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/events/batch/items", p, ct);
 
+        /// <summary>POST /v1/events/export-jobs - Every event matching the GET /v1/events filters as a CSV file, prepared in the background (poll GET /v1/exports/:id for the download link)</summary>
+        public Task<JsonElement?> PostV1EventsExportJobsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/events/export-jobs", p, ct);
+
         /// <summary>POST /v1/experiments</summary>
         public Task<JsonElement?> PostV1ExperimentsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/experiments", p, ct);
 
         /// <summary>POST /v1/experiments/{id}/conclude</summary>
         public Task<JsonElement?> PostV1ExperimentsByIdConcludeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/experiments/{id}/conclude", p, ct);
 
-        /// <summary>POST /v1/exports - Export a segment, a list or all profiles to CSV; poll GET /v1/exports/:id for the signed download URL</summary>
+        /// <summary>POST /v1/exports - Export a segment, a list or all profiles to CSV, NDJSON or XLSX, with chosen columns (`attributes.&lt;key&gt;` for a custom property); poll GET /v</summary>
         public Task<JsonElement?> PostV1ExportsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/exports", p, ct);
 
         /// <summary>POST /v1/exports/activity - CSV export of the profile activity timeline (poll GET /v1/exports/:id)</summary>
         public Task<JsonElement?> PostV1ExportsActivityAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/exports/activity", p, ct);
+
+        /// <summary>POST /v1/exports/clicks - Every human link click with its message and URL, as CSV (poll GET /v1/exports/:id)</summary>
+        public Task<JsonElement?> PostV1ExportsClicksAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/exports/clicks", p, ct);
+
+        /// <summary>POST /v1/exports/message-events - Every message event (delivered, open, click, bounce ...) with its message, as CSV (poll GET /v1/exports/:id)</summary>
+        public Task<JsonElement?> PostV1ExportsMessageEventsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/exports/message-events", p, ct);
 
         /// <summary>POST /v1/exports/suppressions - CSV export of suppressions (rejects)</summary>
         public Task<JsonElement?> PostV1ExportsSuppressionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/exports/suppressions", p, ct);
@@ -4328,6 +5390,12 @@ namespace Hermetica
         /// <summary>POST /v1/hooks/subscribe - Subscribe a Zapier/Make REST hook to a trigger</summary>
         public Task<JsonElement?> PostV1HooksSubscribeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/hooks/subscribe", p, ct);
 
+        /// <summary>POST /v1/identifier-blocks/check - Whether an email, phone or external id is blocked</summary>
+        public Task<JsonElement?> PostV1IdentifierBlocksCheckAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/identifier-blocks/check", p, ct);
+
+        /// <summary>POST /v1/identifier-blocks/unblock - Allow a blocked identifier to be added again (admin; suppressions stay)</summary>
+        public Task<JsonElement?> PostV1IdentifierBlocksUnblockAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/identifier-blocks/unblock", p, ct);
+
         /// <summary>POST /v1/identify</summary>
         public Task<JsonElement?> PostV1IdentifyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/identify", p, ct);
 
@@ -4367,8 +5435,17 @@ namespace Hermetica
         /// <summary>POST /v1/imports/json - Bulk-import up to 10,000 profiles as JSON: runs as an import job (poll GET /v1/imports/:id, then /errors and /profiles)</summary>
         public Task<JsonElement?> PostV1ImportsJsonAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/imports/json", p, ct);
 
+        /// <summary>POST /v1/imports/url - One-off import of a CSV at an https URL: events, object records or relationships (poll GET /v1/jobs)</summary>
+        public Task<JsonElement?> PostV1ImportsUrlAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/imports/url", p, ct);
+
+        /// <summary>POST /v1/in-app-components - Define a component the app renders natively (its fields and the events it reports)</summary>
+        public Task<JsonElement?> PostV1InAppComponentsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/in-app-components", p, ct);
+
         /// <summary>POST /v1/in-app-messages - Create an in-app message (draft)</summary>
         public Task<JsonElement?> PostV1InAppMessagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/in-app-messages", p, ct);
+
+        /// <summary>POST /v1/in-app-messages/{id}/send - Hold a live in-app message for one contact (shown on their next visit). Needs an idempotency key</summary>
+        public Task<JsonElement?> PostV1InAppMessagesByIdSendAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/in-app-messages/{id}/send", p, ct);
 
         /// <summary>POST /v1/inbound/domains - Add an inbound domain; point its MX at expectedMx, then call /check</summary>
         public Task<JsonElement?> PostV1InboundDomainsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/inbound/domains", p, ct);
@@ -4382,8 +5459,17 @@ namespace Hermetica
         /// <summary>POST /v1/inbound/simulate - Run a fake inbound mail through the domain's routes (queues the webhook deliveries)</summary>
         public Task<JsonElement?> PostV1InboundSimulateAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/inbound/simulate", p, ct);
 
+        /// <summary>POST /v1/inbox-messages - Send a transactional message into a contact's in-app inbox. Needs an idempotency key</summary>
+        public Task<JsonElement?> PostV1InboxMessagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/inbox-messages", p, ct);
+
         /// <summary>POST /v1/integrations/connections</summary>
         public Task<JsonElement?> PostV1IntegrationsConnectionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/integrations/connections", p, ct);
+
+        /// <summary>POST /v1/integrations/connections/{id}/crm/imports - Import (or re-import) the members of a CRM source; no consent is granted by importing</summary>
+        public Task<JsonElement?> PostV1IntegrationsConnectionsByIdCrmImportsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/integrations/connections/{id}/crm/imports", p, ct);
+
+        /// <summary>POST /v1/integrations/connections/{id}/crm/users/refresh - Read the CRM users and match new ones to members by email</summary>
+        public Task<JsonElement?> PostV1IntegrationsConnectionsByIdCrmUsersRefreshAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/integrations/connections/{id}/crm/users/refresh", p, ct);
 
         /// <summary>POST /v1/integrations/connections/{id}/declarative/rotate-webhook-secret - Generate a new webhook secret; the new value is returned once and the old one stops working</summary>
         public Task<JsonElement?> PostV1IntegrationsConnectionsByIdDeclarativeRotateWebhookSecretAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/integrations/connections/{id}/declarative/rotate-webhook-secret", p, ct);
@@ -4412,8 +5498,17 @@ namespace Hermetica
         /// <summary>POST /v1/integrations/declarative/connect - Connect a catalog connector from its manifest fields; OAuth connectors return the authorize URL</summary>
         public Task<JsonElement?> PostV1IntegrationsDeclarativeConnectAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/integrations/declarative/connect", p, ct);
 
+        /// <summary>POST /v1/integrations/google/start - Start a Google sign-in that saves a Sheets grant under the named secret; the access token is refreshed automatically</summary>
+        public Task<JsonElement?> PostV1IntegrationsGoogleStartAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/integrations/google/start", p, ct);
+
         /// <summary>POST /v1/integrations/hubspot/install - Start the HubSpot OAuth install: creates the (disabled) connection and returns the authorize URL</summary>
         public Task<JsonElement?> PostV1IntegrationsHubspotInstallAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/integrations/hubspot/install", p, ct);
+
+        /// <summary>POST /v1/integrations/packages - Install one catalogue package version; unsigned, mis-signed or unreviewed packages are refused</summary>
+        public Task<JsonElement?> PostV1IntegrationsPackagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/integrations/packages", p, ct);
+
+        /// <summary>POST /v1/integrations/packages/{packageId}/upgrade - Move an installed package (and every connection using it) to another verified version</summary>
+        public Task<JsonElement?> PostV1IntegrationsPackagesByPackageIdUpgradeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/integrations/packages/{packageId}/upgrade", p, ct);
 
         /// <summary>POST /v1/integrations/warehouse/rows - Reverse-ETL: upsert profiles and events from warehouse rows</summary>
         public Task<JsonElement?> PostV1IntegrationsWarehouseRowsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/integrations/warehouse/rows", p, ct);
@@ -4424,6 +5519,12 @@ namespace Hermetica
         /// <summary>POST /v1/invitations/{id}/resend - Reissue the invitation link (the old one stops working); the token is returned once</summary>
         public Task<JsonElement?> PostV1InvitationsByIdResendAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/invitations/{id}/resend", p, ct);
 
+        /// <summary>POST /v1/invitations/decline - Decline an invitation (the link stops working)</summary>
+        public Task<JsonElement?> PostV1InvitationsDeclineAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/invitations/decline", p, ct);
+
+        /// <summary>POST /v1/landing-page-clusters - Group a pillar page and its supporting pages; missing links between them are listed</summary>
+        public Task<JsonElement?> PostV1LandingPageClustersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/landing-page-clusters", p, ct);
+
         /// <summary>POST /v1/landing-page-folders</summary>
         public Task<JsonElement?> PostV1LandingPageFoldersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/landing-page-folders", p, ct);
 
@@ -4433,7 +5534,7 @@ namespace Hermetica
         /// <summary>POST /v1/landing-page-folders/{id}/revisions/{revisionId}/restore</summary>
         public Task<JsonElement?> PostV1LandingPageFoldersByIdRevisionsByRevisionIdRestoreAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/landing-page-folders/{id}/revisions/{revisionId}/restore", p, ct);
 
-        /// <summary>POST /v1/landing-pages</summary>
+        /// <summary>POST /v1/landing-pages - Create a page; `template_id` starts it from a preset when `doc` is left out</summary>
         public Task<JsonElement?> PostV1LandingPagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/landing-pages", p, ct);
 
         /// <summary>POST /v1/landing-pages/batch - create | read | update | archive (delete) up to 50 pages in one transaction</summary>
@@ -4447,6 +5548,9 @@ namespace Hermetica
 
         /// <summary>POST /v1/landing-pages/{id}/ab/variants - Add a copy as a new arm (even split); publish it to start serving</summary>
         public Task<JsonElement?> PostV1LandingPagesByIdAbVariantsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/landing-pages/{id}/ab/variants", p, ct);
+
+        /// <summary>POST /v1/landing-pages/{id}/archive - Hide the page from the list and stop serving it</summary>
+        public Task<JsonElement?> PostV1LandingPagesByIdArchiveAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/landing-pages/{id}/archive", p, ct);
 
         /// <summary>POST /v1/landing-pages/{id}/clone</summary>
         public Task<JsonElement?> PostV1LandingPagesByIdCloneAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/landing-pages/{id}/clone", p, ct);
@@ -4472,6 +5576,9 @@ namespace Hermetica
         /// <summary>POST /v1/landing-pages/{id}/schedule - Publish the draft at a future time</summary>
         public Task<JsonElement?> PostV1LandingPagesByIdScheduleAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/landing-pages/{id}/schedule", p, ct);
 
+        /// <summary>POST /v1/landing-pages/{id}/unarchive</summary>
+        public Task<JsonElement?> PostV1LandingPagesByIdUnarchiveAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/landing-pages/{id}/unarchive", p, ct);
+
         /// <summary>POST /v1/landing-pages/{id}/unpublish</summary>
         public Task<JsonElement?> PostV1LandingPagesByIdUnpublishAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/landing-pages/{id}/unpublish", p, ct);
 
@@ -4481,7 +5588,25 @@ namespace Hermetica
         /// <summary>POST /v1/leads/companies</summary>
         public Task<JsonElement?> PostV1LeadsCompaniesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/leads/companies", p, ct);
 
-        /// <summary>POST /v1/leads/companies/{id}/link</summary>
+        /// <summary>POST /v1/leads/companies/batch - Create, edit, delete and link companies in one call (up to 500 operations); failures are reported per item</summary>
+        public Task<JsonElement?> PostV1LeadsCompaniesBatchAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/leads/companies/batch", p, ct);
+
+        /// <summary>POST /v1/leads/companies/bulk-delete - Delete up to 500 companies; do-not-contact blocks on their domains stay</summary>
+        public Task<JsonElement?> PostV1LeadsCompaniesBulkDeleteAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/leads/companies/bulk-delete", p, ct);
+
+        /// <summary>POST /v1/leads/companies/{id}/contacts - Link several contacts at once, with optional link fields</summary>
+        public Task<JsonElement?> PostV1LeadsCompaniesByIdContactsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/leads/companies/{id}/contacts", p, ct);
+
+        /// <summary>POST /v1/leads/companies/{id}/crm/connect - Find the company in the CRM and link it without creating anything; empty fields and the owner are filled from the CRM</summary>
+        public Task<JsonElement?> PostV1LeadsCompaniesByIdCrmConnectAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/leads/companies/{id}/crm/connect", p, ct);
+
+        /// <summary>POST /v1/leads/companies/{id}/crm/push - Create or update the company in the CRM (found by link, domain or name) and associate its contacts already in the CRM</summary>
+        public Task<JsonElement?> PostV1LeadsCompaniesByIdCrmPushAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/leads/companies/{id}/crm/push", p, ct);
+
+        /// <summary>POST /v1/leads/companies/{id}/files - Upload a file (multipart field "file": PDF, image, text, CSV, Office or ZIP, up to 25 MB)</summary>
+        public Task<JsonElement?> PostV1LeadsCompaniesByIdFilesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/leads/companies/{id}/files", p, ct);
+
+        /// <summary>POST /v1/leads/companies/{id}/link - Link a contact (or change its link: primary flag, job title, role). A contact can be linked to several companies; one is primary</summary>
         public Task<JsonElement?> PostV1LeadsCompaniesByIdLinkAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/leads/companies/{id}/link", p, ct);
 
         /// <summary>POST /v1/leads/companies/{id}/merge - Merge duplicate companies into this one (contacts, notes and list memberships move; suppressions are untouched)</summary>
@@ -4489,6 +5614,9 @@ namespace Hermetica
 
         /// <summary>POST /v1/leads/companies/{id}/notes</summary>
         public Task<JsonElement?> PostV1LeadsCompaniesByIdNotesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/leads/companies/{id}/notes", p, ct);
+
+        /// <summary>POST /v1/leads/companies/{id}/score - Add (or with a negative delta, take) account score points</summary>
+        public Task<JsonElement?> PostV1LeadsCompaniesByIdScoreAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/leads/companies/{id}/score", p, ct);
 
         /// <summary>POST /v1/leads/companies/{id}/source-contacts - Find contacts at an account. With no titles given, the AI assistant proposes the buyer titles first</summary>
         public Task<JsonElement?> PostV1LeadsCompaniesByIdSourceContactsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/leads/companies/{id}/source-contacts", p, ct);
@@ -4502,11 +5630,17 @@ namespace Hermetica
         /// <summary>POST /v1/leads/companies/import - Create or update up to 1000 companies by domain; a company that already exists is kept as it is, a bad domain is reported by row</summary>
         public Task<JsonElement?> PostV1LeadsCompaniesImportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/leads/companies/import", p, ct);
 
+        /// <summary>POST /v1/leads/companies/import-mapped - Import parsed CSV rows with a column mapping (built-in and custom company fields); existing domains are skipped or updated</summary>
+        public Task<JsonElement?> PostV1LeadsCompaniesImportMappedAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/leads/companies/import-mapped", p, ct);
+
         /// <summary>POST /v1/leads/companies/query - Filter companies with a typed where / orderBy / limit / offset (fields are an allowlist; read "fields" in the result)</summary>
         public Task<JsonElement?> PostV1LeadsCompaniesQueryAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/leads/companies/query", p, ct);
 
         /// <summary>POST /v1/leads/companies/unify-accounts - Fold outbound accounts into lead companies by domain, keeping their status, owner and website</summary>
         public Task<JsonElement?> PostV1LeadsCompaniesUnifyAccountsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/leads/companies/unify-accounts", p, ct);
+
+        /// <summary>POST /v1/leads/company-fields</summary>
+        public Task<JsonElement?> PostV1LeadsCompanyFieldsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/leads/company-fields", p, ct);
 
         /// <summary>POST /v1/leads/company-lists</summary>
         public Task<JsonElement?> PostV1LeadsCompanyListsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/leads/company-lists", p, ct);
@@ -4601,6 +5735,39 @@ namespace Hermetica
         /// <summary>POST /v1/lists/{id}/restore - Undo a list delete; members come back with it</summary>
         public Task<JsonElement?> PostV1ListsByIdRestoreAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/lists/{id}/restore", p, ct);
 
+        /// <summary>POST /v1/looker/data</summary>
+        public Task<JsonElement?> PostV1LookerDataAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/looker/data", p, ct);
+
+        /// <summary>POST /v1/looker/schema</summary>
+        public Task<JsonElement?> PostV1LookerSchemaAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/looker/schema", p, ct);
+
+        /// <summary>POST /v1/loyalty/programs</summary>
+        public Task<JsonElement?> PostV1LoyaltyProgramsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/loyalty/programs", p, ct);
+
+        /// <summary>POST /v1/loyalty/programs/{id}/adjust - Add or remove points by hand (send `key` to make a retry count once)</summary>
+        public Task<JsonElement?> PostV1LoyaltyProgramsByIdAdjustAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/loyalty/programs/{id}/adjust", p, ct);
+
+        /// <summary>POST /v1/loyalty/programs/{id}/passes - Issue (or fetch) a member card or reward pass and its install links</summary>
+        public Task<JsonElement?> PostV1LoyaltyProgramsByIdPassesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/loyalty/programs/{id}/passes", p, ct);
+
+        /// <summary>POST /v1/loyalty/programs/{id}/passes/{serial}/replace-link - Revoke a pass's install link and return a new one (a card already added to a wallet keeps working)</summary>
+        public Task<JsonElement?> PostV1LoyaltyProgramsByIdPassesBySerialReplaceLinkAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/loyalty/programs/{id}/passes/{serial}/replace-link", p, ct);
+
+        /// <summary>POST /v1/loyalty/programs/{id}/redeem - Spend points on a reward; returns the coupon code</summary>
+        public Task<JsonElement?> PostV1LoyaltyProgramsByIdRedeemAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/loyalty/programs/{id}/redeem", p, ct);
+
+        /// <summary>POST /v1/loyalty/programs/{id}/rewards - A reward costs points and hands out a code from a coupon pool</summary>
+        public Task<JsonElement?> PostV1LoyaltyProgramsByIdRewardsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/loyalty/programs/{id}/rewards", p, ct);
+
+        /// <summary>POST /v1/loyalty/programs/{id}/rules - Earn points on an event (orders are `purchase`)</summary>
+        public Task<JsonElement?> PostV1LoyaltyProgramsByIdRulesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/loyalty/programs/{id}/rules", p, ct);
+
+        /// <summary>POST /v1/loyalty/programs/{id}/tiers</summary>
+        public Task<JsonElement?> PostV1LoyaltyProgramsByIdTiersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/loyalty/programs/{id}/tiers", p, ct);
+
+        /// <summary>POST /v1/loyalty/vouchers/{id}/use - Mark a reward code used (also redeems the coupon code)</summary>
+        public Task<JsonElement?> PostV1LoyaltyVouchersByIdUseAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/loyalty/vouchers/{id}/use", p, ct);
+
         /// <summary>POST /v1/markdown/preview - Render Markdown the way a markdown template compiles it (live editor preview)</summary>
         public Task<JsonElement?> PostV1MarkdownPreviewAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/markdown/preview", p, ct);
 
@@ -4667,8 +5834,11 @@ namespace Hermetica
         /// <summary>POST /v1/metrics/aggregates - Aggregate a metric over time: measurement, interval, breakdown, filters, timezone</summary>
         public Task<JsonElement?> PostV1MetricsAggregatesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/metrics/aggregates", p, ct);
 
-        /// <summary>POST /v1/metrics/ingest - A custom sender reports an open or click for a delivery id; feeds the same reports as tracked opens and clicks</summary>
+        /// <summary>POST /v1/metrics/ingest - A custom sender reports an outcome for a delivery id (delivered, opened, clicked, converted, bounced, spammed, dropped, deferred, failed); i</summary>
         public Task<JsonElement?> PostV1MetricsIngestAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/metrics/ingest", p, ct);
+
+        /// <summary>POST /v1/me/verify-email/resend - Mail a new confirmation link</summary>
+        public Task<JsonElement?> PostV1MeVerifyEmailResendAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/me/verify-email/resend", p, ct);
 
         /// <summary>POST /v1/migrations/hubspot/lists - Import HubSpot list memberships (list id, list name, email): one list per HubSpot list, existing contacts only, no consent granted</summary>
         public Task<JsonElement?> PostV1MigrationsHubspotListsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/migrations/hubspot/lists", p, ct);
@@ -4708,6 +5878,12 @@ namespace Hermetica
 
         /// <summary>POST /v1/newsletter/engagement/surveys - Create a poll (one question) or a survey</summary>
         public Task<JsonElement?> PostV1NewsletterEngagementSurveysAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/newsletter/engagement/surveys", p, ct);
+
+        /// <summary>POST /v1/newsletter/engagement/surveys/{id}/campaign - Draft an email campaign to the survey's list, with a new template that links each recipient to the survey (signed per reader)</summary>
+        public Task<JsonElement?> PostV1NewsletterEngagementSurveysByIdCampaignAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/newsletter/engagement/surveys/{id}/campaign", p, ct);
+
+        /// <summary>POST /v1/newsletter/engagement/surveys/{id}/duplicate - Copy a survey (questions and settings, no answers)</summary>
+        public Task<JsonElement?> PostV1NewsletterEngagementSurveysByIdDuplicateAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/newsletter/engagement/surveys/{id}/duplicate", p, ct);
 
         /// <summary>POST /v1/newsletter/gifts - Create a gift and its Stripe Checkout link for the buyer; the redeem link works once paid</summary>
         public Task<JsonElement?> PostV1NewsletterGiftsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/newsletter/gifts", p, ct);
@@ -4802,6 +5978,12 @@ namespace Hermetica
         /// <summary>POST /v1/newsletter/tiers/{id}/archive - Archive a tier: current members keep it, nobody new can join</summary>
         public Task<JsonElement?> PostV1NewsletterTiersByIdArchiveAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/newsletter/tiers/{id}/archive", p, ct);
 
+        /// <summary>POST /v1/notifications/read</summary>
+        public Task<JsonElement?> PostV1NotificationsReadAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/notifications/read", p, ct);
+
+        /// <summary>POST /v1/notifications/read-all</summary>
+        public Task<JsonElement?> PostV1NotificationsReadAllAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/notifications/read-all", p, ct);
+
         /// <summary>POST /v1/oauth/authorize - The user approved: returns the redirect URL carrying the single-use code (PKCE S256 required)</summary>
         public Task<JsonElement?> PostV1OauthAuthorizeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/oauth/authorize", p, ct);
 
@@ -4826,11 +6008,20 @@ namespace Hermetica
         /// <summary>POST /v1/objects/{type}/query</summary>
         public Task<JsonElement?> PostV1ObjectsByTypeQueryAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/objects/{type}/query", p, ct);
 
+        /// <summary>POST /v1/objects/relationships/import - Link people (by externalId, email or phone) to object records (by type and externalId); a bad row is reported, the rest land</summary>
+        public Task<JsonElement?> PostV1ObjectsRelationshipsImportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/objects/relationships/import", p, ct);
+
         /// <summary>POST /v1/object-types</summary>
         public Task<JsonElement?> PostV1ObjectTypesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/object-types", p, ct);
 
         /// <summary>POST /v1/object-types/{id}/draft/publish</summary>
         public Task<JsonElement?> PostV1ObjectTypesByIdDraftPublishAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/object-types/{id}/draft/publish", p, ct);
+
+        /// <summary>POST /v1/object-types/{id}/share - Publish this workspace's object type to the organization (re-publishing bumps the version)</summary>
+        public Task<JsonElement?> PostV1ObjectTypesByIdShareAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/object-types/{id}/share", p, ct);
+
+        /// <summary>POST /v1/operator/waitlist/{id}/approve - Let this address sign up, and email them the sign-up link</summary>
+        public Task<JsonElement?> PostV1OperatorWaitlistByIdApproveAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/operator/waitlist/{id}/approve", p, ct);
 
         /// <summary>POST /v1/ops/dlq/{queue}/{id}/replay - Move a failed job back to the queue (audited)</summary>
         public Task<JsonElement?> PostV1OpsDlqByQueueByIdReplayAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/ops/dlq/{queue}/{id}/replay", p, ct);
@@ -4846,6 +6037,12 @@ namespace Hermetica
 
         /// <summary>POST /v1/outbound/blocklist/import - Import a CSV or pasted list of emails and domains</summary>
         public Task<JsonElement?> PostV1OutboundBlocklistImportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/blocklist/import", p, ct);
+
+        /// <summary>POST /v1/outbound/booking-pages</summary>
+        public Task<JsonElement?> PostV1OutboundBookingPagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/booking-pages", p, ct);
+
+        /// <summary>POST /v1/outbound/bookings/{id}/cancel</summary>
+        public Task<JsonElement?> PostV1OutboundBookingsByIdCancelAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/bookings/{id}/cancel", p, ct);
 
         /// <summary>POST /v1/outbound/calls - Log a finished call (outcome, duration, recording link)</summary>
         public Task<JsonElement?> PostV1OutboundCallsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/calls", p, ct);
@@ -4964,6 +6161,9 @@ namespace Hermetica
         /// <summary>POST /v1/outbound/personalize/{id}/apply - Save the reviewed snippets (all, or only the given leads) to the custom field they were written for</summary>
         public Task<JsonElement?> PostV1OutboundPersonalizeByIdApplyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/personalize/{id}/apply", p, ct);
 
+        /// <summary>POST /v1/outbound/proposals/{id}/decide - Approve (optionally edited) or reject; approving sends through the normal path, consent and suppression rechecked</summary>
+        public Task<JsonElement?> PostV1OutboundProposalsByIdDecideAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/proposals/{id}/decide", p, ct);
+
         /// <summary>POST /v1/outbound/prospects/adopt</summary>
         public Task<JsonElement?> PostV1OutboundProspectsAdoptAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/prospects/adopt", p, ct);
 
@@ -5003,8 +6203,14 @@ namespace Hermetica
         /// <summary>POST /v1/outbound/sequences/{id}/duplicate</summary>
         public Task<JsonElement?> PostV1OutboundSequencesByIdDuplicateAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/sequences/{id}/duplicate", p, ct);
 
-        /// <summary>POST /v1/outbound/sequences/{id}/enroll</summary>
+        /// <summary>POST /v1/outbound/sequences/{id}/enroll - Enroll chosen prospects and / or every member of a list (listId: all of its members)</summary>
         public Task<JsonElement?> PostV1OutboundSequencesByIdEnrollAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/sequences/{id}/enroll", p, ct);
+
+        /// <summary>POST /v1/outbound/sequences/{id}/enroll-accounts - ABM: enroll the contacts of these companies, grouped per account (per-account cap and stop rule from the sequence settings)</summary>
+        public Task<JsonElement?> PostV1OutboundSequencesByIdEnrollAccountsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/sequences/{id}/enroll-accounts", p, ct);
+
+        /// <summary>POST /v1/outbound/sequences/{id}/export-leads - CSV of the sequence's leads with their fields, variables and per-lead stats, built in the background; optional email when ready</summary>
+        public Task<JsonElement?> PostV1OutboundSequencesByIdExportLeadsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/sequences/{id}/export-leads", p, ct);
 
         /// <summary>POST /v1/outbound/sequences/{id}/launch - Review gate: let held prospects start (the given ones, or every held prospect)</summary>
         public Task<JsonElement?> PostV1OutboundSequencesByIdLaunchAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/sequences/{id}/launch", p, ct);
@@ -5060,8 +6266,14 @@ namespace Hermetica
         /// <summary>POST /v1/outbound/tasks</summary>
         public Task<JsonElement?> PostV1OutboundTasksAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/tasks", p, ct);
 
+        /// <summary>POST /v1/outbound/tasks/bulk - Assign, snooze, complete or skip many tasks at once</summary>
+        public Task<JsonElement?> PostV1OutboundTasksBulkAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/tasks/bulk", p, ct);
+
         /// <summary>POST /v1/outbound/tasks/{id}/assign</summary>
         public Task<JsonElement?> PostV1OutboundTasksByIdAssignAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/tasks/{id}/assign", p, ct);
+
+        /// <summary>POST /v1/outbound/tasks/{id}/call - Click-to-call (or voicemail drop) from a call task through the workspace's Twilio; the call is logged on the task when Twilio reports back</summary>
+        public Task<JsonElement?> PostV1OutboundTasksByIdCallAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/tasks/{id}/call", p, ct);
 
         /// <summary>POST /v1/outbound/tasks/{id}/complete</summary>
         public Task<JsonElement?> PostV1OutboundTasksByIdCompleteAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/tasks/{id}/complete", p, ct);
@@ -5074,6 +6286,18 @@ namespace Hermetica
 
         /// <summary>POST /v1/outbound/tasks/search - Search tasks with a nested and / or / not filter tree</summary>
         public Task<JsonElement?> PostV1OutboundTasksSearchAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/tasks/search", p, ct);
+
+        /// <summary>POST /v1/outbound/task-types</summary>
+        public Task<JsonElement?> PostV1OutboundTaskTypesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/task-types", p, ct);
+
+        /// <summary>POST /v1/outbound/voice-clips - Upload an audio clip (multipart field "file"): MP3, M4A, OGG, WAV or WebM up to 5 MB</summary>
+        public Task<JsonElement?> PostV1OutboundVoiceClipsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/outbound/voice-clips", p, ct);
+
+        /// <summary>POST /v1/page-sites - Create a website: pages that share a header, footer and menus</summary>
+        public Task<JsonElement?> PostV1PageSitesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/page-sites", p, ct);
+
+        /// <summary>POST /v1/page-sites/{id}/domain/verify - Queue a DNS check (status `checking` until it lands); once verified the domain is added to the proxy routing file (TLS is issued automatical</summary>
+        public Task<JsonElement?> PostV1PageSitesByIdDomainVerifyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/page-sites/{id}/domain/verify", p, ct);
 
         /// <summary>POST /v1/pipelines/batch - Mixed batch of identify/track/page/screen/group/alias calls; bad calls are rejected by index, the rest land</summary>
         public Task<JsonElement?> PostV1PipelinesBatchAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/pipelines/batch", p, ct);
@@ -5093,6 +6317,9 @@ namespace Hermetica
         /// <summary>POST /v1/postal-addresses</summary>
         public Task<JsonElement?> PostV1PostalAddressesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/postal-addresses", p, ct);
 
+        /// <summary>POST /v1/profile-filters</summary>
+        public Task<JsonElement?> PostV1ProfileFiltersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/profile-filters", p, ct);
+
         /// <summary>POST /v1/profiles</summary>
         public Task<JsonElement?> PostV1ProfilesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/profiles", p, ct);
 
@@ -5102,11 +6329,20 @@ namespace Hermetica
         /// <summary>POST /v1/profiles/bulk - Tag, untag, add/remove list, subscribe, unsubscribe, suppress, unsuppress or delete many profiles as a background job</summary>
         public Task<JsonElement?> PostV1ProfilesBulkAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/profiles/bulk", p, ct);
 
+        /// <summary>POST /v1/profiles/{id}/ai-commerce-summary - A plain-language read of one customer's buying behaviour (frequency, spend, top products, carts), from their order figures only. Needs AI as</summary>
+        public Task<JsonElement?> PostV1ProfilesByIdAiCommerceSummaryAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/profiles/{id}/ai-commerce-summary", p, ct);
+
         /// <summary>POST /v1/profiles/{id}/archive - Archive a contact: kept with history, never sent to or counted until restored</summary>
         public Task<JsonElement?> PostV1ProfilesByIdArchiveAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/profiles/{id}/archive", p, ct);
 
         /// <summary>POST /v1/profiles/{id}/consent</summary>
         public Task<JsonElement?> PostV1ProfilesByIdConsentAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/profiles/{id}/consent", p, ct);
+
+        /// <summary>POST /v1/profiles/{id}/crm/find - Find this contact in the CRM by email and link it (nothing is created)</summary>
+        public Task<JsonElement?> PostV1ProfilesByIdCrmFindAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/profiles/{id}/crm/find", p, ct);
+
+        /// <summary>POST /v1/profiles/{id}/crm/push - Push this contact to the CRM now</summary>
+        public Task<JsonElement?> PostV1ProfilesByIdCrmPushAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/profiles/{id}/crm/push", p, ct);
 
         /// <summary>POST /v1/profiles/{id}/devices - Add a device record by hand (flagged manual)</summary>
         public Task<JsonElement?> PostV1ProfilesByIdDevicesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/profiles/{id}/devices", p, ct);
@@ -5116,6 +6352,9 @@ namespace Hermetica
 
         /// <summary>POST /v1/profiles/{id}/dsar/export</summary>
         public Task<JsonElement?> PostV1ProfilesByIdDsarExportAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/profiles/{id}/dsar/export", p, ct);
+
+        /// <summary>POST /v1/profiles/{id}/files - Attach a file (multipart field "file"; the asset library's types and limits apply)</summary>
+        public Task<JsonElement?> PostV1ProfilesByIdFilesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/profiles/{id}/files", p, ct);
 
         /// <summary>POST /v1/profiles/{id}/files/{key} - Upload a file (multipart field "file": image, PDF or MP4, up to 25 MB) into a profile property of type file; the property then holds the hos</summary>
         public Task<JsonElement?> PostV1ProfilesByIdFilesByKeyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/profiles/{id}/files/{key}", p, ct);
@@ -5134,6 +6373,9 @@ namespace Hermetica
 
         /// <summary>POST /v1/profiles/{id}/suppress - Suppress every address of the profile (or one channel): nothing is sent until an admin or marketer lifts a manual suppression</summary>
         public Task<JsonElement?> PostV1ProfilesByIdSuppressAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/profiles/{id}/suppress", p, ct);
+
+        /// <summary>POST /v1/profiles/{id}/suppress-delete - Suppress every address of a contact, delete the contact, and block its identifiers so no import, API call or event can re-create it</summary>
+        public Task<JsonElement?> PostV1ProfilesByIdSuppressDeleteAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/profiles/{id}/suppress-delete", p, ct);
 
         /// <summary>POST /v1/profiles/{id}/tags</summary>
         public Task<JsonElement?> PostV1ProfilesByIdTagsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/profiles/{id}/tags", p, ct);
@@ -5164,6 +6406,12 @@ namespace Hermetica
 
         /// <summary>POST /v1/programs/{id}/assets</summary>
         public Task<JsonElement?> PostV1ProgramsByIdAssetsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/programs/{id}/assets", p, ct);
+
+        /// <summary>POST /v1/push/live - Start a live notification for one contact (order tracking, a match score...). Push consent applies to marketing ones; suppression always app</summary>
+        public Task<JsonElement?> PostV1PushLiveAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/push/live", p, ct);
+
+        /// <summary>POST /v1/push/live/{id}/end - End the live notification (optionally with a final state and when to dismiss it)</summary>
+        public Task<JsonElement?> PostV1PushLiveByIdEndAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/push/live/{id}/end", p, ct);
 
         /// <summary>POST /v1/push/test-send - Send a push template (with a flow step's extras) to a test profile's devices or one pasted device token, through the normal send checks</summary>
         public Task<JsonElement?> PostV1PushTestSendAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/push/test-send", p, ct);
@@ -5197,6 +6445,9 @@ namespace Hermetica
 
         /// <summary>POST /v1/reporting/values - Values report for campaigns, workflows, forms or segments: statistics list, timeframe, conversion metric, compare-to-previous</summary>
         public Task<JsonElement?> PostV1ReportingValuesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/reporting/values", p, ct);
+
+        /// <summary>POST /v1/review-feeds/google/replace - Revoke every review feed link made so far and return new ones</summary>
+        public Task<JsonElement?> PostV1ReviewFeedsGoogleReplaceAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/review-feeds/google/replace", p, ct);
 
         /// <summary>POST /v1/reviews - Ingest a review (pending unless status is set); emits review_created for the profile</summary>
         public Task<JsonElement?> PostV1ReviewsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/reviews", p, ct);
@@ -5249,8 +6500,14 @@ namespace Hermetica
         /// <summary>POST /v1/segments/{id}/evaluate</summary>
         public Task<JsonElement?> PostV1SegmentsByIdEvaluateAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/segments/{id}/evaluate", p, ct);
 
+        /// <summary>POST /v1/segments/{id}/export-jobs - Every current member as a CSV file, prepared in the background (poll GET /v1/exports/:id for the download link)</summary>
+        public Task<JsonElement?> PostV1SegmentsByIdExportJobsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/segments/{id}/export-jobs", p, ct);
+
         /// <summary>POST /v1/segments/{id}/match-runs - Match everyone against the segment now and keep the result as a run</summary>
         public Task<JsonElement?> PostV1SegmentsByIdMatchRunsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/segments/{id}/match-runs", p, ct);
+
+        /// <summary>POST /v1/segments/{id}/members - Add existing contacts to a hand-picked segment by profile id or email (grants no consent)</summary>
+        public Task<JsonElement?> PostV1SegmentsByIdMembersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/segments/{id}/members", p, ct);
 
         /// <summary>POST /v1/segments/{id}/snapshots</summary>
         public Task<JsonElement?> PostV1SegmentsByIdSnapshotsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/segments/{id}/snapshots", p, ct);
@@ -5291,14 +6548,32 @@ namespace Hermetica
         /// <summary>POST /v1/sending-domains/{id}/check</summary>
         public Task<JsonElement?> PostV1SendingDomainsByIdCheckAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/sending-domains/{id}/check", p, ct);
 
+        /// <summary>POST /v1/shared-object-schemas/{id}/install - Create or update the object type here from a shared schema (fields are merged, none removed)</summary>
+        public Task<JsonElement?> PostV1SharedObjectSchemasByIdInstallAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/shared-object-schemas/{id}/install", p, ct);
+
         /// <summary>POST /v1/signals - Record an outside signal for a person (job change, funding...). It arrives as the event external_signal, so journeys and sequences can start</summary>
         public Task<JsonElement?> PostV1SignalsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/signals", p, ct);
+
+        /// <summary>POST /v1/site-messages - Create a content-only on-site message (draft)</summary>
+        public Task<JsonElement?> PostV1SiteMessagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/site-messages", p, ct);
 
         /// <summary>POST /v1/sites</summary>
         public Task<JsonElement?> PostV1SitesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/sites", p, ct);
 
         /// <summary>POST /v1/sites/{id}/verify - Verified once the snippet has sent a browser event</summary>
         public Task<JsonElement?> PostV1SitesByIdVerifyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/sites/{id}/verify", p, ct);
+
+        /// <summary>POST /v1/slack/installs - Install with your own Slack app's bot token (stored encrypted)</summary>
+        public Task<JsonElement?> PostV1SlackInstallsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/slack/installs", p, ct);
+
+        /// <summary>POST /v1/slack/oauth/start - Start "Add to Slack"; returns Slack's authorize URL</summary>
+        public Task<JsonElement?> PostV1SlackOauthStartAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/slack/oauth/start", p, ct);
+
+        /// <summary>POST /v1/slack/templates - Create a Slack message template (text plus optional Block Kit blocks)</summary>
+        public Task<JsonElement?> PostV1SlackTemplatesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/slack/templates", p, ct);
+
+        /// <summary>POST /v1/slack/test - Post a test message to a channel. Needs an idempotency key</summary>
+        public Task<JsonElement?> PostV1SlackTestAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/slack/test", p, ct);
 
         /// <summary>POST /v1/sms/ai-drafts - Write a text message from a brief; a draft for a person to review, never sent</summary>
         public Task<JsonElement?> PostV1SmsAiDraftsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/sms/ai-drafts", p, ct);
@@ -5357,6 +6632,24 @@ namespace Hermetica
         /// <summary>POST /v1/snippets/bulk-delete - Delete up to 100 snippets; locked ones are skipped</summary>
         public Task<JsonElement?> PostV1SnippetsBulkDeleteAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/snippets/bulk-delete", p, ct);
 
+        /// <summary>POST /v1/social/accounts - Connect with a pasted access token (stored encrypted); connects every page/account it can post as unless externalId is given</summary>
+        public Task<JsonElement?> PostV1SocialAccountsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/social/accounts", p, ct);
+
+        /// <summary>POST /v1/social/oauth/{platform}/start - Start sign-in with the network; returns its authorize URL</summary>
+        public Task<JsonElement?> PostV1SocialOauthByPlatformStartAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/social/oauth/{platform}/start", p, ct);
+
+        /// <summary>POST /v1/social/oauth/pending/{id} - Connect the picked pages and accounts from a sign-in; the others are forgotten</summary>
+        public Task<JsonElement?> PostV1SocialOauthPendingByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/social/oauth/pending/{id}", p, ct);
+
+        /// <summary>POST /v1/social/posts - Compose a post for one or more accounts: a draft, now, or scheduled. Needs an idempotency key</summary>
+        public Task<JsonElement?> PostV1SocialPostsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/social/posts", p, ct);
+
+        /// <summary>POST /v1/social/posts/{id}/cancel - Cancel a draft, scheduled or failed post</summary>
+        public Task<JsonElement?> PostV1SocialPostsByIdCancelAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/social/posts/{id}/cancel", p, ct);
+
+        /// <summary>POST /v1/social/posts/{id}/replies - Reply to a comment as the page or account. Needs an idempotency key</summary>
+        public Task<JsonElement?> PostV1SocialPostsByIdRepliesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/social/posts/{id}/replies", p, ct);
+
         /// <summary>POST /v1/soft-bounce-allowlist - Exempt an address or domain from automatic soft-bounce suppression</summary>
         public Task<JsonElement?> PostV1SoftBounceAllowlistAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/soft-bounce-allowlist", p, ct);
 
@@ -5401,6 +6694,15 @@ namespace Hermetica
 
         /// <summary>POST /v1/sponsors/network/marketplace/{id}/decision - Accept or decline a network campaign for a publication</summary>
         public Task<JsonElement?> PostV1SponsorsNetworkMarketplaceByIdDecisionAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/sponsors/network/marketplace/{id}/decision", p, ct);
+
+        /// <summary>POST /v1/sql-sources - Add a scheduled SELECT; only SELECT statements are accepted</summary>
+        public Task<JsonElement?> PostV1SqlSourcesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/sql-sources", p, ct);
+
+        /// <summary>POST /v1/sql-sources/{id}/preview - Test the connection and query: up to 20 rows, nothing imported</summary>
+        public Task<JsonElement?> PostV1SqlSourcesByIdPreviewAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/sql-sources/{id}/preview", p, ct);
+
+        /// <summary>POST /v1/sql-sources/{id}/run - Run the pull now (in the background)</summary>
+        public Task<JsonElement?> PostV1SqlSourcesByIdRunAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/sql-sources/{id}/run", p, ct);
 
         /// <summary>POST /v1/sso/saml/{workspaceId}/acs</summary>
         public Task<JsonElement?> PostV1SsoSamlByWorkspaceIdAcsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/sso/saml/{workspaceId}/acs", p, ct);
@@ -5447,6 +6749,9 @@ namespace Hermetica
         /// <summary>POST /v1/templates</summary>
         public Task<JsonElement?> PostV1TemplatesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/templates", p, ct);
 
+        /// <summary>POST /v1/templates/bulk-update - Move, tag, re-brand, set the topic of or archive up to 100 templates; each is applied or refused on its own</summary>
+        public Task<JsonElement?> PostV1TemplatesBulkUpdateAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/templates/bulk-update", p, ct);
+
         /// <summary>POST /v1/templates/{id}/archive - Blocked (412) while a scheduled campaign or live workflow uses it, unless force=true</summary>
         public Task<JsonElement?> PostV1TemplatesByIdArchiveAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/templates/{id}/archive", p, ct);
 
@@ -5456,7 +6761,7 @@ namespace Hermetica
         /// <summary>POST /v1/templates/{id}/clone</summary>
         public Task<JsonElement?> PostV1TemplatesByIdCloneAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/templates/{id}/clone", p, ct);
 
-        /// <summary>POST /v1/templates/{id}/convert - One-way: copy a block template into a new HTML template</summary>
+        /// <summary>POST /v1/templates/{id}/convert - One-way copy into the other format: a block template into a new HTML template, an HTML template into a new drag-and-drop template</summary>
         public Task<JsonElement?> PostV1TemplatesByIdConvertAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/templates/{id}/convert", p, ct);
 
         /// <summary>POST /v1/templates/{id}/languages</summary>
@@ -5495,10 +6800,10 @@ namespace Hermetica
         /// <summary>POST /v1/templates/{id}/versions/{versionId}/submit</summary>
         public Task<JsonElement?> PostV1TemplatesByIdVersionsByVersionIdSubmitAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/templates/{id}/versions/{versionId}/submit", p, ct);
 
-        /// <summary>POST /v1/templates/github-sync/pull - Read files from the repository: new templates and changed template versions; journeys only ever update drafts, never a published version</summary>
+        /// <summary>POST /v1/templates/github-sync/pull - Read files from the repository: new templates and changed template versions, journey drafts (never a published version) and segments (create</summary>
         public Task<JsonElement?> PostV1TemplatesGithubSyncPullAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/templates/github-sync/pull", p, ct);
 
-        /// <summary>POST /v1/templates/github-sync/push - Write every template and journey to the repository as one JSON file each (unchanged files are skipped)</summary>
+        /// <summary>POST /v1/templates/github-sync/push - Write every template, journey and segment to the repository as one JSON file each (unchanged files are skipped)</summary>
         public Task<JsonElement?> PostV1TemplatesGithubSyncPushAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/templates/github-sync/push", p, ct);
 
         /// <summary>POST /v1/templates/import-zip - Create an HTML email template from a theme ZIP (multipart field "file"): one HTML page plus its images. Images become library assets; script</summary>
@@ -5530,6 +6835,9 @@ namespace Hermetica
 
         /// <summary>POST /v1/transactional/definitions/{id}/send - Send a transactional definition by id: recipients and data in, template and settings from the definition</summary>
         public Task<JsonElement?> PostV1TransactionalDefinitionsByIdSendAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/transactional/definitions/{id}/send", p, ct);
+
+        /// <summary>POST /v1/transactional/metadata-fields</summary>
+        public Task<JsonElement?> PostV1TransactionalMetadataFieldsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/transactional/metadata-fields", p, ct);
 
         /// <summary>POST /v1/transactional/parse - Parse a raw MIME message into from, to, subject, text, html, headers and attachment metadata (nothing is stored or sent)</summary>
         public Task<JsonElement?> PostV1TransactionalParseAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/transactional/parse", p, ct);
@@ -5588,6 +6896,9 @@ namespace Hermetica
         /// <summary>POST /v1/webhooks/journal/exports - Start a background export of the journal (optionally as one endpoint would receive it); poll GET /v1/webhooks/journal/exports/:id</summary>
         public Task<JsonElement?> PostV1WebhooksJournalExportsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/webhooks/journal/exports", p, ct);
 
+        /// <summary>POST /v1/webhooks/journal/snapshots - Write the current state of listed contacts into the journal as crm.snapshot entries, or freeze a segment and queue its entries for the worke</summary>
+        public Task<JsonElement?> PostV1WebhooksJournalSnapshotsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/webhooks/journal/snapshots", p, ct);
+
         /// <summary>POST /v1/webhook-templates</summary>
         public Task<JsonElement?> PostV1WebhookTemplatesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/webhook-templates", p, ct);
 
@@ -5596,6 +6907,18 @@ namespace Hermetica
 
         /// <summary>POST /v1/webhook-templates/test - Make a real test call (saved template or ad-hoc), SSRF-guarded, never retried</summary>
         public Task<JsonElement?> PostV1WebhookTemplatesTestAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/webhook-templates/test", p, ct);
+
+        /// <summary>POST /v1/whatsapp/flows - Create a Flow (draft) from its Flow JSON</summary>
+        public Task<JsonElement?> PostV1WhatsappFlowsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/whatsapp/flows", p, ct);
+
+        /// <summary>POST /v1/whatsapp/flows/{id}/deprecate - Deprecate a published Flow at Meta (it can no longer be sent)</summary>
+        public Task<JsonElement?> PostV1WhatsappFlowsByIdDeprecateAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/whatsapp/flows/{id}/deprecate", p, ct);
+
+        /// <summary>POST /v1/whatsapp/flows/{id}/publish - Upload the Flow JSON to Meta and publish it (validation errors are returned on the flow)</summary>
+        public Task<JsonElement?> PostV1WhatsappFlowsByIdPublishAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/whatsapp/flows/{id}/publish", p, ct);
+
+        /// <summary>POST /v1/whatsapp/flows/{id}/run - Send a published Flow to one contact. WhatsApp consent (marketing) and suppression apply; outside the 24-hour window the flow template is us</summary>
+        public Task<JsonElement?> PostV1WhatsappFlowsByIdRunAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/whatsapp/flows/{id}/run", p, ct);
 
         /// <summary>POST /v1/whatsapp/send - Send one WhatsApp message: an approved template, or free text inside the 24-hour window. Consent, suppression and the window are enforced; n</summary>
         public Task<JsonElement?> PostV1WhatsappSendAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/whatsapp/send", p, ct);
@@ -5617,6 +6940,9 @@ namespace Hermetica
 
         /// <summary>POST /v1/workflow-actions/callbacks/complete - Finish up to 100 waiting steps at once</summary>
         public Task<JsonElement?> PostV1WorkflowActionsCallbacksCompleteAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/workflow-actions/callbacks/complete", p, ct);
+
+        /// <summary>POST /v1/workflow-custom-types - Register an action type (runs a call template or code action) or a trigger type (fires on an event)</summary>
+        public Task<JsonElement?> PostV1WorkflowCustomTypesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/workflow-custom-types", p, ct);
 
         /// <summary>POST /v1/workflows</summary>
         public Task<JsonElement?> PostV1WorkflowsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/workflows", p, ct);
@@ -5656,6 +6982,9 @@ namespace Hermetica
 
         /// <summary>POST /v1/workflows/{id}/enrollments/exit-all - Remove everyone still inside the journey (or only those at one step); up to 500 per call, `more` says to repeat</summary>
         public Task<JsonElement?> PostV1WorkflowsByIdEnrollmentsExitAllAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/workflows/{id}/enrollments/exit-all", p, ct);
+
+        /// <summary>POST /v1/workflows/{id}/enroll-object-segment - Enroll the people linked to each object in an object segment (the object rides along as the trigger event)</summary>
+        public Task<JsonElement?> PostV1WorkflowsByIdEnrollObjectSegmentAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/workflows/{id}/enroll-object-segment", p, ct);
 
         /// <summary>POST /v1/workflows/{id}/migrate</summary>
         public Task<JsonElement?> PostV1WorkflowsByIdMigrateAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/workflows/{id}/migrate", p, ct);
@@ -5705,6 +7034,9 @@ namespace Hermetica
         /// <summary>POST /v1/workspace/dashboard-domain/verify - Check the CNAME now</summary>
         public Task<JsonElement?> PostV1WorkspaceDashboardDomainVerifyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/workspace/dashboard-domain/verify", p, ct);
 
+        /// <summary>POST /v1/workspaces/current/reset - Owner only: delete the chosen data (contacts, events, messages, campaigns, journeys) and keep settings, members, keys, connections, template</summary>
+        public Task<JsonElement?> PostV1WorkspacesCurrentResetAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/workspaces/current/reset", p, ct);
+
         /// <summary>POST /v1/workspaces/current/schedule-for-removal - Owner only: stop sending now and erase the workspace after the grace period</summary>
         public Task<JsonElement?> PostV1WorkspacesCurrentScheduleForRemovalAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v1/workspaces/current/schedule-for-removal", p, ct);
 
@@ -5716,6 +7048,15 @@ namespace Hermetica
 
         /// <summary>POST /v2/entity - Unified entity call for people and objects: identify, event, page, screen, delete, merge, add/delete relationships</summary>
         public Task<JsonElement?> PostV2EntityAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/v2/entity", p, ct);
+
+        /// <summary>POST /wallet/apple/{ws}/v1/devices/{device}/registrations/{passType}/{serial}</summary>
+        public Task<JsonElement?> PostWalletAppleByWsV1DevicesByDeviceRegistrationsByPassTypeBySerialAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/wallet/apple/{ws}/v1/devices/{device}/registrations/{passType}/{serial}", p, ct);
+
+        /// <summary>POST /wallet/apple/{ws}/v1/log</summary>
+        public Task<JsonElement?> PostWalletAppleByWsV1LogAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/wallet/apple/{ws}/v1/log", p, ct);
+
+        /// <summary>POST /webhooks/ads/meta/leadgen - Meta leadgen delivery: queues the matching lead form syncs at once</summary>
+        public Task<JsonElement?> PostWebhooksAdsMetaLeadgenAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/webhooks/ads/meta/leadgen", p, ct);
 
         /// <summary>POST /webhooks/billing/stripe</summary>
         public Task<JsonElement?> PostWebhooksBillingStripeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/webhooks/billing/stripe", p, ct);
@@ -5729,6 +7070,9 @@ namespace Hermetica
         /// <summary>POST /webhooks/bounce/{workspaceId}/{connectionId}/generic - Generic bounce intake (documented JSON, HMAC-signed with the connection webhook secret): bounces, complaints, deliveries</summary>
         public Task<JsonElement?> PostWebhooksBounceByWorkspaceIdByConnectionIdGenericAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/webhooks/bounce/{workspaceId}/{connectionId}/generic", p, ct);
 
+        /// <summary>POST /webhooks/bounce/{workspaceId}/{connectionId}/lettermint - Lettermint webhook (hard/soft bounce, spam complaint, delivered); X-Lettermint-Signature t=&lt;unix&gt;,v1=HMAC-SHA256 of "&lt;t&gt;.&lt;body&gt;" with the co</summary>
+        public Task<JsonElement?> PostWebhooksBounceByWorkspaceIdByConnectionIdLettermintAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/webhooks/bounce/{workspaceId}/{connectionId}/lettermint", p, ct);
+
         /// <summary>POST /webhooks/bounce/{workspaceId}/{connectionId}/sparkpost - SparkPost events receiver; authenticate with the X-MessageSystems-Webhook-Token header (or basic auth) = connection webhook secret</summary>
         public Task<JsonElement?> PostWebhooksBounceByWorkspaceIdByConnectionIdSparkpostAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/webhooks/bounce/{workspaceId}/{connectionId}/sparkpost", p, ct);
 
@@ -5740,6 +7084,9 @@ namespace Hermetica
 
         /// <summary>POST /webhooks/integrations/{workspaceId}/{connectionId}</summary>
         public Task<JsonElement?> PostWebhooksIntegrationsByWorkspaceIdByConnectionIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/webhooks/integrations/{workspaceId}/{connectionId}", p, ct);
+
+        /// <summary>POST /webhooks/outbound-voice/{workspaceId}/{taskId} - Twilio Voice status / dial / answering-machine callback: plays the voicemail clip or bridges the rep, and logs the call on the task</summary>
+        public Task<JsonElement?> PostWebhooksOutboundVoiceByWorkspaceIdByTaskIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/webhooks/outbound-voice/{workspaceId}/{taskId}", p, ct);
 
         /// <summary>POST /webhooks/stripe-memberships/{workspaceId}</summary>
         public Task<JsonElement?> PostWebhooksStripeMembershipsByWorkspaceIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("POST", "/webhooks/stripe-memberships/{workspaceId}", p, ct);
@@ -5786,6 +7133,9 @@ namespace Hermetica
         /// <summary>PUT /v1/assets/uploads/{id}/chunks/{n} - Send chunk n (multipart field "chunk", at most 2 MB); resending a chunk replaces it</summary>
         public Task<JsonElement?> PutV1AssetsUploadsByIdChunksByNAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/assets/uploads/{id}/chunks/{n}", p, ct);
 
+        /// <summary>PUT /v1/associations/{fromType}/{fromId}/{toType}/{toId} - Associate two records; without a label the pair's default label is used (or "related")</summary>
+        public Task<JsonElement?> PutV1AssociationsByFromTypeByFromIdByToTypeByToIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/associations/{fromType}/{fromId}/{toType}/{toId}", p, ct);
+
         /// <summary>PUT /v1/attributes/fields/{key}/lists/{listId} - Show this field for people on this list</summary>
         public Task<JsonElement?> PutV1AttributesFieldsByKeyListsByListIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/attributes/fields/{key}/lists/{listId}", p, ct);
 
@@ -5797,6 +7147,9 @@ namespace Hermetica
 
         /// <summary>PUT /v1/brand-kits/{id}/voice</summary>
         public Task<JsonElement?> PutV1BrandKitsByIdVoiceAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/brand-kits/{id}/voice", p, ct);
+
+        /// <summary>PUT /v1/budgets/{id}/folder</summary>
+        public Task<JsonElement?> PutV1BudgetsByIdFolderAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/budgets/{id}/folder", p, ct);
 
         /// <summary>PUT /v1/campaign-folders/{id}/assets/{assetType}/{assetId} - File an asset under the folder (moves it if it was in another folder)</summary>
         public Task<JsonElement?> PutV1CampaignFoldersByIdAssetsByAssetTypeByAssetIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/campaign-folders/{id}/assets/{assetType}/{assetId}", p, ct);
@@ -5812,6 +7165,12 @@ namespace Hermetica
 
         /// <summary>PUT /v1/campaigns/{id}/folder</summary>
         public Task<JsonElement?> PutV1CampaignsByIdFolderAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/campaigns/{id}/folder", p, ct);
+
+        /// <summary>PUT /v1/campaigns/{id}/messages/{messageId}/variants/{key}</summary>
+        public Task<JsonElement?> PutV1CampaignsByIdMessagesByMessageIdVariantsByKeyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/campaigns/{id}/messages/{messageId}/variants/{key}", p, ct);
+
+        /// <summary>PUT /v1/campaigns/{id}/postcard - Save the postcard design (6x4 or 9x6, HTML front and back with merge tags)</summary>
+        public Task<JsonElement?> PutV1CampaignsByIdPostcardAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/campaigns/{id}/postcard", p, ct);
 
         /// <summary>PUT /v1/campaigns/{id}/push - Set the content of a draft push campaign</summary>
         public Task<JsonElement?> PutV1CampaignsByIdPushAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/campaigns/{id}/push", p, ct);
@@ -5846,6 +7205,9 @@ namespace Hermetica
         /// <summary>PUT /v1/commerce/stores/{storeId}/orders</summary>
         public Task<JsonElement?> PutV1CommerceStoresByStoreIdOrdersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/commerce/stores/{storeId}/orders", p, ct);
 
+        /// <summary>PUT /v1/commerce/stores/{storeId}/orders/{id} - Create or replace the order under the store's own order id</summary>
+        public Task<JsonElement?> PutV1CommerceStoresByStoreIdOrdersByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/commerce/stores/{storeId}/orders/{id}", p, ct);
+
         /// <summary>PUT /v1/commerce/stores/{storeId}/products/{productId} - Create or replace a product in this store</summary>
         public Task<JsonElement?> PutV1CommerceStoresByStoreIdProductsByProductIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/commerce/stores/{storeId}/products/{productId}", p, ct);
 
@@ -5854,6 +7216,9 @@ namespace Hermetica
 
         /// <summary>PUT /v1/commerce/stores/{storeId}/products/{productId}/variants/{variantId} - Create or replace a variant of a store product</summary>
         public Task<JsonElement?> PutV1CommerceStoresByStoreIdProductsByProductIdVariantsByVariantIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/commerce/stores/{storeId}/products/{productId}/variants/{variantId}", p, ct);
+
+        /// <summary>PUT /v1/compliance/export-retention</summary>
+        public Task<JsonElement?> PutV1ComplianceExportRetentionAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/compliance/export-retention", p, ct);
 
         /// <summary>PUT /v1/compliance/gpc</summary>
         public Task<JsonElement?> PutV1ComplianceGpcAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/compliance/gpc", p, ct);
@@ -5866,6 +7231,9 @@ namespace Hermetica
 
         /// <summary>PUT /v1/compliance/trash-retention</summary>
         public Task<JsonElement?> PutV1ComplianceTrashRetentionAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/compliance/trash-retention", p, ct);
+
+        /// <summary>PUT /v1/compliance/unconfirmed-purge</summary>
+        public Task<JsonElement?> PutV1ComplianceUnconfirmedPurgeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/compliance/unconfirmed-purge", p, ct);
 
         /// <summary>PUT /v1/compliance/unsubscribe-purge - GDPR auto-purge: erase contacts N days after they unsubscribed (their address stays suppressed)</summary>
         public Task<JsonElement?> PutV1ComplianceUnsubscribePurgeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/compliance/unsubscribe-purge", p, ct);
@@ -5888,8 +7256,14 @@ namespace Hermetica
         /// <summary>PUT /v1/delivery/settings</summary>
         public Task<JsonElement?> PutV1DeliverySettingsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/delivery/settings", p, ct);
 
+        /// <summary>PUT /v1/embed-api/{token}/journey - Save the journey draft (publish with POST .../journey/publish)</summary>
+        public Task<JsonElement?> PutV1EmbedApiByTokenJourneyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/embed-api/{token}/journey", p, ct);
+
         /// <summary>PUT /v1/event-definitions/{name}/properties/{prop} - Add or change one declared property type</summary>
         public Task<JsonElement?> PutV1EventDefinitionsByNamePropertiesByPropAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/event-definitions/{name}/properties/{prop}", p, ct);
+
+        /// <summary>PUT /v1/events/settings - Turn server-side event ingest on or off (callers get 412 while off, nothing is dropped silently), or set the primary-key field</summary>
+        public Task<JsonElement?> PutV1EventsSettingsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/events/settings", p, ct);
 
         /// <summary>PUT /v1/forms/{id} - Replace the draft (name, definition, targeting)</summary>
         public Task<JsonElement?> PutV1FormsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/forms/{id}", p, ct);
@@ -5900,14 +7274,23 @@ namespace Hermetica
         /// <summary>PUT /v1/frequency-settings</summary>
         public Task<JsonElement?> PutV1FrequencySettingsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/frequency-settings", p, ct);
 
+        /// <summary>PUT /v1/integrations/connections/{id}/crm/users</summary>
+        public Task<JsonElement?> PutV1IntegrationsConnectionsByIdCrmUsersAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/integrations/connections/{id}/crm/users", p, ct);
+
         /// <summary>PUT /v1/integrations/connections/{id}/declarative/push - Turn on sending changed profiles to this CRM/helpdesk (off by default), optionally for one segment</summary>
         public Task<JsonElement?> PutV1IntegrationsConnectionsByIdDeclarativePushAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/integrations/connections/{id}/declarative/push", p, ct);
 
         /// <summary>PUT /v1/integrations/connections/{id}/declarative/webhook-secret - Save the signing secret the vendor shows only after it verified the webhook URL (e.g. Clover X-Clover-Auth); it is never returned</summary>
         public Task<JsonElement?> PutV1IntegrationsConnectionsByIdDeclarativeWebhookSecretAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/integrations/connections/{id}/declarative/webhook-secret", p, ct);
 
+        /// <summary>PUT /v1/integrations/crm-settings - Set how many days the CRM sync log keeps rows (7 to 3650)</summary>
+        public Task<JsonElement?> PutV1IntegrationsCrmSettingsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/integrations/crm-settings", p, ct);
+
         /// <summary>PUT /v1/integrations/secrets/{name} - Create or replace a secret</summary>
         public Task<JsonElement?> PutV1IntegrationsSecretsByNameAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/integrations/secrets/{name}", p, ct);
+
+        /// <summary>PUT /v1/landing-page-clusters/{id}</summary>
+        public Task<JsonElement?> PutV1LandingPageClustersByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/landing-page-clusters/{id}", p, ct);
 
         /// <summary>PUT /v1/landing-page-languages - Re-label locales of pages in one group</summary>
         public Task<JsonElement?> PutV1LandingPageLanguagesAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/landing-page-languages", p, ct);
@@ -5920,6 +7303,12 @@ namespace Hermetica
 
         /// <summary>PUT /v1/landing-pages/{id}/languages/primary - Make this page the group fallback (served at its address by Accept-Language)</summary>
         public Task<JsonElement?> PutV1LandingPagesByIdLanguagesPrimaryAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/landing-pages/{id}/languages/primary", p, ct);
+
+        /// <summary>PUT /v1/landing-pages/{id}/seo/keyword - Set the focus keyword the audit checks</summary>
+        public Task<JsonElement?> PutV1LandingPagesByIdSeoKeywordAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/landing-pages/{id}/seo/keyword", p, ct);
+
+        /// <summary>PUT /v1/landing-pages/{id}/site - Put the page in a website (null takes it out)</summary>
+        public Task<JsonElement?> PutV1LandingPagesByIdSiteAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/landing-pages/{id}/site", p, ct);
 
         /// <summary>PUT /v1/leads/settings</summary>
         public Task<JsonElement?> PutV1LeadsSettingsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/leads/settings", p, ct);
@@ -5939,8 +7328,17 @@ namespace Hermetica
         /// <summary>PUT /v1/lists/{id}/tags</summary>
         public Task<JsonElement?> PutV1ListsByIdTagsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/lists/{id}/tags", p, ct);
 
+        /// <summary>PUT /v1/loyalty/hub</summary>
+        public Task<JsonElement?> PutV1LoyaltyHubAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/loyalty/hub", p, ct);
+
+        /// <summary>PUT /v1/loyalty/programs/{id}/wallet - Set up Apple and Google Wallet passes (secrets are write-only and stored sealed)</summary>
+        public Task<JsonElement?> PutV1LoyaltyProgramsByIdWalletAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/loyalty/programs/{id}/wallet", p, ct);
+
         /// <summary>PUT /v1/mapped-metrics/{role}</summary>
         public Task<JsonElement?> PutV1MappedMetricsByRoleAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/mapped-metrics/{role}", p, ct);
+
+        /// <summary>PUT /v1/marketing-events/apps - Set the event-details URL template of an event app (by name)</summary>
+        public Task<JsonElement?> PutV1MarketingEventsAppsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/marketing-events/apps", p, ct);
 
         /// <summary>PUT /v1/marketing-events/{id}/lists/{listId} - Attach a list and register its members</summary>
         public Task<JsonElement?> PutV1MarketingEventsByIdListsByListIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/marketing-events/{id}/lists/{listId}", p, ct);
@@ -5972,7 +7370,7 @@ namespace Hermetica
         /// <summary>PUT /v1/newsletter/stripe - Connect the workspace's own Stripe account (keys are sealed and never returned)</summary>
         public Task<JsonElement?> PutV1NewsletterStripeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/newsletter/stripe", p, ct);
 
-        /// <summary>PUT /v1/notes/{id}</summary>
+        /// <summary>PUT /v1/notes/{id} - Edit a contact or company note</summary>
         public Task<JsonElement?> PutV1NotesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/notes/{id}", p, ct);
 
         /// <summary>PUT /v1/object-types/{id}/draft</summary>
@@ -5984,6 +7382,9 @@ namespace Hermetica
         /// <summary>PUT /v1/outbound/ai-key - Save your own Anthropic API key (sealed; never returned)</summary>
         public Task<JsonElement?> PutV1OutboundAiKeyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/outbound/ai-key", p, ct);
 
+        /// <summary>PUT /v1/outbound/booking-pages/{id}</summary>
+        public Task<JsonElement?> PutV1OutboundBookingPagesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/outbound/booking-pages/{id}", p, ct);
+
         /// <summary>PUT /v1/outbound/call-dispositions</summary>
         public Task<JsonElement?> PutV1OutboundCallDispositionsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/outbound/call-dispositions", p, ct);
 
@@ -5992,6 +7393,9 @@ namespace Hermetica
 
         /// <summary>PUT /v1/outbound/inbox/{id}/drafts/{draftId}</summary>
         public Task<JsonElement?> PutV1OutboundInboxByIdDraftsByDraftIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/outbound/inbox/{id}/drafts/{draftId}", p, ct);
+
+        /// <summary>PUT /v1/outbound/inbox-routing/{channel} - Default inbox and default assignee for new replies on a channel</summary>
+        public Task<JsonElement?> PutV1OutboundInboxRoutingByChannelAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/outbound/inbox-routing/{channel}", p, ct);
 
         /// <summary>PUT /v1/outbound/mailbox-meta/{id}</summary>
         public Task<JsonElement?> PutV1OutboundMailboxMetaByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/outbound/mailbox-meta/{id}", p, ct);
@@ -6017,6 +7421,24 @@ namespace Hermetica
         /// <summary>PUT /v1/outbound/sequences/{id}/tags</summary>
         public Task<JsonElement?> PutV1OutboundSequencesByIdTagsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/outbound/sequences/{id}/tags", p, ct);
 
+        /// <summary>PUT /v1/outbound/task-types/{id}</summary>
+        public Task<JsonElement?> PutV1OutboundTaskTypesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/outbound/task-types/{id}", p, ct);
+
+        /// <summary>PUT /v1/outbound/telephony</summary>
+        public Task<JsonElement?> PutV1OutboundTelephonyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/outbound/telephony", p, ct);
+
+        /// <summary>PUT /v1/outbound/telephony/my-phone</summary>
+        public Task<JsonElement?> PutV1OutboundTelephonyMyPhoneAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/outbound/telephony/my-phone", p, ct);
+
+        /// <summary>PUT /v1/page-sites/{id}/domain - Set the custom domain; publish the returned DNS records, then verify</summary>
+        public Task<JsonElement?> PutV1PageSitesByIdDomainAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/page-sites/{id}/domain", p, ct);
+
+        /// <summary>PUT /v1/postal-addresses/{id}/groups</summary>
+        public Task<JsonElement?> PutV1PostalAddressesByIdGroupsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/postal-addresses/{id}/groups", p, ct);
+
+        /// <summary>PUT /v1/profile-filters/{id}</summary>
+        public Task<JsonElement?> PutV1ProfileFiltersByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/profile-filters/{id}", p, ct);
+
         /// <summary>PUT /v1/profiles/{id}/contact-prefs</summary>
         public Task<JsonElement?> PutV1ProfilesByIdContactPrefsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/profiles/{id}/contact-prefs", p, ct);
 
@@ -6028,6 +7450,9 @@ namespace Hermetica
 
         /// <summary>PUT /v1/registrar/domains/{id}/forwarding - Replace the email forwarding rules and the apex/www redirects</summary>
         public Task<JsonElement?> PutV1RegistrarDomainsByIdForwardingAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/registrar/domains/{id}/forwarding", p, ct);
+
+        /// <summary>PUT /v1/review-settings</summary>
+        public Task<JsonElement?> PutV1ReviewSettingsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/review-settings", p, ct);
 
         /// <summary>PUT /v1/roles/{id}</summary>
         public Task<JsonElement?> PutV1RolesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/roles/{id}", p, ct);
@@ -6041,11 +7466,23 @@ namespace Hermetica
         /// <summary>PUT /v1/seed-lists/{id}</summary>
         public Task<JsonElement?> PutV1SeedListsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/seed-lists/{id}", p, ct);
 
+        /// <summary>PUT /v1/segments - Create or update by name: the live segment with this name (case-insensitive) gets these rules, else a new one is made</summary>
+        public Task<JsonElement?> PutV1SegmentsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/segments", p, ct);
+
         /// <summary>PUT /v1/segments/settings - Change spend tiers or the geocoding provider; segments that use them recalculate</summary>
         public Task<JsonElement?> PutV1SegmentsSettingsAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/segments/settings", p, ct);
 
+        /// <summary>PUT /v1/senders/{id}/signing/pgp - Sign this sender's email with PGP/MIME: an armored private key with a user id for its address, and its passphrase</summary>
+        public Task<JsonElement?> PutV1SendersByIdSigningPgpAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/senders/{id}/signing/pgp", p, ct);
+
+        /// <summary>PUT /v1/senders/{id}/signing/smime - Sign this sender's email with S/MIME: PEM certificate issued for its address, its unencrypted private key, optional chain</summary>
+        public Task<JsonElement?> PutV1SendersByIdSigningSmimeAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/senders/{id}/signing/smime", p, ct);
+
         /// <summary>PUT /v1/send-options/{sourceKind}/{sourceId} - Replace the attachments (base64, stored in object storage) and allowlisted headers of a source; reserved headers are rejected</summary>
         public Task<JsonElement?> PutV1SendOptionsBySourceKindBySourceIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/send-options/{sourceKind}/{sourceId}", p, ct);
+
+        /// <summary>PUT /v1/send-options/{sourceKind}/{sourceId}/behaviour - Strict Liquid (null = default strict) and send-from-contact-owner for a campaign, journey or sequence; other send options are untouched</summary>
+        public Task<JsonElement?> PutV1SendOptionsBySourceKindBySourceIdBehaviourAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/send-options/{sourceKind}/{sourceId}/behaviour", p, ct);
 
         /// <summary>PUT /v1/send-options/{sourceKind}/{sourceId}/footer-address - Choose which saved address prints in the email footer of a campaign, journey or sequence (null = workspace address); attachments and headers</summary>
         public Task<JsonElement?> PutV1SendOptionsBySourceKindBySourceIdFooterAddressAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/send-options/{sourceKind}/{sourceId}/footer-address", p, ct);
@@ -6064,6 +7501,9 @@ namespace Hermetica
 
         /// <summary>PUT /v1/sites/{id}/allowlist</summary>
         public Task<JsonElement?> PutV1SitesByIdAllowlistAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/sites/{id}/allowlist", p, ct);
+
+        /// <summary>PUT /v1/slack/templates/{id} - Edit a Slack message template</summary>
+        public Task<JsonElement?> PutV1SlackTemplatesByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/slack/templates/{id}", p, ct);
 
         /// <summary>PUT /v1/sms/ai-drafts/{id} - Write it again from a new brief or tone, replacing this draft</summary>
         public Task<JsonElement?> PutV1SmsAiDraftsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/sms/ai-drafts/{id}", p, ct);
@@ -6092,6 +7532,9 @@ namespace Hermetica
         /// <summary>PUT /v1/sso/oidc</summary>
         public Task<JsonElement?> PutV1SsoOidcAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/sso/oidc", p, ct);
 
+        /// <summary>PUT /v1/standard-fields/{key}</summary>
+        public Task<JsonElement?> PutV1StandardFieldsByKeyAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/standard-fields/{key}", p, ct);
+
         /// <summary>PUT /v1/tags/resources/{resourceType}/{resourceId} - Replace the resource tag set</summary>
         public Task<JsonElement?> PutV1TagsResourcesByResourceTypeByResourceIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/tags/resources/{resourceType}/{resourceId}", p, ct);
 
@@ -6112,6 +7555,9 @@ namespace Hermetica
 
         /// <summary>PUT /v1/user-groups/{id}</summary>
         public Task<JsonElement?> PutV1UserGroupsByIdAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/user-groups/{id}", p, ct);
+
+        /// <summary>PUT /v1/user-groups/{id}/access - Lists the group's members may reach (null = the group does not limit lists) and caps such as sends per day</summary>
+        public Task<JsonElement?> PutV1UserGroupsByIdAccessAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/user-groups/{id}/access", p, ct);
 
         /// <summary>PUT /v1/white-label - Set the white-label look; send null to clear a field</summary>
         public Task<JsonElement?> PutV1WhiteLabelAsync(Params? p = null, CancellationToken ct = default) => RequestAsync("PUT", "/v1/white-label", p, ct);

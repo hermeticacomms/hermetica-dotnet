@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-dotnet@v5
-        with: { dotnet-version: '8.0.x' }
+        with: { dotnet-version: '10.0.x' }
       - run: grep -q "<Version>${GITHUB_REF_NAME#v}</Version>" src/Hermetica/Hermetica.csproj
       - run: dotnet test tests/Hermetica.Tests -c Release
       - run: dotnet pack src/Hermetica -c Release -o out

@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-dotnet@v5
-        with: { dotnet-version: '8.0.x' }
-      - run: dotnet build src/Hermetica -c Release # netstandard2.0 and net8.0
+        with: { dotnet-version: '10.0.x' }
+      - run: dotnet build src/Hermetica -c Release # netstandard2.0 and net10.0
       - run: dotnet test tests/Hermetica.Tests -c Release
       - run: dotnet pack src/Hermetica -c Release -o out
