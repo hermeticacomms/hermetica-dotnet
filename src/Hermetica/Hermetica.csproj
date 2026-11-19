@@ -6,7 +6,7 @@
     <RootNamespace>Hermetica</RootNamespace>
     <AssemblyName>Hermetica</AssemblyName>
     <PackageId>Hermeticacomms.Hermetica</PackageId>
-    <Version>0.4.0</Version>
+    <Version>0.4.9</Version>
     <Authors>Hermetica</Authors>
     <Description>.NET client for the Hermetica API: one async method per operation, idempotency keys, cursor paging.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
